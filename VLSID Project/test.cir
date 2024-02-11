@@ -1,0 +1,29 @@
+TEST DEMO
+***SETUP***
+.INCLUDE TSMC_180nm.txt
+.INCLUDE full_adder.sub
+.PARAM SUPPLY = 1.8
+.PARAM LAMBDA = 0.18u
+.PARAM width_N = {10*LAMBDA}
+.PARAM width_P = {2.5*width_N}
+.GLOBAL GND VDD
+
+VDS VDD GND 1
+
+VA A GND PULSE(0 1 0 100p 100p 9.9n 20n)
+VB B GND PULSE(0 1 0 100p 100p 19.9n 40n)
+VC C GND PULSE(0 1 0 100p 100p 39.9n 80n)
+
+Cout out GND 2f
+CS S GND 2f
+
+X1 A B C S out 1 GND fulladd
+
+.TRAN 100p 80n
+
+.CONTROL
+	run
+	plot v(A) v(B)+2 v(C)+4 v(S)+6 v(out)+8
+.ENDC
+
+.END

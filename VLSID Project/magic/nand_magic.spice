@@ -1,0 +1,41 @@
+
+.include TSMC_180nm.txt
+.include 22nm_MGK.pm
+.param SUPPLY=1
+.param LAMBDA=22n
+.param width_N={2*LAMBDA}
+.param width_P={2*LAMBDA}
+.global gnd vdd 
+
+.option scale=0.01u
+
+
+v_dd vdd gnd  'SUPPLY'
+va A gnd pulse 0 1 0 100p 100p 10n 20n
+vb B gnd pulse 0 1 0 100p 100p 20n 40n
+
+
+
+M1000 OUTPUT A VDD w_0_0# pmos w=8 l=2
++  ad=48 pd=28 as=80 ps=52
+M1001 a_13_n12# A a_10_n12# Gnd nmos w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1002 VDD B OUTPUT w_0_0# pmos w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1003 OUTPUT B a_13_n12# Gnd nmos w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+C0 w_0_0# A 2.62fF
+C1 w_0_0# B 2.62fF
+C2 w_0_0# VDD 2.26fF
+C3 OUTPUT Gnd 3.76fF
+C4 VDD Gnd 6.02fF
+C5 B Gnd 9.09fF
+C6 A Gnd 5.68fF
+
+
+
+.control
+tran 1n 120n
+plot  A+1 B+2 OUTPUT+3
+.endc
+.end

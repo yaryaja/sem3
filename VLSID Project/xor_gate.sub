@@ -1,0 +1,18 @@
+.SUBCKT xor A B OUT VDD GND
+*.INCLUDE inverter.sub
+*.INCLUDE and_gate.sub
+*.INCLUDE or_gate.sub
+.INCLUDE nand_gate.sub
+
+*X1 A node1 VDD GND inverter
+*X2 B node2 VDD GND inverter
+*X3 node1 B node3 VDD GND and
+*X4 A node2 node4 VDD GND and
+*X5 node3 node4 OUT VDD GND or
+
+X1 A B node1 VDD GND nand
+X2 A node1 node2 VDD GND nand
+X3 node1 B node3 VDD GND nand
+X4 node2 node3 OUT VDD GND nand
+
+.ENDS xor

@@ -1,0 +1,11 @@
+timestamp 1668426029
+version 8.2
+tech scmos
+style lambda=1.0(scna20_orb)
+scale 1000 1 100
+resistclasses 26670 59550 23860 19690 27260 2000000 49 26 2505830
+use inverter_magic inverter_magic_0 1 0 25 0 1 30
+use nor_magic nor_magic_0 1 0 -2 0 1 30
+merge "nor_magic_0/w_0_0#" "inverter_magic_0/w_0_0#" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -100 -50
+merge "nor_magic_0/VDD" "inverter_magic_0/VDD" -940 0 0 0 0 0 0 0 0 0 0 0 0 -20 -18 0 0 0 0
+merge "nor_magic_0/OUTPUT" "inverter_magic_0/INPUT" -940 0 0 0 0 0 0 0 0 0 0 0 0 -20 -18 0 0 0 0
