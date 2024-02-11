@@ -1,0 +1,34 @@
+timestamp 1667997983
+version 8.2
+tech scmos
+style lambda=1.0(scna20_orb)
+scale 1000 1 100
+resistclasses 26670 59550 23860 19690 27260 2000000 49 26 2505830
+node "output" 64 4888 39 -10 ndiff 60 34 0 0 0 0 0 0 0 0 0 0 160 88 0 0 0 0
+node "GND" 889 10528 -17 -10 ndiff 146 88 48 48 0 0 0 0 0 0 0 0 320 192 0 0 0 0
+node "a_39_17#" 60 0 39 17 pdiff 0 0 36 24 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "a_5_17#" 60 0 5 17 pdiff 0 0 36 24 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "a_n9_17#" 119 0 -9 17 pdiff 0 0 72 36 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "a_n9_n10#" 620 16948 -9 -10 ndiff 72 36 0 0 154 126 0 0 0 0 0 0 190 114 0 0 0 0
+node "B" 525 5162 3 -13 p 0 0 0 0 88 92 0 0 0 0 0 0 0 0 0 0 0 0
+node "A" 525 5162 -11 -13 p 0 0 0 0 88 92 0 0 0 0 0 0 0 0 0 0 0 0
+node "VDD" 612 9588 -17 17 pdiff 48 48 72 48 0 0 0 0 0 0 0 0 336 176 0 0 0 0
+node "w_23_11#" 3898 0 23 11 nw 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 504 92
+node "w_n23_11#" 5275 0 -23 11 nw 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 760 118
+cap "a_39_17#" "output" 752
+cap "B" "a_n9_n10#" 180
+cap "w_23_11#" "output" 1128
+cap "a_n9_n10#" "a_5_17#" 282
+cap "VDD" "w_n23_11#" 1316
+cap "w_23_11#" "VDD" 1128
+cap "A" "w_n23_11#" 3414
+cap "B" "w_n23_11#" 3414
+cap "a_n9_n10#" "w_n23_11#" 846
+cap "w_23_11#" "a_n9_n10#" 3176
+device mosfet nfet 37 -10 38 -9 2 5 "Gnd!" "a_n9_n10#" 4 0 "GND" 5 0 "output" 5 0
+device mosfet nfet 3 -10 4 -9 2 6 "Gnd!" "B" 4 0 "a_n9_n10#" 6 0 "GND" 6 0
+device mosfet nfet -11 -10 -10 -9 2 6 "Gnd!" "A" 4 0 "GND" 6 0 "a_n9_n10#" 6 0
+device mosfet pfet 37 17 38 18 2 6 "w_23_11#" "a_n9_n10#" 4 0 "VDD" 6 0 "a_39_17#" 6 0
+device mosfet pfet 3 17 4 18 2 6 "w_n23_11#" "B" 4 0 "a_n9_17#" 6 0 "a_5_17#" 6 0
+device mosfet pfet -11 17 -10 18 2 6 "w_n23_11#" "A" 4 0 "VDD" 6 0 "a_n9_17#" 6 0
+subcap "output" -564

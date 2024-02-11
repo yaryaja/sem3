@@ -1,0 +1,119 @@
+* SPICE3 file created from magicor_gate.ext - technology: scmos
+
+
+.include 22nm_MGK.pm
+.include TSMC_180nm.txt
+.param SUPPLY=1
+.param LAMBDA=22n
+.param width_N={2*LAMBDA}
+.param width_P={2*LAMBDA}
+.global gnd vdd 
+
+.option scale=0.01u
+
+
+v_dd vdd gnd  'SUPPLY'
+va A gnd pulse 0 1 0 100p 100p 10n 20n
+vb B gnd pulse 0 1 0 100p 100p 20n 40n
+
+
+M1000 m1_87_75# B vdd nand_0/w_54_71# pmos w=8 l=2
++  ad=80 pd=52 as=320 ps=208
+M1001 m1_87_75# a_48_76# vdd nand_0/w_54_71# pmos w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1002 m1_87_75# B nand_0/a_70_54# Gnd nmos w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1003 nand_0/a_70_54# a_48_76# gnd Gnd nmos w=4 l=2
++  ad=0 pd=0 as=100 ps=90
+M1004 a_282_139# a_189_110# vdd nand_1/w_54_71# pmos w=8 l=2
++  ad=80 pd=52 as=0 ps=0
+M1005 a_282_139# a_48_76# vdd nand_1/w_54_71# pmos w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1006 a_282_139# a_189_110# nand_1/a_70_54# Gnd nmos w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1007 nand_1/a_70_54# a_48_76# gnd Gnd nmos w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1008 m1_207_n3# a_187_n2# vdd nand_2/w_54_71# pmos w=8 l=2
++  ad=80 pd=52 as=0 ps=0
+M1009 m1_207_n3# a_137_n1# vdd nand_2/w_54_71# pmos w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1010 m1_207_n3# a_187_n2# nand_2/a_70_54# Gnd nmos w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1011 nand_2/a_70_54# a_137_n1# gnd Gnd nmos w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1012 sum a_339_140# vdd nand_3/w_54_71# pmos w=8 l=2
++  ad=80 pd=52 as=0 ps=0
+M1013 sum a_282_139# vdd nand_3/w_54_71# pmos w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1014 sum a_339_140# nand_3/a_70_54# Gnd nmos w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1015 nand_3/a_70_54# a_282_139# gnd Gnd nmos w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1016 carry a_360_n1# m1_328_38# nand_4/w_54_71# pmos w=8 l=2
++  ad=80 pd=52 as=80 ps=52
+M1017 carry a_305_1# m1_328_38# nand_4/w_54_71# pmos w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1018 carry a_360_n1# nand_4/a_70_54# Gnd nmos w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1019 nand_4/a_70_54# a_305_1# gnd Gnd nmos w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+C0 a_187_n2# nand_2/w_54_71# 3.89fF
+C1 m1_87_75# nand_0/w_54_71# 3.85fF
+C2 a_282_139# nand_1/w_54_71# 3.85fF
+C3 gnd m2_69_n34# 2.88fF
+C4 vdd nand_0/w_54_71# 2.63fF
+C5 vdd nand_1/w_54_71# 2.63fF
+C6 m2_69_n34# m1_87_75# 2.52fF
+C7 gnd m1_87_75# 3.51fF
+C8 carry nand_4/w_54_71# 3.85fF
+C9 a_339_140# nand_3/w_54_71# 3.89fF
+C10 m1_328_38# nand_4/w_54_71# 2.63fF
+C11 nand_3/w_54_71# sum 3.85fF
+C12 vdd nand_2/w_54_71# 2.63fF
+C13 a_282_139# nand_3/w_54_71# 3.89fF
+C14 a_137_n1# nand_2/w_54_71# 3.89fF
+C15 a_360_n1# nand_4/w_54_71# 3.89fF
+C16 B nand_0/w_54_71# 3.89fF
+C17 nand_3/w_54_71# vdd 2.63fF
+C18 a_189_110# nand_1/w_54_71# 3.89fF
+C19 a_305_1# nand_4/w_54_71# 3.89fF
+C20 a_48_76# nand_0/w_54_71# 3.89fF
+C21 a_48_76# nand_1/w_54_71# 3.89fF
+C22 m1_207_n3# m2_239_84# 3.24fF
+C23 m1_207_n3# nand_2/w_54_71# 3.85fF
+C24 a_305_1# m1_87_75# 4.40fF
+C25 m2_69_n34# Gnd 38.72fF 
+C26 m2_239_84# Gnd 19.15fF 
+C27 nand_4/a_70_54# Gnd 2.07fF
+C28 carry Gnd 6.06fF
+C29 m1_328_38# Gnd 12.80fF
+C30 a_360_n1# Gnd 10.86fF
+C31 a_305_1# Gnd 21.61fF
+C32 nand_3/a_70_54# Gnd 2.07fF
+C33 gnd Gnd 222.97fF
+C34 sum Gnd 7.71fF
+C35 vdd Gnd 68.24fF
+C36 a_339_140# Gnd 10.86fF
+C37 a_282_139# Gnd 37.09fF
+C38 nand_2/a_70_54# Gnd 2.07fF
+C39 m1_207_n3# Gnd 12.41fF
+C40 a_187_n2# Gnd 11.49fF
+C41 a_137_n1# Gnd 21.47fF
+C42 nand_1/a_70_54# Gnd 2.07fF
+C43 a_189_110# Gnd 13.70fF
+C44 a_48_76# Gnd 23.01fF
+C45 nand_0/a_70_54# Gnd 2.07fF
+C46 m1_87_75# Gnd 10.39fF
+C47 B Gnd 12.13fF
+
+
+
+
+
+
+
+.control
+tran 1n 120n
+plot  A+1 B+2 
+.endc
+.end

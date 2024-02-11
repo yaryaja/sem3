@@ -1,0 +1,40 @@
+* SPICE3 file created from magic_nor.ext - technology: scmos
+
+
+.include 22nm_MGK.pm
+.param SUPPLY=1
+.param LAMBDA=22n
+.param width_N={2*LAMBDA}
+.param width_P={2*LAMBDA}
+.global gnd vdd 
+
+.option scale=0.01u
+M1000 output a_n9_n10# GND Gnd nfet w=5 l=2
++  ad=60 pd=34 as=146 ps=88
+M1001 a_39_17# a_n9_n10# VDD w_23_11# pfet w=6 l=2
++  ad=36 pd=24 as=72 ps=48
+M1002 a_5_17# B a_n9_17# w_n23_11# pfet w=6 l=2
++  ad=36 pd=24 as=72 ps=36
+M1003 GND B a_n9_n10# Gnd nfet w=6 l=2
++  ad=0 pd=0 as=72 ps=36
+M1004 a_n9_17# A VDD w_n23_11# pfet w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+M1005 a_n9_n10# A GND Gnd nfet w=6 l=2
++  ad=0 pd=0 as=0 ps=0
+C0 B w_n23_11# 3.41fF
+C1 w_23_11# a_n9_n10# 3.18fF
+C2 A w_n23_11# 3.41fF
+C3 output Gnd 4.32fF
+C4 GND Gnd 10.53fF
+C5 a_n9_n10# Gnd 16.95fF
+C6 B Gnd 5.16fF
+C7 A Gnd 5.16fF
+C8 VDD Gnd 9.
+
+
+
+.control
+tran 1n 120n
+plot  A+1 B+2 output
+.endc
+.end

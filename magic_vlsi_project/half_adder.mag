@@ -1,0 +1,114 @@
+magic
+tech scmos
+timestamp 1669577940
+<< polysilicon >>
+rect 130 142 179 146
+rect 189 142 203 146
+rect 189 118 193 142
+rect 297 139 329 144
+rect 344 140 352 144
+rect 54 76 63 80
+rect 78 76 86 80
+rect 146 -1 178 4
+rect 194 -2 202 2
+rect 313 1 352 5
+rect 366 -1 373 3
+<< metal1 >>
+rect 113 180 164 183
+rect 220 182 370 183
+rect 220 180 314 182
+rect 113 178 175 180
+rect 200 179 314 180
+rect 34 142 124 146
+rect 34 80 42 142
+rect 209 139 282 144
+rect 357 138 374 142
+rect 215 123 325 128
+rect 364 123 419 127
+rect 46 118 95 119
+rect 102 115 171 119
+rect 34 76 48 80
+rect 56 -61 64 59
+rect 165 42 171 115
+rect 165 41 218 42
+rect 165 40 171 41
+rect 118 -44 125 15
+rect 239 3 248 92
+rect 342 41 391 42
+rect 207 -3 248 3
+rect 378 1 390 2
+rect 379 0 390 1
+rect 380 -1 390 0
+rect 407 -14 410 123
+rect 209 -61 215 -14
+rect 380 -61 384 -15
+rect 386 -18 410 -14
+rect 56 -67 384 -61
+<< metal2 >>
+rect 95 119 102 183
+rect 339 140 352 144
+rect 189 81 193 118
+rect 339 92 344 140
+rect 239 84 344 92
+rect 69 -26 78 76
+rect 91 75 193 81
+rect 137 23 145 75
+rect 218 38 328 42
+rect 125 15 145 23
+rect 137 4 145 15
+rect 187 -2 202 2
+rect 305 1 352 5
+rect 360 2 373 3
+rect 187 -26 194 -2
+rect 69 -34 195 -26
+rect 305 -44 313 1
+rect 125 -45 313 -44
+rect 360 -1 374 2
+rect 360 -45 366 -1
+rect 125 -53 367 -45
+<< polycontact >>
+rect 124 142 130 146
+rect 282 139 297 144
+rect 339 140 344 144
+rect 189 110 193 118
+rect 48 76 54 80
+rect 69 76 78 80
+rect 137 -1 146 4
+rect 187 -2 194 2
+rect 305 1 313 5
+rect 360 -1 366 3
+<< m2contact >>
+rect 102 178 113 183
+rect 95 115 102 119
+rect 87 75 91 81
+rect 118 15 125 23
+rect 328 38 342 42
+rect 118 -53 125 -44
+use nand  nand_1
+timestamp 1669576883
+transform 1 0 111 0 1 79
+box 53 45 109 104
+use nand  nand_3
+timestamp 1669576883
+transform 1 0 261 0 1 78
+box 53 45 109 104
+use nand  nand_0
+timestamp 1669576883
+transform 1 0 -7 0 1 14
+box 53 45 109 104
+use nand  nand_2
+timestamp 1669576883
+transform 1 0 109 0 1 -63
+box 53 45 109 104
+use nand  nand_4
+timestamp 1669576883
+transform 1 0 282 0 1 -63
+box 53 45 109 104
+<< labels >>
+rlabel metal1 372 139 372 139 1 sum
+rlabel metal1 242 -65 242 -65 1 gnd
+rlabel metal1 387 0 387 0 1 carry
+rlabel metal1 260 180 260 180 5 vdd
+rlabel space 62 82 62 82 1 A
+rlabel polysilicon 84 77 84 77 1 B
+<< end >>

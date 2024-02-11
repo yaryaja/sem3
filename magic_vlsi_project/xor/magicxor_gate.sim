@@ -1,0 +1,17 @@
+| units: 1 tech: scmos format: MIT
+n B GND vout 18 36 -459 -90
+p A VDD GND 18 36 -180 153
+n A GND 18 36 -180 -90
+n B_not A vout 18 36 -720 -90
+p B_not GND vout 18 36 -459 153
+n B GND B_not 18 36 72 -90
+p B A vout 18 36 -720 153
+p B VDD B_not 18 36 72 153
+R GND 203
+R vout 86
+R A 190
+R B 714
+R B_not 980
+R VDD 85
+C w_n91_5# GND 2.59
+R w_n91_5# 4941

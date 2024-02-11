@@ -1,0 +1,37 @@
+* SPICE3 file created from magicor_gate.ext - technology: scmos
+
+
+.include 22nm_MGK.pm
+.param SUPPLY=1
+.param LAMBDA=22n
+.param width_N={2*LAMBDA}
+.param width_P={2*LAMBDA}
+.global gnd vdd 
+
+.option scale=0.01u
+
+
+v_dd vdd gnd  'SUPPLY'
+va A gnd pulse 0 1 0 100p 100p 10n 20n
+vb B gnd pulse 0 1 0 100p 100p 20n 40n
+
+M1000 output out Vdd w_89_58# pmos w=11 l=2
++  ad=187 pd=56 as=396 ps=138
+M1001 output out Gnd Gnd nmos w=11 l=2
++  ad=198 pd=58 as=297 ps=98
+M1002 Vdd B out w_n4_57# pmos w=11 l=2
++  ad=0 pd=0 as=231 ps=64
+M1003 out B a_12_31# Gnd nmos w=11 l=2
++  ad=99 pd=40 as=231 ps=64
+M1004 out A Vdd w_n4_57# pmos w=11 l=2
++  ad=0 pd=0 as=0 ps=0
+M1005 a_12_31# A Gnd Gnd nmos w=11 l=2
++  ad=0 pd=0 as=0 ps=0
+
+
+
+.control
+tran 1n 120n
+plot  A B+1 output+2
+.endc
+.end

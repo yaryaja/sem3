@@ -1,0 +1,16 @@
+* SPICE3 file created from all.ext - technology: scmos
+
+.option scale=0.09u
+
+M1000 output out Vdd w_89_58# pfet w=11 l=2
++  ad=187 pd=56 as=396 ps=138
+M1001 output out Gnd Gnd nfet w=11 l=2
++  ad=198 pd=58 as=297 ps=98
+M1002 Vdd B out w_n4_57# pfet w=11 l=2
++  ad=0 pd=0 as=231 ps=64
+M1003 out B a_12_31# Gnd nfet w=11 l=2
++  ad=99 pd=40 as=231 ps=64
+M1004 out A Vdd w_n4_57# pfet w=11 l=2
++  ad=0 pd=0 as=0 ps=0
+M1005 a_12_31# A Gnd Gnd nfet w=11 l=2
++  ad=0 pd=0 as=0 ps=0
