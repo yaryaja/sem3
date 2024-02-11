@@ -1,0 +1,35 @@
+
+.include and_gate.sub
+.include 4bit_adder.sub
+.subckt binary_multiplier A0 A1 A2 A3 B0 B1 B2 B3 P0 P1 P2 P3 P4 P5 P6 p7 vdd gnd 
+* step 1
+x1 B0 A0 P0 vdd gnd and_Gates
+x2 B0 A1 L1_b0 vdd gnd and_Gates
+x3 B0 A2 L1_b1 vdd gnd and_Gates
+x4 B0 A3 L1_b2 vdd gnd and_Gates
+
+x5 B1 A0 L1_a0 vdd gnd and_Gates
+x6 B1 A1 L1_a1 vdd gnd and_Gates
+x7 B1 A2 L1_a2 vdd gnd and_Gates
+x8 B1 A3 L1_a3 vdd gnd and_Gates
+
+* -------using first 4-bit adder
+x9 L1_a0 L1_a1 L1_a2 L1_a3 L1_b0 L1_b1 L1_b2 0  P1 L2_b0 L2_b1 L2_b2 L2_b3 vdd gnd fourbit_adder
+
+* step 2
+x10 B2 A0 L2_a0 vdd gnd and_Gates
+x11 B2 A1 L2_a1 vdd gnd and_Gates
+x12 B2 A2 L2_a2 vdd gnd and_Gates
+x13 B2 A3 L2_a3 vdd gnd and_Gates
+* --------using second 4-bit adder
+x14 L2_a0 L2_a1 L2_a2 L2_a3 L2_b0 L2_b1 L2_b2 L2_b3  P2 L3_b0 L3_b1 L3_b2 L3_b3 vdd gnd fourbit_adder
+
+* step 3
+x15 B3 A0 L3_a0 vdd gnd and_Gates
+x16 B3 A1 L3_a1 vdd gnd and_Gates
+x17 B3 A2 L3_a2 vdd gnd and_Gates
+x18 B3 A3 L3_a3 vdd gnd and_Gates
+
+* using third 4-bit adder
+x19 L3_a0 L3_a1 L3_a2 L3_a3 L3_b0 L3_b1 L3_b2 L3_b3  P3 p4 p5 p6 p7 vdd gnd fourbit_adder
+.ends

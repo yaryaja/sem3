@@ -1,0 +1,228 @@
+magic
+tech scmos
+timestamp 1668121151
+<< metal1 >>
+rect 800 934 1481 938
+rect 258 930 552 934
+rect 290 845 294 930
+rect 297 845 301 905
+rect 376 845 380 930
+rect 383 845 387 905
+rect 462 845 466 930
+rect 469 845 473 905
+rect 548 845 552 930
+rect 555 845 559 905
+rect 849 850 853 934
+rect 856 850 860 910
+rect 935 850 939 934
+rect 942 849 946 909
+rect 1021 850 1025 934
+rect 1028 850 1032 910
+rect 1477 850 1481 934
+rect 1484 850 1488 910
+rect 287 719 291 779
+rect 373 736 377 779
+rect 373 730 423 736
+rect 287 713 385 719
+rect 377 710 385 713
+rect 415 710 423 730
+rect 459 725 463 779
+rect 444 720 463 725
+rect 545 723 549 779
+rect 846 734 850 784
+rect 932 738 936 784
+rect 846 729 880 734
+rect 444 710 452 720
+rect 478 716 549 723
+rect 478 710 486 716
+rect 804 711 857 718
+rect 870 711 880 729
+rect 912 733 936 738
+rect 912 711 922 733
+rect 1018 717 1022 784
+rect 935 711 1022 717
+rect 0 -1 7 0
+rect -12 -8 7 -1
+rect -601 -176 -307 -172
+rect -569 -261 -565 -176
+rect -562 -261 -558 -201
+rect -483 -261 -479 -176
+rect -476 -261 -472 -201
+rect -397 -261 -393 -176
+rect -390 -261 -386 -201
+rect -311 -261 -307 -176
+rect -304 -261 -300 -201
+rect -572 -387 -568 -327
+rect -486 -370 -482 -327
+rect -486 -376 -436 -370
+rect -572 -393 -474 -387
+rect -482 -396 -474 -393
+rect -444 -396 -436 -376
+rect -400 -381 -396 -327
+rect -415 -386 -396 -381
+rect -314 -383 -310 -327
+rect -415 -396 -407 -386
+rect -381 -390 -310 -383
+rect -381 -396 -373 -390
+rect -12 -395 -2 -8
+rect 10 -26 21 -25
+rect 277 -26 281 0
+rect 10 -36 281 -26
+rect 10 -396 21 -36
+rect 652 -74 656 0
+rect 53 -83 656 -74
+rect 53 -395 63 -83
+rect 1030 -135 1034 0
+rect 76 -145 1034 -135
+rect 76 -395 86 -145
+rect -871 -1110 -851 -1106
+rect -1460 -1269 -1166 -1265
+rect -1428 -1354 -1424 -1269
+rect -1421 -1354 -1417 -1294
+rect -1342 -1354 -1338 -1269
+rect -1335 -1354 -1331 -1294
+rect -1256 -1354 -1252 -1269
+rect -1249 -1354 -1245 -1294
+rect -1170 -1354 -1166 -1269
+rect -1163 -1354 -1159 -1294
+rect -1431 -1480 -1427 -1420
+rect -1345 -1463 -1341 -1420
+rect -1345 -1469 -1295 -1463
+rect -1431 -1486 -1333 -1480
+rect -1341 -1489 -1333 -1486
+rect -1303 -1489 -1295 -1469
+rect -1259 -1474 -1255 -1420
+rect -1274 -1479 -1255 -1474
+rect -1173 -1476 -1169 -1420
+rect -1274 -1489 -1266 -1479
+rect -1240 -1483 -1169 -1476
+rect -1240 -1489 -1232 -1483
+rect -871 -1488 -861 -1110
+rect -849 -1119 -838 -1118
+rect -582 -1119 -578 -1106
+rect -849 -1129 -578 -1119
+rect -849 -1489 -838 -1129
+rect -207 -1167 -203 -1106
+rect -806 -1176 -203 -1167
+rect -806 -1488 -796 -1176
+rect 171 -1228 175 -1106
+rect -783 -1238 175 -1228
+rect -783 -1488 -773 -1238
+rect -1719 -2367 -1710 -2199
+rect -1441 -2367 -1437 -2199
+rect -1066 -2367 -1062 -2199
+rect -688 -2367 -684 -2199
+rect -337 -2367 -333 -2199
+rect 522 -2354 526 -1106
+rect 1381 -1325 1385 0
+rect 521 -2367 526 -2354
+rect 1380 -1365 1385 -1325
+rect 1380 -2367 1384 -1365
+rect 1474 -2367 1478 784
+use Adder_4  Adder_4_2
+timestamp 1668121151
+transform 1 0 -1336 0 1 -2106
+box -382 -93 1069 618
+use AND  AND_15
+timestamp 1668119437
+transform 0 1 1447 -1 0 850
+box 0 0 66 83
+use AND  AND_0
+timestamp 1668119437
+transform 0 1 991 -1 0 850
+box 0 0 66 83
+use AND  AND_1
+timestamp 1668119437
+transform 0 1 905 -1 0 850
+box 0 0 66 83
+use AND  AND_7
+timestamp 1668119437
+transform 0 1 518 -1 0 845
+box 0 0 66 83
+use AND  AND_6
+timestamp 1668119437
+transform 0 1 432 -1 0 845
+box 0 0 66 83
+use AND  AND_2
+timestamp 1668119437
+transform 0 1 819 -1 0 850
+box 0 0 66 83
+use AND  AND_5
+timestamp 1668119437
+transform 0 1 260 -1 0 845
+box 0 0 66 83
+use AND  AND_4
+timestamp 1668119437
+transform 0 1 346 -1 0 845
+box 0 0 66 83
+use Adder_4  Adder_4_0
+timestamp 1668121151
+transform 1 0 382 0 1 93
+box -382 -93 1069 618
+use AND  AND_3
+timestamp 1668119437
+transform 0 1 -341 -1 0 -261
+box 0 0 66 83
+use AND  AND_8
+timestamp 1668119437
+transform 0 1 -427 -1 0 -261
+box 0 0 66 83
+use AND  AND_10
+timestamp 1668119437
+transform 0 1 -513 -1 0 -261
+box 0 0 66 83
+use AND  AND_9
+timestamp 1668119437
+transform 0 1 -599 -1 0 -261
+box 0 0 66 83
+use Adder_4  Adder_4_1
+timestamp 1668121151
+transform 1 0 -477 0 1 -1013
+box -382 -93 1069 618
+use AND  AND_11
+timestamp 1668119437
+transform 0 1 -1458 -1 0 -1354
+box 0 0 66 83
+use AND  AND_12
+timestamp 1668119437
+transform 0 1 -1372 -1 0 -1354
+box 0 0 66 83
+use AND  AND_13
+timestamp 1668119437
+transform 0 1 -1286 -1 0 -1354
+box 0 0 66 83
+use AND  AND_14
+timestamp 1668119437
+transform 0 1 -1200 -1 0 -1354
+box 0 0 66 83
+<< labels >>
+rlabel metal1 1474 -2361 1478 -2361 1 P0
+rlabel metal1 1380 -2362 1384 -2362 1 P1
+rlabel metal1 521 -2361 525 -2361 1 P2
+rlabel metal1 -337 -2362 -333 -2362 1 P3
+rlabel metal1 -688 -2362 -684 -2362 1 P4
+rlabel metal1 -1066 -2360 -1062 -2360 1 P5
+rlabel metal1 -1441 -2362 -1437 -2362 1 P6
+rlabel metal1 -1718 -2361 -1717 -2354 3 P7
+rlabel metal1 810 712 828 713 1 gnd
+rlabel metal1 856 897 860 898 1 B3
+rlabel metal1 942 895 946 896 1 B2
+rlabel metal1 1028 898 1032 899 1 B1
+rlabel metal1 1484 893 1488 894 1 B0
+rlabel metal1 805 935 814 936 5 A0
+rlabel metal1 297 887 301 887 1 B3
+rlabel metal1 383 889 387 889 1 B2
+rlabel metal1 469 891 473 891 1 B1
+rlabel metal1 555 890 559 890 1 B0
+rlabel metal1 -562 -223 -558 -223 1 B3
+rlabel metal1 -476 -222 -472 -222 1 B2
+rlabel metal1 -390 -221 -386 -221 1 B1
+rlabel metal1 -304 -220 -300 -220 1 B0
+rlabel metal1 -1421 -1312 -1417 -1312 1 B3
+rlabel metal1 -1335 -1311 -1331 -1311 1 B2
+rlabel metal1 -1249 -1309 -1245 -1309 1 B1
+rlabel metal1 -1163 -1310 -1159 -1310 1 B0
+rlabel metal1 -1452 -1267 -1448 -1267 1 A3
+rlabel metal1 -596 -174 -592 -174 1 A2
+rlabel metal1 262 932 266 932 1 A1
+<< end >>

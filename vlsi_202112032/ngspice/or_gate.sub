@@ -1,0 +1,21 @@
+.subckt or_Gates A B out vdd gnd
+    MP_1 1  A vdd vdd pmos W={width_P} L={LAMBDA} 
+    + AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P} AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P} 
+
+    MP_2 2 B 1 vdd pmos W={width_P} L={LAMBDA} 
+    + AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P} AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P} 
+
+    MN_A 2 A gnd gnd nmos W={width_P} L={LAMBDA} 
+    + AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P} AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+
+    MN_B 2 B gnd gnd nmos W={width_P} L={LAMBDA} 
+    + AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P} AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+
+    MP_I out 2 vdd vdd pmos W={width_P} L={LAMBDA} 
+    + AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P} AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P} 
+
+    MN_I out 2 gnd gnd nmos W={width_P} L={LAMBDA} 
+    + AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P} AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+   
+.ends or_Gates  
+

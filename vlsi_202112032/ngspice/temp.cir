@@ -1,0 +1,1872 @@
+
+
+.INCLUDE TSMC_180nm.txt
+.INCLUDE multiplier.sub
+.PARAM SUPPLY = 1
+.PARAM LAMBDA = 0.18u
+.PARAM width_N = {12*LAMBDA}
+.PARAM width_P = {2*width_N}
+.GLOBAL GND VDD
+
+VDS VDD GND 'SUPPLY'
+
+.OPTION scale=0.09u
+
+VA0 A0 GND PULSE(0 1 0 100p 100p 19.9n 40n)
+VA1 A1 GND PULSE(0 1 0 100p 100p 19.9n 40n)
+VA2 A2 GND PULSE(0 1 0 100p 100p 19.9n 40n)
+VA3 A3 GND PULSE(0 1 0 100p 100p 19.9n 40n)
+VB0 B0 GND PULSE(0 1 0 100p 100p 19.9n 40n)
+VB1 B1 GND PULSE(0 1 0 100p 100p 19.9n 40n)
+VB2 B2 GND PULSE(0 1 0 100p 100p 19.9n 40n)
+VB3 B3 GND PULSE(0 1 0 100p 100p 19.9n 40n)
+
+M1000 P0 and_magic_0/nand_magic_0/OUTPUT VDD and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=11360 ps=7384
+M1001 P0 and_magic_0/nand_magic_0/OUTPUT and_magic_0/inverter_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=4 ps=10
+M1002 and_magic_0/nand_magic_0/OUTPUT A0 VDD and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1003 and_magic_0/nand_magic_0/a_13_n12# A0 and_magic_0/nand_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1004 VDD B0 and_magic_0/nand_magic_0/OUTPUT and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1005 and_magic_0/nand_magic_0/OUTPUT B0 and_magic_0/nand_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1006 half_adder_magic_0/A and_magic_1/nand_magic_0/OUTPUT VDD and_magic_1/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1007 half_adder_magic_0/A and_magic_1/nand_magic_0/OUTPUT and_magic_1/inverter_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=4 ps=10
+M1008 and_magic_1/nand_magic_0/OUTPUT A0 VDD and_magic_1/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1009 and_magic_1/nand_magic_0/a_13_n12# A0 and_magic_1/nand_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1010 VDD B1 and_magic_1/nand_magic_0/OUTPUT and_magic_1/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1011 and_magic_1/nand_magic_0/OUTPUT B1 and_magic_1/nand_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1012 half_adder_magic_0/B and_magic_2/nand_magic_0/OUTPUT VDD and_magic_2/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1013 half_adder_magic_0/B and_magic_2/nand_magic_0/OUTPUT and_magic_2/inverter_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=4 ps=10
+M1014 and_magic_2/nand_magic_0/OUTPUT A1 VDD and_magic_2/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1015 and_magic_2/nand_magic_0/a_13_n12# A1 and_magic_2/nand_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1016 VDD B0 and_magic_2/nand_magic_0/OUTPUT and_magic_2/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1017 and_magic_2/nand_magic_0/OUTPUT B0 and_magic_2/nand_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1018 half_adder_magic_1/A and_magic_3/nand_magic_0/OUTPUT VDD and_magic_3/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1019 half_adder_magic_1/A and_magic_3/nand_magic_0/OUTPUT and_magic_3/inverter_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=4 ps=10
+M1020 and_magic_3/nand_magic_0/OUTPUT A2 VDD and_magic_3/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1021 and_magic_3/nand_magic_0/a_13_n12# A2 and_magic_3/nand_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1022 VDD B0 and_magic_3/nand_magic_0/OUTPUT and_magic_3/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1023 and_magic_3/nand_magic_0/OUTPUT B0 and_magic_3/nand_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1024 full_adder_magic_0/C_IN and_magic_5/nand_magic_0/OUTPUT VDD and_magic_5/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1025 full_adder_magic_0/C_IN and_magic_5/nand_magic_0/OUTPUT and_magic_5/inverter_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=4 ps=10
+M1026 and_magic_5/nand_magic_0/OUTPUT A0 VDD and_magic_5/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1027 and_magic_5/nand_magic_0/a_13_n12# A0 and_magic_5/nand_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1028 VDD B2 and_magic_5/nand_magic_0/OUTPUT and_magic_5/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1029 and_magic_5/nand_magic_0/OUTPUT B2 and_magic_5/nand_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1030 half_adder_magic_1/B and_magic_4/nand_magic_0/OUTPUT VDD and_magic_4/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1031 half_adder_magic_1/B and_magic_4/nand_magic_0/OUTPUT and_magic_4/inverter_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=4 ps=10
+M1032 and_magic_4/nand_magic_0/OUTPUT A1 VDD and_magic_4/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1033 and_magic_4/nand_magic_0/a_13_n12# A1 and_magic_4/nand_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1034 VDD B1 and_magic_4/nand_magic_0/OUTPUT and_magic_4/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1035 and_magic_4/nand_magic_0/OUTPUT B1 and_magic_4/nand_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1036 and_magic_6/inverter_magic_0/OUTPUT and_magic_6/nand_magic_0/OUTPUT VDD and_magic_6/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1037 and_magic_6/inverter_magic_0/OUTPUT and_magic_6/nand_magic_0/OUTPUT and_magic_6/inverter_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=4 ps=10
+M1038 and_magic_6/nand_magic_0/OUTPUT A3 VDD and_magic_6/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1039 and_magic_6/nand_magic_0/a_13_n12# A3 and_magic_6/nand_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1040 VDD B0 and_magic_6/nand_magic_0/OUTPUT and_magic_6/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1041 and_magic_6/nand_magic_0/OUTPUT B0 and_magic_6/nand_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1042 and_magic_7/inverter_magic_0/OUTPUT and_magic_7/nand_magic_0/OUTPUT VDD and_magic_7/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1043 and_magic_7/inverter_magic_0/OUTPUT and_magic_7/nand_magic_0/OUTPUT and_magic_7/inverter_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=4 ps=10
+M1044 and_magic_7/nand_magic_0/OUTPUT A2 VDD and_magic_7/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1045 and_magic_7/nand_magic_0/a_13_n12# A2 and_magic_7/nand_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1046 VDD B1 and_magic_7/nand_magic_0/OUTPUT and_magic_7/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1047 and_magic_7/nand_magic_0/OUTPUT B1 and_magic_7/nand_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1048 and_magic_8/inverter_magic_0/OUTPUT and_magic_8/nand_magic_0/OUTPUT VDD and_magic_8/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1049 and_magic_8/inverter_magic_0/OUTPUT and_magic_8/nand_magic_0/OUTPUT and_magic_8/inverter_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=4 ps=10
+M1050 and_magic_8/nand_magic_0/OUTPUT A1 VDD and_magic_8/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1051 and_magic_8/nand_magic_0/a_13_n12# A1 and_magic_8/nand_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1052 VDD B3 and_magic_8/nand_magic_0/OUTPUT and_magic_8/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1053 and_magic_8/nand_magic_0/OUTPUT B3 and_magic_8/nand_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1054 and_magic_9/inverter_magic_0/OUTPUT and_magic_9/nand_magic_0/OUTPUT VDD and_magic_9/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1055 and_magic_9/inverter_magic_0/OUTPUT and_magic_9/nand_magic_0/OUTPUT and_magic_9/inverter_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=4 ps=10
+M1056 and_magic_9/nand_magic_0/OUTPUT A3 VDD and_magic_9/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1057 and_magic_9/nand_magic_0/a_13_n12# A3 and_magic_9/nand_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1058 VDD B2 and_magic_9/nand_magic_0/OUTPUT and_magic_9/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1059 and_magic_9/nand_magic_0/OUTPUT B2 and_magic_9/nand_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1060 half_adder_magic_0/CARRY half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT VDD half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1061 half_adder_magic_0/CARRY half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT half_adder_magic_0/and_magic_0/inverter_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=4 ps=10
+M1062 half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT half_adder_magic_0/A VDD half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1063 half_adder_magic_0/and_magic_0/nand_magic_0/a_13_n12# half_adder_magic_0/A half_adder_magic_0/and_magic_0/nand_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1064 VDD half_adder_magic_0/B half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1065 half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT half_adder_magic_0/B half_adder_magic_0/and_magic_0/nand_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1066 half_adder_magic_0/xor_magic_0/a_46_39# half_adder_magic_0/xor_magic_0/a_13_6# half_adder_magic_0/xor_magic_0/a_46_21# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1067 P1 half_adder_magic_0/xor_magic_0/a_46_n26# half_adder_magic_0/xor_magic_0/a_80_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1068 half_adder_magic_0/xor_magic_0/a_46_n26# half_adder_magic_0/xor_magic_0/a_13_6# half_adder_magic_0/xor_magic_0/a_46_n44# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1069 half_adder_magic_0/xor_magic_0/a_46_21# half_adder_magic_0/A half_adder_magic_0/xor_magic_0/a_43_21# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1070 P1 half_adder_magic_0/xor_magic_0/a_46_39# VDD half_adder_magic_0/xor_magic_0/w_67_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1071 half_adder_magic_0/xor_magic_0/a_46_n26# half_adder_magic_0/B VDD half_adder_magic_0/xor_magic_0/w_33_n32# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1072 VDD half_adder_magic_0/xor_magic_0/a_13_6# half_adder_magic_0/xor_magic_0/a_46_39# half_adder_magic_0/xor_magic_0/w_33_33# CMOSP w=8 l=2
++  ad=0 pd=0 as=48 ps=28
+M1073 VDD half_adder_magic_0/xor_magic_0/a_46_n26# P1 half_adder_magic_0/xor_magic_0/w_67_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1074 half_adder_magic_0/xor_magic_0/a_13_6# half_adder_magic_0/A VDD half_adder_magic_0/xor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1075 half_adder_magic_0/xor_magic_0/a_13_n12# half_adder_magic_0/A half_adder_magic_0/xor_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1076 VDD half_adder_magic_0/xor_magic_0/a_13_6# half_adder_magic_0/xor_magic_0/a_46_n26# half_adder_magic_0/xor_magic_0/w_33_n32# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1077 half_adder_magic_0/xor_magic_0/a_46_39# half_adder_magic_0/A VDD half_adder_magic_0/xor_magic_0/w_33_33# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1078 VDD half_adder_magic_0/B half_adder_magic_0/xor_magic_0/a_13_6# half_adder_magic_0/xor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1079 half_adder_magic_0/xor_magic_0/a_80_n12# half_adder_magic_0/xor_magic_0/a_46_39# half_adder_magic_0/xor_magic_0/a_77_n12# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1080 half_adder_magic_0/xor_magic_0/a_13_6# half_adder_magic_0/B half_adder_magic_0/xor_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1081 half_adder_magic_0/xor_magic_0/a_46_n44# half_adder_magic_0/B half_adder_magic_0/xor_magic_0/a_43_n44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1082 full_adder_magic_1/C_IN half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT VDD half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1083 full_adder_magic_1/C_IN half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT half_adder_magic_1/and_magic_0/inverter_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=4 ps=10
+M1084 half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT half_adder_magic_1/A VDD half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1085 half_adder_magic_1/and_magic_0/nand_magic_0/a_13_n12# half_adder_magic_1/A half_adder_magic_1/and_magic_0/nand_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1086 VDD half_adder_magic_1/B half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1087 half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT half_adder_magic_1/B half_adder_magic_1/and_magic_0/nand_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1088 half_adder_magic_1/xor_magic_0/a_46_39# half_adder_magic_1/xor_magic_0/a_13_6# half_adder_magic_1/xor_magic_0/a_46_21# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1089 half_adder_magic_1/SUM half_adder_magic_1/xor_magic_0/a_46_n26# half_adder_magic_1/xor_magic_0/a_80_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1090 half_adder_magic_1/xor_magic_0/a_46_n26# half_adder_magic_1/xor_magic_0/a_13_6# half_adder_magic_1/xor_magic_0/a_46_n44# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1091 half_adder_magic_1/xor_magic_0/a_46_21# half_adder_magic_1/A half_adder_magic_1/xor_magic_0/a_43_21# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1092 half_adder_magic_1/SUM half_adder_magic_1/xor_magic_0/a_46_39# VDD half_adder_magic_1/xor_magic_0/w_67_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1093 half_adder_magic_1/xor_magic_0/a_46_n26# half_adder_magic_1/B VDD half_adder_magic_1/xor_magic_0/w_33_n32# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1094 VDD half_adder_magic_1/xor_magic_0/a_13_6# half_adder_magic_1/xor_magic_0/a_46_39# half_adder_magic_1/xor_magic_0/w_33_33# CMOSP w=8 l=2
++  ad=0 pd=0 as=48 ps=28
+M1095 VDD half_adder_magic_1/xor_magic_0/a_46_n26# half_adder_magic_1/SUM half_adder_magic_1/xor_magic_0/w_67_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1096 half_adder_magic_1/xor_magic_0/a_13_6# half_adder_magic_1/A VDD half_adder_magic_1/xor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1097 half_adder_magic_1/xor_magic_0/a_13_n12# half_adder_magic_1/A half_adder_magic_1/xor_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1098 VDD half_adder_magic_1/xor_magic_0/a_13_6# half_adder_magic_1/xor_magic_0/a_46_n26# half_adder_magic_1/xor_magic_0/w_33_n32# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1099 half_adder_magic_1/xor_magic_0/a_46_39# half_adder_magic_1/A VDD half_adder_magic_1/xor_magic_0/w_33_33# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1100 VDD half_adder_magic_1/B half_adder_magic_1/xor_magic_0/a_13_6# half_adder_magic_1/xor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1101 half_adder_magic_1/xor_magic_0/a_80_n12# half_adder_magic_1/xor_magic_0/a_46_39# half_adder_magic_1/xor_magic_0/a_77_n12# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1102 half_adder_magic_1/xor_magic_0/a_13_6# half_adder_magic_1/B half_adder_magic_1/xor_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1103 half_adder_magic_1/xor_magic_0/a_46_n44# half_adder_magic_1/B half_adder_magic_1/xor_magic_0/a_43_n44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1104 full_adder_magic_4/C_IN half_adder_magic_2/and_magic_0/nand_magic_0/OUTPUT VDD half_adder_magic_2/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1105 full_adder_magic_4/C_IN half_adder_magic_2/and_magic_0/nand_magic_0/OUTPUT half_adder_magic_2/and_magic_0/inverter_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=4 ps=10
+M1106 half_adder_magic_2/and_magic_0/nand_magic_0/OUTPUT half_adder_magic_2/A VDD half_adder_magic_2/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1107 half_adder_magic_2/and_magic_0/nand_magic_0/a_13_n12# half_adder_magic_2/A half_adder_magic_2/and_magic_0/nand_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1108 VDD half_adder_magic_2/B half_adder_magic_2/and_magic_0/nand_magic_0/OUTPUT half_adder_magic_2/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1109 half_adder_magic_2/and_magic_0/nand_magic_0/OUTPUT half_adder_magic_2/B half_adder_magic_2/and_magic_0/nand_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1110 half_adder_magic_2/xor_magic_0/a_46_39# half_adder_magic_2/xor_magic_0/a_13_6# half_adder_magic_2/xor_magic_0/a_46_21# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1111 P3 half_adder_magic_2/xor_magic_0/a_46_n26# half_adder_magic_2/xor_magic_0/a_80_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1112 half_adder_magic_2/xor_magic_0/a_46_n26# half_adder_magic_2/xor_magic_0/a_13_6# half_adder_magic_2/xor_magic_0/a_46_n44# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1113 half_adder_magic_2/xor_magic_0/a_46_21# half_adder_magic_2/A half_adder_magic_2/xor_magic_0/a_43_21# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1114 P3 half_adder_magic_2/xor_magic_0/a_46_39# VDD half_adder_magic_2/xor_magic_0/w_67_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1115 half_adder_magic_2/xor_magic_0/a_46_n26# half_adder_magic_2/B VDD half_adder_magic_2/xor_magic_0/w_33_n32# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1116 VDD half_adder_magic_2/xor_magic_0/a_13_6# half_adder_magic_2/xor_magic_0/a_46_39# half_adder_magic_2/xor_magic_0/w_33_33# CMOSP w=8 l=2
++  ad=0 pd=0 as=48 ps=28
+M1117 VDD half_adder_magic_2/xor_magic_0/a_46_n26# P3 half_adder_magic_2/xor_magic_0/w_67_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1118 half_adder_magic_2/xor_magic_0/a_13_6# half_adder_magic_2/A VDD half_adder_magic_2/xor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1119 half_adder_magic_2/xor_magic_0/a_13_n12# half_adder_magic_2/A half_adder_magic_2/xor_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1120 VDD half_adder_magic_2/xor_magic_0/a_13_6# half_adder_magic_2/xor_magic_0/a_46_n26# half_adder_magic_2/xor_magic_0/w_33_n32# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1121 half_adder_magic_2/xor_magic_0/a_46_39# half_adder_magic_2/A VDD half_adder_magic_2/xor_magic_0/w_33_33# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1122 VDD half_adder_magic_2/B half_adder_magic_2/xor_magic_0/a_13_6# half_adder_magic_2/xor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1123 half_adder_magic_2/xor_magic_0/a_80_n12# half_adder_magic_2/xor_magic_0/a_46_39# half_adder_magic_2/xor_magic_0/a_77_n12# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1124 half_adder_magic_2/xor_magic_0/a_13_6# half_adder_magic_2/B half_adder_magic_2/xor_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1125 half_adder_magic_2/xor_magic_0/a_46_n44# half_adder_magic_2/B half_adder_magic_2/xor_magic_0/a_43_n44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1126 full_adder_magic_6/C_IN half_adder_magic_3/and_magic_0/nand_magic_0/OUTPUT VDD half_adder_magic_3/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1127 full_adder_magic_6/C_IN half_adder_magic_3/and_magic_0/nand_magic_0/OUTPUT half_adder_magic_3/and_magic_0/inverter_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=4 ps=10
+M1128 half_adder_magic_3/and_magic_0/nand_magic_0/OUTPUT half_adder_magic_3/A VDD half_adder_magic_3/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1129 half_adder_magic_3/and_magic_0/nand_magic_0/a_13_n12# half_adder_magic_3/A half_adder_magic_3/and_magic_0/nand_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1130 VDD half_adder_magic_3/B half_adder_magic_3/and_magic_0/nand_magic_0/OUTPUT half_adder_magic_3/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1131 half_adder_magic_3/and_magic_0/nand_magic_0/OUTPUT half_adder_magic_3/B half_adder_magic_3/and_magic_0/nand_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1132 half_adder_magic_3/xor_magic_0/a_46_39# half_adder_magic_3/xor_magic_0/a_13_6# half_adder_magic_3/xor_magic_0/a_46_21# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1133 P4 half_adder_magic_3/xor_magic_0/a_46_n26# half_adder_magic_3/xor_magic_0/a_80_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1134 half_adder_magic_3/xor_magic_0/a_46_n26# half_adder_magic_3/xor_magic_0/a_13_6# half_adder_magic_3/xor_magic_0/a_46_n44# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1135 half_adder_magic_3/xor_magic_0/a_46_21# half_adder_magic_3/A half_adder_magic_3/xor_magic_0/a_43_21# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1136 P4 half_adder_magic_3/xor_magic_0/a_46_39# VDD half_adder_magic_3/xor_magic_0/w_67_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1137 half_adder_magic_3/xor_magic_0/a_46_n26# half_adder_magic_3/B VDD half_adder_magic_3/xor_magic_0/w_33_n32# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1138 VDD half_adder_magic_3/xor_magic_0/a_13_6# half_adder_magic_3/xor_magic_0/a_46_39# half_adder_magic_3/xor_magic_0/w_33_33# CMOSP w=8 l=2
++  ad=0 pd=0 as=48 ps=28
+M1139 VDD half_adder_magic_3/xor_magic_0/a_46_n26# P4 half_adder_magic_3/xor_magic_0/w_67_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1140 half_adder_magic_3/xor_magic_0/a_13_6# half_adder_magic_3/A VDD half_adder_magic_3/xor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1141 half_adder_magic_3/xor_magic_0/a_13_n12# half_adder_magic_3/A half_adder_magic_3/xor_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1142 VDD half_adder_magic_3/xor_magic_0/a_13_6# half_adder_magic_3/xor_magic_0/a_46_n26# half_adder_magic_3/xor_magic_0/w_33_n32# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1143 half_adder_magic_3/xor_magic_0/a_46_39# half_adder_magic_3/A VDD half_adder_magic_3/xor_magic_0/w_33_33# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1144 VDD half_adder_magic_3/B half_adder_magic_3/xor_magic_0/a_13_6# half_adder_magic_3/xor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1145 half_adder_magic_3/xor_magic_0/a_80_n12# half_adder_magic_3/xor_magic_0/a_46_39# half_adder_magic_3/xor_magic_0/a_77_n12# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1146 half_adder_magic_3/xor_magic_0/a_13_6# half_adder_magic_3/B half_adder_magic_3/xor_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1147 half_adder_magic_3/xor_magic_0/a_46_n44# half_adder_magic_3/B half_adder_magic_3/xor_magic_0/a_43_n44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1148 and_magic_10/inverter_magic_0/OUTPUT and_magic_10/nand_magic_0/OUTPUT VDD and_magic_10/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1149 and_magic_10/inverter_magic_0/OUTPUT and_magic_10/nand_magic_0/OUTPUT and_magic_10/inverter_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=4 ps=10
+M1150 and_magic_10/nand_magic_0/OUTPUT A2 VDD and_magic_10/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1151 and_magic_10/nand_magic_0/a_13_n12# A2 and_magic_10/nand_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1152 VDD B3 and_magic_10/nand_magic_0/OUTPUT and_magic_10/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1153 and_magic_10/nand_magic_0/OUTPUT B3 and_magic_10/nand_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1154 full_adder_magic_7/C_IN and_magic_11/nand_magic_0/OUTPUT VDD and_magic_11/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1155 full_adder_magic_7/C_IN and_magic_11/nand_magic_0/OUTPUT and_magic_11/inverter_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=4 ps=10
+M1156 and_magic_11/nand_magic_0/OUTPUT A3 VDD and_magic_11/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1157 and_magic_11/nand_magic_0/a_13_n12# A3 and_magic_11/nand_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1158 VDD B3 and_magic_11/nand_magic_0/OUTPUT and_magic_11/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1159 and_magic_11/nand_magic_0/OUTPUT B3 and_magic_11/nand_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1160 and_magic_12/inverter_magic_0/OUTPUT and_magic_12/nand_magic_0/OUTPUT VDD and_magic_12/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1161 and_magic_12/inverter_magic_0/OUTPUT and_magic_12/nand_magic_0/OUTPUT and_magic_12/inverter_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=4 ps=10
+M1162 and_magic_12/nand_magic_0/OUTPUT A2 VDD and_magic_12/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1163 and_magic_12/nand_magic_0/a_13_n12# A2 and_magic_12/nand_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1164 VDD B2 and_magic_12/nand_magic_0/OUTPUT and_magic_12/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1165 and_magic_12/nand_magic_0/OUTPUT B2 and_magic_12/nand_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1166 full_adder_magic_1/half_adder_magic_0/CARRY full_adder_magic_1/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT VDD full_adder_magic_1/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1167 full_adder_magic_1/half_adder_magic_0/CARRY full_adder_magic_1/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_1/half_adder_magic_0/and_magic_0/inverter_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=4 ps=10
+M1168 full_adder_magic_1/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT and_magic_6/inverter_magic_0/OUTPUT VDD full_adder_magic_1/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1169 full_adder_magic_1/half_adder_magic_0/and_magic_0/nand_magic_0/a_13_n12# and_magic_6/inverter_magic_0/OUTPUT full_adder_magic_1/half_adder_magic_0/and_magic_0/nand_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1170 VDD and_magic_7/inverter_magic_0/OUTPUT full_adder_magic_1/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_1/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1171 full_adder_magic_1/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT and_magic_7/inverter_magic_0/OUTPUT full_adder_magic_1/half_adder_magic_0/and_magic_0/nand_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1172 full_adder_magic_1/half_adder_magic_0/xor_magic_0/a_46_39# full_adder_magic_1/half_adder_magic_0/xor_magic_0/a_13_6# full_adder_magic_1/half_adder_magic_0/xor_magic_0/a_46_21# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1173 full_adder_magic_1/half_adder_magic_1/A full_adder_magic_1/half_adder_magic_0/xor_magic_0/a_46_n26# full_adder_magic_1/half_adder_magic_0/xor_magic_0/a_80_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1174 full_adder_magic_1/half_adder_magic_0/xor_magic_0/a_46_n26# full_adder_magic_1/half_adder_magic_0/xor_magic_0/a_13_6# full_adder_magic_1/half_adder_magic_0/xor_magic_0/a_46_n44# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1175 full_adder_magic_1/half_adder_magic_0/xor_magic_0/a_46_21# and_magic_6/inverter_magic_0/OUTPUT full_adder_magic_1/half_adder_magic_0/xor_magic_0/a_43_21# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1176 full_adder_magic_1/half_adder_magic_1/A full_adder_magic_1/half_adder_magic_0/xor_magic_0/a_46_39# VDD full_adder_magic_1/half_adder_magic_0/xor_magic_0/w_67_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1177 full_adder_magic_1/half_adder_magic_0/xor_magic_0/a_46_n26# and_magic_7/inverter_magic_0/OUTPUT VDD full_adder_magic_1/half_adder_magic_0/xor_magic_0/w_33_n32# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1178 VDD full_adder_magic_1/half_adder_magic_0/xor_magic_0/a_13_6# full_adder_magic_1/half_adder_magic_0/xor_magic_0/a_46_39# full_adder_magic_1/half_adder_magic_0/xor_magic_0/w_33_33# CMOSP w=8 l=2
++  ad=0 pd=0 as=48 ps=28
+M1179 VDD full_adder_magic_1/half_adder_magic_0/xor_magic_0/a_46_n26# full_adder_magic_1/half_adder_magic_1/A full_adder_magic_1/half_adder_magic_0/xor_magic_0/w_67_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1180 full_adder_magic_1/half_adder_magic_0/xor_magic_0/a_13_6# and_magic_6/inverter_magic_0/OUTPUT VDD full_adder_magic_1/half_adder_magic_0/xor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1181 full_adder_magic_1/half_adder_magic_0/xor_magic_0/a_13_n12# and_magic_6/inverter_magic_0/OUTPUT full_adder_magic_1/half_adder_magic_0/xor_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1182 VDD full_adder_magic_1/half_adder_magic_0/xor_magic_0/a_13_6# full_adder_magic_1/half_adder_magic_0/xor_magic_0/a_46_n26# full_adder_magic_1/half_adder_magic_0/xor_magic_0/w_33_n32# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1183 full_adder_magic_1/half_adder_magic_0/xor_magic_0/a_46_39# and_magic_6/inverter_magic_0/OUTPUT VDD full_adder_magic_1/half_adder_magic_0/xor_magic_0/w_33_33# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1184 VDD and_magic_7/inverter_magic_0/OUTPUT full_adder_magic_1/half_adder_magic_0/xor_magic_0/a_13_6# full_adder_magic_1/half_adder_magic_0/xor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1185 full_adder_magic_1/half_adder_magic_0/xor_magic_0/a_80_n12# full_adder_magic_1/half_adder_magic_0/xor_magic_0/a_46_39# full_adder_magic_1/half_adder_magic_0/xor_magic_0/a_77_n12# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1186 full_adder_magic_1/half_adder_magic_0/xor_magic_0/a_13_6# and_magic_7/inverter_magic_0/OUTPUT full_adder_magic_1/half_adder_magic_0/xor_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1187 full_adder_magic_1/half_adder_magic_0/xor_magic_0/a_46_n44# and_magic_7/inverter_magic_0/OUTPUT full_adder_magic_1/half_adder_magic_0/xor_magic_0/a_43_n44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1188 full_adder_magic_1/half_adder_magic_1/CARRY full_adder_magic_1/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT VDD full_adder_magic_1/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1189 full_adder_magic_1/half_adder_magic_1/CARRY full_adder_magic_1/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_1/half_adder_magic_1/and_magic_0/inverter_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=4 ps=10
+M1190 full_adder_magic_1/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_1/half_adder_magic_1/A VDD full_adder_magic_1/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1191 full_adder_magic_1/half_adder_magic_1/and_magic_0/nand_magic_0/a_13_n12# full_adder_magic_1/half_adder_magic_1/A full_adder_magic_1/half_adder_magic_1/and_magic_0/nand_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1192 VDD full_adder_magic_1/C_IN full_adder_magic_1/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_1/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1193 full_adder_magic_1/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_1/C_IN full_adder_magic_1/half_adder_magic_1/and_magic_0/nand_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1194 full_adder_magic_1/half_adder_magic_1/xor_magic_0/a_46_39# full_adder_magic_1/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_1/half_adder_magic_1/xor_magic_0/a_46_21# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1195 half_adder_magic_2/A full_adder_magic_1/half_adder_magic_1/xor_magic_0/a_46_n26# full_adder_magic_1/half_adder_magic_1/xor_magic_0/a_80_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1196 full_adder_magic_1/half_adder_magic_1/xor_magic_0/a_46_n26# full_adder_magic_1/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_1/half_adder_magic_1/xor_magic_0/a_46_n44# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1197 full_adder_magic_1/half_adder_magic_1/xor_magic_0/a_46_21# full_adder_magic_1/half_adder_magic_1/A full_adder_magic_1/half_adder_magic_1/xor_magic_0/a_43_21# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1198 half_adder_magic_2/A full_adder_magic_1/half_adder_magic_1/xor_magic_0/a_46_39# VDD full_adder_magic_1/half_adder_magic_1/xor_magic_0/w_67_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1199 full_adder_magic_1/half_adder_magic_1/xor_magic_0/a_46_n26# full_adder_magic_1/C_IN VDD full_adder_magic_1/half_adder_magic_1/xor_magic_0/w_33_n32# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1200 VDD full_adder_magic_1/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_1/half_adder_magic_1/xor_magic_0/a_46_39# full_adder_magic_1/half_adder_magic_1/xor_magic_0/w_33_33# CMOSP w=8 l=2
++  ad=0 pd=0 as=48 ps=28
+M1201 VDD full_adder_magic_1/half_adder_magic_1/xor_magic_0/a_46_n26# half_adder_magic_2/A full_adder_magic_1/half_adder_magic_1/xor_magic_0/w_67_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1202 full_adder_magic_1/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_1/half_adder_magic_1/A VDD full_adder_magic_1/half_adder_magic_1/xor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1203 full_adder_magic_1/half_adder_magic_1/xor_magic_0/a_13_n12# full_adder_magic_1/half_adder_magic_1/A full_adder_magic_1/half_adder_magic_1/xor_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1204 VDD full_adder_magic_1/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_1/half_adder_magic_1/xor_magic_0/a_46_n26# full_adder_magic_1/half_adder_magic_1/xor_magic_0/w_33_n32# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1205 full_adder_magic_1/half_adder_magic_1/xor_magic_0/a_46_39# full_adder_magic_1/half_adder_magic_1/A VDD full_adder_magic_1/half_adder_magic_1/xor_magic_0/w_33_33# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1206 VDD full_adder_magic_1/C_IN full_adder_magic_1/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_1/half_adder_magic_1/xor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1207 full_adder_magic_1/half_adder_magic_1/xor_magic_0/a_80_n12# full_adder_magic_1/half_adder_magic_1/xor_magic_0/a_46_39# full_adder_magic_1/half_adder_magic_1/xor_magic_0/a_77_n12# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1208 full_adder_magic_1/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_1/C_IN full_adder_magic_1/half_adder_magic_1/xor_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1209 full_adder_magic_1/half_adder_magic_1/xor_magic_0/a_46_n44# full_adder_magic_1/C_IN full_adder_magic_1/half_adder_magic_1/xor_magic_0/a_43_n44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1210 full_adder_magic_1/or_magic_0/nor_magic_0/a_13_6# full_adder_magic_1/half_adder_magic_1/CARRY VDD full_adder_magic_1/or_magic_0/nor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1211 full_adder_magic_1/or_magic_0/nor_magic_0/OUTPUT full_adder_magic_1/half_adder_magic_1/CARRY full_adder_magic_1/or_magic_0/nor_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1212 full_adder_magic_1/or_magic_0/nor_magic_0/OUTPUT full_adder_magic_1/half_adder_magic_0/CARRY full_adder_magic_1/or_magic_0/nor_magic_0/a_13_6# full_adder_magic_1/or_magic_0/nor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1213 full_adder_magic_1/or_magic_0/nor_magic_0/a_21_n12# full_adder_magic_1/half_adder_magic_0/CARRY full_adder_magic_1/or_magic_0/nor_magic_0/OUTPUT Gnd CMOSN w=4 l=2
++  ad=4 pd=10 as=0 ps=0
+M1214 full_adder_magic_3/half_adder_magic_0/B full_adder_magic_1/or_magic_0/nor_magic_0/OUTPUT VDD full_adder_magic_1/or_magic_0/nor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1215 full_adder_magic_3/half_adder_magic_0/B full_adder_magic_1/or_magic_0/nor_magic_0/OUTPUT full_adder_magic_1/or_magic_0/inverter_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=4 ps=10
+M1216 full_adder_magic_0/half_adder_magic_0/CARRY full_adder_magic_0/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT VDD full_adder_magic_0/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1217 full_adder_magic_0/half_adder_magic_0/CARRY full_adder_magic_0/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_0/half_adder_magic_0/and_magic_0/inverter_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=4 ps=10
+M1218 full_adder_magic_0/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT half_adder_magic_0/CARRY VDD full_adder_magic_0/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1219 full_adder_magic_0/half_adder_magic_0/and_magic_0/nand_magic_0/a_13_n12# half_adder_magic_0/CARRY full_adder_magic_0/half_adder_magic_0/and_magic_0/nand_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1220 VDD half_adder_magic_1/SUM full_adder_magic_0/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_0/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1221 full_adder_magic_0/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT half_adder_magic_1/SUM full_adder_magic_0/half_adder_magic_0/and_magic_0/nand_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1222 full_adder_magic_0/half_adder_magic_0/xor_magic_0/a_46_39# full_adder_magic_0/half_adder_magic_0/xor_magic_0/a_13_6# full_adder_magic_0/half_adder_magic_0/xor_magic_0/a_46_21# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1223 full_adder_magic_0/half_adder_magic_1/A full_adder_magic_0/half_adder_magic_0/xor_magic_0/a_46_n26# full_adder_magic_0/half_adder_magic_0/xor_magic_0/a_80_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1224 full_adder_magic_0/half_adder_magic_0/xor_magic_0/a_46_n26# full_adder_magic_0/half_adder_magic_0/xor_magic_0/a_13_6# full_adder_magic_0/half_adder_magic_0/xor_magic_0/a_46_n44# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1225 full_adder_magic_0/half_adder_magic_0/xor_magic_0/a_46_21# half_adder_magic_0/CARRY full_adder_magic_0/half_adder_magic_0/xor_magic_0/a_43_21# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1226 full_adder_magic_0/half_adder_magic_1/A full_adder_magic_0/half_adder_magic_0/xor_magic_0/a_46_39# VDD full_adder_magic_0/half_adder_magic_0/xor_magic_0/w_67_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1227 full_adder_magic_0/half_adder_magic_0/xor_magic_0/a_46_n26# half_adder_magic_1/SUM VDD full_adder_magic_0/half_adder_magic_0/xor_magic_0/w_33_n32# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1228 VDD full_adder_magic_0/half_adder_magic_0/xor_magic_0/a_13_6# full_adder_magic_0/half_adder_magic_0/xor_magic_0/a_46_39# full_adder_magic_0/half_adder_magic_0/xor_magic_0/w_33_33# CMOSP w=8 l=2
++  ad=0 pd=0 as=48 ps=28
+M1229 VDD full_adder_magic_0/half_adder_magic_0/xor_magic_0/a_46_n26# full_adder_magic_0/half_adder_magic_1/A full_adder_magic_0/half_adder_magic_0/xor_magic_0/w_67_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1230 full_adder_magic_0/half_adder_magic_0/xor_magic_0/a_13_6# half_adder_magic_0/CARRY VDD full_adder_magic_0/half_adder_magic_0/xor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1231 full_adder_magic_0/half_adder_magic_0/xor_magic_0/a_13_n12# half_adder_magic_0/CARRY full_adder_magic_0/half_adder_magic_0/xor_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1232 VDD full_adder_magic_0/half_adder_magic_0/xor_magic_0/a_13_6# full_adder_magic_0/half_adder_magic_0/xor_magic_0/a_46_n26# full_adder_magic_0/half_adder_magic_0/xor_magic_0/w_33_n32# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1233 full_adder_magic_0/half_adder_magic_0/xor_magic_0/a_46_39# half_adder_magic_0/CARRY VDD full_adder_magic_0/half_adder_magic_0/xor_magic_0/w_33_33# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1234 VDD half_adder_magic_1/SUM full_adder_magic_0/half_adder_magic_0/xor_magic_0/a_13_6# full_adder_magic_0/half_adder_magic_0/xor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1235 full_adder_magic_0/half_adder_magic_0/xor_magic_0/a_80_n12# full_adder_magic_0/half_adder_magic_0/xor_magic_0/a_46_39# full_adder_magic_0/half_adder_magic_0/xor_magic_0/a_77_n12# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1236 full_adder_magic_0/half_adder_magic_0/xor_magic_0/a_13_6# half_adder_magic_1/SUM full_adder_magic_0/half_adder_magic_0/xor_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1237 full_adder_magic_0/half_adder_magic_0/xor_magic_0/a_46_n44# half_adder_magic_1/SUM full_adder_magic_0/half_adder_magic_0/xor_magic_0/a_43_n44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1238 full_adder_magic_0/half_adder_magic_1/CARRY full_adder_magic_0/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT VDD full_adder_magic_0/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1239 full_adder_magic_0/half_adder_magic_1/CARRY full_adder_magic_0/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_0/half_adder_magic_1/and_magic_0/inverter_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=4 ps=10
+M1240 full_adder_magic_0/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_0/half_adder_magic_1/A VDD full_adder_magic_0/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1241 full_adder_magic_0/half_adder_magic_1/and_magic_0/nand_magic_0/a_13_n12# full_adder_magic_0/half_adder_magic_1/A full_adder_magic_0/half_adder_magic_1/and_magic_0/nand_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1242 VDD full_adder_magic_0/C_IN full_adder_magic_0/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_0/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1243 full_adder_magic_0/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_0/C_IN full_adder_magic_0/half_adder_magic_1/and_magic_0/nand_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1244 full_adder_magic_0/half_adder_magic_1/xor_magic_0/a_46_39# full_adder_magic_0/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_0/half_adder_magic_1/xor_magic_0/a_46_21# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1245 P2 full_adder_magic_0/half_adder_magic_1/xor_magic_0/a_46_n26# full_adder_magic_0/half_adder_magic_1/xor_magic_0/a_80_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1246 full_adder_magic_0/half_adder_magic_1/xor_magic_0/a_46_n26# full_adder_magic_0/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_0/half_adder_magic_1/xor_magic_0/a_46_n44# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1247 full_adder_magic_0/half_adder_magic_1/xor_magic_0/a_46_21# full_adder_magic_0/half_adder_magic_1/A full_adder_magic_0/half_adder_magic_1/xor_magic_0/a_43_21# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1248 P2 full_adder_magic_0/half_adder_magic_1/xor_magic_0/a_46_39# VDD full_adder_magic_0/half_adder_magic_1/xor_magic_0/w_67_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1249 full_adder_magic_0/half_adder_magic_1/xor_magic_0/a_46_n26# full_adder_magic_0/C_IN VDD full_adder_magic_0/half_adder_magic_1/xor_magic_0/w_33_n32# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1250 VDD full_adder_magic_0/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_0/half_adder_magic_1/xor_magic_0/a_46_39# full_adder_magic_0/half_adder_magic_1/xor_magic_0/w_33_33# CMOSP w=8 l=2
++  ad=0 pd=0 as=48 ps=28
+M1251 VDD full_adder_magic_0/half_adder_magic_1/xor_magic_0/a_46_n26# P2 full_adder_magic_0/half_adder_magic_1/xor_magic_0/w_67_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1252 full_adder_magic_0/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_0/half_adder_magic_1/A VDD full_adder_magic_0/half_adder_magic_1/xor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1253 full_adder_magic_0/half_adder_magic_1/xor_magic_0/a_13_n12# full_adder_magic_0/half_adder_magic_1/A full_adder_magic_0/half_adder_magic_1/xor_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1254 VDD full_adder_magic_0/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_0/half_adder_magic_1/xor_magic_0/a_46_n26# full_adder_magic_0/half_adder_magic_1/xor_magic_0/w_33_n32# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1255 full_adder_magic_0/half_adder_magic_1/xor_magic_0/a_46_39# full_adder_magic_0/half_adder_magic_1/A VDD full_adder_magic_0/half_adder_magic_1/xor_magic_0/w_33_33# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1256 VDD full_adder_magic_0/C_IN full_adder_magic_0/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_0/half_adder_magic_1/xor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1257 full_adder_magic_0/half_adder_magic_1/xor_magic_0/a_80_n12# full_adder_magic_0/half_adder_magic_1/xor_magic_0/a_46_39# full_adder_magic_0/half_adder_magic_1/xor_magic_0/a_77_n12# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1258 full_adder_magic_0/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_0/C_IN full_adder_magic_0/half_adder_magic_1/xor_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1259 full_adder_magic_0/half_adder_magic_1/xor_magic_0/a_46_n44# full_adder_magic_0/C_IN full_adder_magic_0/half_adder_magic_1/xor_magic_0/a_43_n44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1260 full_adder_magic_0/or_magic_0/nor_magic_0/a_13_6# full_adder_magic_0/half_adder_magic_1/CARRY VDD full_adder_magic_0/or_magic_0/nor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1261 full_adder_magic_0/or_magic_0/nor_magic_0/OUTPUT full_adder_magic_0/half_adder_magic_1/CARRY full_adder_magic_0/or_magic_0/nor_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1262 full_adder_magic_0/or_magic_0/nor_magic_0/OUTPUT full_adder_magic_0/half_adder_magic_0/CARRY full_adder_magic_0/or_magic_0/nor_magic_0/a_13_6# full_adder_magic_0/or_magic_0/nor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1263 full_adder_magic_0/or_magic_0/nor_magic_0/a_21_n12# full_adder_magic_0/half_adder_magic_0/CARRY full_adder_magic_0/or_magic_0/nor_magic_0/OUTPUT Gnd CMOSN w=4 l=2
++  ad=4 pd=10 as=0 ps=0
+M1264 full_adder_magic_2/C_IN full_adder_magic_0/or_magic_0/nor_magic_0/OUTPUT VDD full_adder_magic_0/or_magic_0/nor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1265 full_adder_magic_2/C_IN full_adder_magic_0/or_magic_0/nor_magic_0/OUTPUT full_adder_magic_0/or_magic_0/inverter_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=4 ps=10
+M1266 full_adder_magic_2/half_adder_magic_0/CARRY full_adder_magic_2/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT VDD full_adder_magic_2/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1267 full_adder_magic_2/half_adder_magic_0/CARRY full_adder_magic_2/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_2/half_adder_magic_0/and_magic_0/inverter_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=4 ps=10
+M1268 full_adder_magic_2/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT and_magic_15/inverter_magic_0/OUTPUT VDD full_adder_magic_2/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1269 full_adder_magic_2/half_adder_magic_0/and_magic_0/nand_magic_0/a_13_n12# and_magic_15/inverter_magic_0/OUTPUT full_adder_magic_2/half_adder_magic_0/and_magic_0/nand_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1270 VDD and_magic_14/inverter_magic_0/OUTPUT full_adder_magic_2/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_2/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1271 full_adder_magic_2/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT and_magic_14/inverter_magic_0/OUTPUT full_adder_magic_2/half_adder_magic_0/and_magic_0/nand_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1272 full_adder_magic_2/half_adder_magic_0/xor_magic_0/a_46_39# full_adder_magic_2/half_adder_magic_0/xor_magic_0/a_13_6# full_adder_magic_2/half_adder_magic_0/xor_magic_0/a_46_21# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1273 full_adder_magic_2/half_adder_magic_1/A full_adder_magic_2/half_adder_magic_0/xor_magic_0/a_46_n26# full_adder_magic_2/half_adder_magic_0/xor_magic_0/a_80_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1274 full_adder_magic_2/half_adder_magic_0/xor_magic_0/a_46_n26# full_adder_magic_2/half_adder_magic_0/xor_magic_0/a_13_6# full_adder_magic_2/half_adder_magic_0/xor_magic_0/a_46_n44# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1275 full_adder_magic_2/half_adder_magic_0/xor_magic_0/a_46_21# and_magic_15/inverter_magic_0/OUTPUT full_adder_magic_2/half_adder_magic_0/xor_magic_0/a_43_21# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1276 full_adder_magic_2/half_adder_magic_1/A full_adder_magic_2/half_adder_magic_0/xor_magic_0/a_46_39# VDD full_adder_magic_2/half_adder_magic_0/xor_magic_0/w_67_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1277 full_adder_magic_2/half_adder_magic_0/xor_magic_0/a_46_n26# and_magic_14/inverter_magic_0/OUTPUT VDD full_adder_magic_2/half_adder_magic_0/xor_magic_0/w_33_n32# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1278 VDD full_adder_magic_2/half_adder_magic_0/xor_magic_0/a_13_6# full_adder_magic_2/half_adder_magic_0/xor_magic_0/a_46_39# full_adder_magic_2/half_adder_magic_0/xor_magic_0/w_33_33# CMOSP w=8 l=2
++  ad=0 pd=0 as=48 ps=28
+M1279 VDD full_adder_magic_2/half_adder_magic_0/xor_magic_0/a_46_n26# full_adder_magic_2/half_adder_magic_1/A full_adder_magic_2/half_adder_magic_0/xor_magic_0/w_67_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1280 full_adder_magic_2/half_adder_magic_0/xor_magic_0/a_13_6# and_magic_15/inverter_magic_0/OUTPUT VDD full_adder_magic_2/half_adder_magic_0/xor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1281 full_adder_magic_2/half_adder_magic_0/xor_magic_0/a_13_n12# and_magic_15/inverter_magic_0/OUTPUT full_adder_magic_2/half_adder_magic_0/xor_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1282 VDD full_adder_magic_2/half_adder_magic_0/xor_magic_0/a_13_6# full_adder_magic_2/half_adder_magic_0/xor_magic_0/a_46_n26# full_adder_magic_2/half_adder_magic_0/xor_magic_0/w_33_n32# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1283 full_adder_magic_2/half_adder_magic_0/xor_magic_0/a_46_39# and_magic_15/inverter_magic_0/OUTPUT VDD full_adder_magic_2/half_adder_magic_0/xor_magic_0/w_33_33# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1284 VDD and_magic_14/inverter_magic_0/OUTPUT full_adder_magic_2/half_adder_magic_0/xor_magic_0/a_13_6# full_adder_magic_2/half_adder_magic_0/xor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1285 full_adder_magic_2/half_adder_magic_0/xor_magic_0/a_80_n12# full_adder_magic_2/half_adder_magic_0/xor_magic_0/a_46_39# full_adder_magic_2/half_adder_magic_0/xor_magic_0/a_77_n12# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1286 full_adder_magic_2/half_adder_magic_0/xor_magic_0/a_13_6# and_magic_14/inverter_magic_0/OUTPUT full_adder_magic_2/half_adder_magic_0/xor_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1287 full_adder_magic_2/half_adder_magic_0/xor_magic_0/a_46_n44# and_magic_14/inverter_magic_0/OUTPUT full_adder_magic_2/half_adder_magic_0/xor_magic_0/a_43_n44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1288 full_adder_magic_2/half_adder_magic_1/CARRY full_adder_magic_2/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT VDD full_adder_magic_2/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1289 full_adder_magic_2/half_adder_magic_1/CARRY full_adder_magic_2/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_2/half_adder_magic_1/and_magic_0/inverter_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=4 ps=10
+M1290 full_adder_magic_2/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_2/half_adder_magic_1/A VDD full_adder_magic_2/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1291 full_adder_magic_2/half_adder_magic_1/and_magic_0/nand_magic_0/a_13_n12# full_adder_magic_2/half_adder_magic_1/A full_adder_magic_2/half_adder_magic_1/and_magic_0/nand_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1292 VDD full_adder_magic_2/C_IN full_adder_magic_2/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_2/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1293 full_adder_magic_2/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_2/C_IN full_adder_magic_2/half_adder_magic_1/and_magic_0/nand_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1294 full_adder_magic_2/half_adder_magic_1/xor_magic_0/a_46_39# full_adder_magic_2/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_2/half_adder_magic_1/xor_magic_0/a_46_21# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1295 half_adder_magic_2/B full_adder_magic_2/half_adder_magic_1/xor_magic_0/a_46_n26# full_adder_magic_2/half_adder_magic_1/xor_magic_0/a_80_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1296 full_adder_magic_2/half_adder_magic_1/xor_magic_0/a_46_n26# full_adder_magic_2/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_2/half_adder_magic_1/xor_magic_0/a_46_n44# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1297 full_adder_magic_2/half_adder_magic_1/xor_magic_0/a_46_21# full_adder_magic_2/half_adder_magic_1/A full_adder_magic_2/half_adder_magic_1/xor_magic_0/a_43_21# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1298 half_adder_magic_2/B full_adder_magic_2/half_adder_magic_1/xor_magic_0/a_46_39# VDD full_adder_magic_2/half_adder_magic_1/xor_magic_0/w_67_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1299 full_adder_magic_2/half_adder_magic_1/xor_magic_0/a_46_n26# full_adder_magic_2/C_IN VDD full_adder_magic_2/half_adder_magic_1/xor_magic_0/w_33_n32# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1300 VDD full_adder_magic_2/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_2/half_adder_magic_1/xor_magic_0/a_46_39# full_adder_magic_2/half_adder_magic_1/xor_magic_0/w_33_33# CMOSP w=8 l=2
++  ad=0 pd=0 as=48 ps=28
+M1301 VDD full_adder_magic_2/half_adder_magic_1/xor_magic_0/a_46_n26# half_adder_magic_2/B full_adder_magic_2/half_adder_magic_1/xor_magic_0/w_67_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1302 full_adder_magic_2/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_2/half_adder_magic_1/A VDD full_adder_magic_2/half_adder_magic_1/xor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1303 full_adder_magic_2/half_adder_magic_1/xor_magic_0/a_13_n12# full_adder_magic_2/half_adder_magic_1/A full_adder_magic_2/half_adder_magic_1/xor_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1304 VDD full_adder_magic_2/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_2/half_adder_magic_1/xor_magic_0/a_46_n26# full_adder_magic_2/half_adder_magic_1/xor_magic_0/w_33_n32# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1305 full_adder_magic_2/half_adder_magic_1/xor_magic_0/a_46_39# full_adder_magic_2/half_adder_magic_1/A VDD full_adder_magic_2/half_adder_magic_1/xor_magic_0/w_33_33# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1306 VDD full_adder_magic_2/C_IN full_adder_magic_2/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_2/half_adder_magic_1/xor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1307 full_adder_magic_2/half_adder_magic_1/xor_magic_0/a_80_n12# full_adder_magic_2/half_adder_magic_1/xor_magic_0/a_46_39# full_adder_magic_2/half_adder_magic_1/xor_magic_0/a_77_n12# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1308 full_adder_magic_2/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_2/C_IN full_adder_magic_2/half_adder_magic_1/xor_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1309 full_adder_magic_2/half_adder_magic_1/xor_magic_0/a_46_n44# full_adder_magic_2/C_IN full_adder_magic_2/half_adder_magic_1/xor_magic_0/a_43_n44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1310 full_adder_magic_2/or_magic_0/nor_magic_0/a_13_6# full_adder_magic_2/half_adder_magic_1/CARRY VDD full_adder_magic_2/or_magic_0/nor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1311 full_adder_magic_2/or_magic_0/nor_magic_0/OUTPUT full_adder_magic_2/half_adder_magic_1/CARRY full_adder_magic_2/or_magic_0/nor_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1312 full_adder_magic_2/or_magic_0/nor_magic_0/OUTPUT full_adder_magic_2/half_adder_magic_0/CARRY full_adder_magic_2/or_magic_0/nor_magic_0/a_13_6# full_adder_magic_2/or_magic_0/nor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1313 full_adder_magic_2/or_magic_0/nor_magic_0/a_21_n12# full_adder_magic_2/half_adder_magic_0/CARRY full_adder_magic_2/or_magic_0/nor_magic_0/OUTPUT Gnd CMOSN w=4 l=2
++  ad=4 pd=10 as=0 ps=0
+M1314 full_adder_magic_3/C_IN full_adder_magic_2/or_magic_0/nor_magic_0/OUTPUT VDD full_adder_magic_2/or_magic_0/nor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1315 full_adder_magic_3/C_IN full_adder_magic_2/or_magic_0/nor_magic_0/OUTPUT full_adder_magic_2/or_magic_0/inverter_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=4 ps=10
+M1316 and_magic_13/inverter_magic_0/OUTPUT and_magic_13/nand_magic_0/OUTPUT VDD and_magic_13/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1317 and_magic_13/inverter_magic_0/OUTPUT and_magic_13/nand_magic_0/OUTPUT and_magic_13/inverter_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=4 ps=10
+M1318 and_magic_13/nand_magic_0/OUTPUT A3 VDD and_magic_13/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1319 and_magic_13/nand_magic_0/a_13_n12# A3 and_magic_13/nand_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1320 VDD B1 and_magic_13/nand_magic_0/OUTPUT and_magic_13/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1321 and_magic_13/nand_magic_0/OUTPUT B1 and_magic_13/nand_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1322 full_adder_magic_3/half_adder_magic_0/CARRY full_adder_magic_3/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT VDD full_adder_magic_3/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1323 full_adder_magic_3/half_adder_magic_0/CARRY full_adder_magic_3/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_3/half_adder_magic_0/and_magic_0/inverter_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=4 ps=10
+M1324 full_adder_magic_3/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT and_magic_13/inverter_magic_0/OUTPUT VDD full_adder_magic_3/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1325 full_adder_magic_3/half_adder_magic_0/and_magic_0/nand_magic_0/a_13_n12# and_magic_13/inverter_magic_0/OUTPUT full_adder_magic_3/half_adder_magic_0/and_magic_0/nand_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1326 VDD full_adder_magic_3/half_adder_magic_0/B full_adder_magic_3/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_3/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1327 full_adder_magic_3/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_3/half_adder_magic_0/B full_adder_magic_3/half_adder_magic_0/and_magic_0/nand_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1328 full_adder_magic_3/half_adder_magic_0/xor_magic_0/a_46_39# full_adder_magic_3/half_adder_magic_0/xor_magic_0/a_13_6# full_adder_magic_3/half_adder_magic_0/xor_magic_0/a_46_21# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1329 full_adder_magic_3/half_adder_magic_1/A full_adder_magic_3/half_adder_magic_0/xor_magic_0/a_46_n26# full_adder_magic_3/half_adder_magic_0/xor_magic_0/a_80_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1330 full_adder_magic_3/half_adder_magic_0/xor_magic_0/a_46_n26# full_adder_magic_3/half_adder_magic_0/xor_magic_0/a_13_6# full_adder_magic_3/half_adder_magic_0/xor_magic_0/a_46_n44# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1331 full_adder_magic_3/half_adder_magic_0/xor_magic_0/a_46_21# and_magic_13/inverter_magic_0/OUTPUT full_adder_magic_3/half_adder_magic_0/xor_magic_0/a_43_21# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1332 full_adder_magic_3/half_adder_magic_1/A full_adder_magic_3/half_adder_magic_0/xor_magic_0/a_46_39# VDD full_adder_magic_3/half_adder_magic_0/xor_magic_0/w_67_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1333 full_adder_magic_3/half_adder_magic_0/xor_magic_0/a_46_n26# full_adder_magic_3/half_adder_magic_0/B VDD full_adder_magic_3/half_adder_magic_0/xor_magic_0/w_33_n32# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1334 VDD full_adder_magic_3/half_adder_magic_0/xor_magic_0/a_13_6# full_adder_magic_3/half_adder_magic_0/xor_magic_0/a_46_39# full_adder_magic_3/half_adder_magic_0/xor_magic_0/w_33_33# CMOSP w=8 l=2
++  ad=0 pd=0 as=48 ps=28
+M1335 VDD full_adder_magic_3/half_adder_magic_0/xor_magic_0/a_46_n26# full_adder_magic_3/half_adder_magic_1/A full_adder_magic_3/half_adder_magic_0/xor_magic_0/w_67_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1336 full_adder_magic_3/half_adder_magic_0/xor_magic_0/a_13_6# and_magic_13/inverter_magic_0/OUTPUT VDD full_adder_magic_3/half_adder_magic_0/xor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1337 full_adder_magic_3/half_adder_magic_0/xor_magic_0/a_13_n12# and_magic_13/inverter_magic_0/OUTPUT full_adder_magic_3/half_adder_magic_0/xor_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1338 VDD full_adder_magic_3/half_adder_magic_0/xor_magic_0/a_13_6# full_adder_magic_3/half_adder_magic_0/xor_magic_0/a_46_n26# full_adder_magic_3/half_adder_magic_0/xor_magic_0/w_33_n32# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1339 full_adder_magic_3/half_adder_magic_0/xor_magic_0/a_46_39# and_magic_13/inverter_magic_0/OUTPUT VDD full_adder_magic_3/half_adder_magic_0/xor_magic_0/w_33_33# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1340 VDD full_adder_magic_3/half_adder_magic_0/B full_adder_magic_3/half_adder_magic_0/xor_magic_0/a_13_6# full_adder_magic_3/half_adder_magic_0/xor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1341 full_adder_magic_3/half_adder_magic_0/xor_magic_0/a_80_n12# full_adder_magic_3/half_adder_magic_0/xor_magic_0/a_46_39# full_adder_magic_3/half_adder_magic_0/xor_magic_0/a_77_n12# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1342 full_adder_magic_3/half_adder_magic_0/xor_magic_0/a_13_6# full_adder_magic_3/half_adder_magic_0/B full_adder_magic_3/half_adder_magic_0/xor_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1343 full_adder_magic_3/half_adder_magic_0/xor_magic_0/a_46_n44# full_adder_magic_3/half_adder_magic_0/B full_adder_magic_3/half_adder_magic_0/xor_magic_0/a_43_n44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1344 full_adder_magic_3/half_adder_magic_1/CARRY full_adder_magic_3/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT VDD full_adder_magic_3/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1345 full_adder_magic_3/half_adder_magic_1/CARRY full_adder_magic_3/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_3/half_adder_magic_1/and_magic_0/inverter_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=4 ps=10
+M1346 full_adder_magic_3/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_3/half_adder_magic_1/A VDD full_adder_magic_3/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1347 full_adder_magic_3/half_adder_magic_1/and_magic_0/nand_magic_0/a_13_n12# full_adder_magic_3/half_adder_magic_1/A full_adder_magic_3/half_adder_magic_1/and_magic_0/nand_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1348 VDD full_adder_magic_3/C_IN full_adder_magic_3/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_3/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1349 full_adder_magic_3/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_3/C_IN full_adder_magic_3/half_adder_magic_1/and_magic_0/nand_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1350 full_adder_magic_3/half_adder_magic_1/xor_magic_0/a_46_39# full_adder_magic_3/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_3/half_adder_magic_1/xor_magic_0/a_46_21# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1351 half_adder_magic_3/A full_adder_magic_3/half_adder_magic_1/xor_magic_0/a_46_n26# full_adder_magic_3/half_adder_magic_1/xor_magic_0/a_80_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1352 full_adder_magic_3/half_adder_magic_1/xor_magic_0/a_46_n26# full_adder_magic_3/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_3/half_adder_magic_1/xor_magic_0/a_46_n44# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1353 full_adder_magic_3/half_adder_magic_1/xor_magic_0/a_46_21# full_adder_magic_3/half_adder_magic_1/A full_adder_magic_3/half_adder_magic_1/xor_magic_0/a_43_21# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1354 half_adder_magic_3/A full_adder_magic_3/half_adder_magic_1/xor_magic_0/a_46_39# VDD full_adder_magic_3/half_adder_magic_1/xor_magic_0/w_67_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1355 full_adder_magic_3/half_adder_magic_1/xor_magic_0/a_46_n26# full_adder_magic_3/C_IN VDD full_adder_magic_3/half_adder_magic_1/xor_magic_0/w_33_n32# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1356 VDD full_adder_magic_3/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_3/half_adder_magic_1/xor_magic_0/a_46_39# full_adder_magic_3/half_adder_magic_1/xor_magic_0/w_33_33# CMOSP w=8 l=2
++  ad=0 pd=0 as=48 ps=28
+M1357 VDD full_adder_magic_3/half_adder_magic_1/xor_magic_0/a_46_n26# half_adder_magic_3/A full_adder_magic_3/half_adder_magic_1/xor_magic_0/w_67_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1358 full_adder_magic_3/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_3/half_adder_magic_1/A VDD full_adder_magic_3/half_adder_magic_1/xor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1359 full_adder_magic_3/half_adder_magic_1/xor_magic_0/a_13_n12# full_adder_magic_3/half_adder_magic_1/A full_adder_magic_3/half_adder_magic_1/xor_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1360 VDD full_adder_magic_3/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_3/half_adder_magic_1/xor_magic_0/a_46_n26# full_adder_magic_3/half_adder_magic_1/xor_magic_0/w_33_n32# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1361 full_adder_magic_3/half_adder_magic_1/xor_magic_0/a_46_39# full_adder_magic_3/half_adder_magic_1/A VDD full_adder_magic_3/half_adder_magic_1/xor_magic_0/w_33_33# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1362 VDD full_adder_magic_3/C_IN full_adder_magic_3/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_3/half_adder_magic_1/xor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1363 full_adder_magic_3/half_adder_magic_1/xor_magic_0/a_80_n12# full_adder_magic_3/half_adder_magic_1/xor_magic_0/a_46_39# full_adder_magic_3/half_adder_magic_1/xor_magic_0/a_77_n12# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1364 full_adder_magic_3/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_3/C_IN full_adder_magic_3/half_adder_magic_1/xor_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1365 full_adder_magic_3/half_adder_magic_1/xor_magic_0/a_46_n44# full_adder_magic_3/C_IN full_adder_magic_3/half_adder_magic_1/xor_magic_0/a_43_n44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1366 full_adder_magic_3/or_magic_0/nor_magic_0/a_13_6# full_adder_magic_3/half_adder_magic_1/CARRY VDD full_adder_magic_3/or_magic_0/nor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1367 full_adder_magic_3/or_magic_0/nor_magic_0/OUTPUT full_adder_magic_3/half_adder_magic_1/CARRY full_adder_magic_3/or_magic_0/nor_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1368 full_adder_magic_3/or_magic_0/nor_magic_0/OUTPUT full_adder_magic_3/half_adder_magic_0/CARRY full_adder_magic_3/or_magic_0/nor_magic_0/a_13_6# full_adder_magic_3/or_magic_0/nor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1369 full_adder_magic_3/or_magic_0/nor_magic_0/a_21_n12# full_adder_magic_3/half_adder_magic_0/CARRY full_adder_magic_3/or_magic_0/nor_magic_0/OUTPUT Gnd CMOSN w=4 l=2
++  ad=4 pd=10 as=0 ps=0
+M1370 full_adder_magic_5/half_adder_magic_0/B full_adder_magic_3/or_magic_0/nor_magic_0/OUTPUT VDD full_adder_magic_3/or_magic_0/nor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1371 full_adder_magic_5/half_adder_magic_0/B full_adder_magic_3/or_magic_0/nor_magic_0/OUTPUT full_adder_magic_3/or_magic_0/inverter_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=4 ps=10
+M1372 and_magic_14/inverter_magic_0/OUTPUT and_magic_14/nand_magic_0/OUTPUT VDD and_magic_14/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1373 and_magic_14/inverter_magic_0/OUTPUT and_magic_14/nand_magic_0/OUTPUT and_magic_14/inverter_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=4 ps=10
+M1374 and_magic_14/nand_magic_0/OUTPUT A0 VDD and_magic_14/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1375 and_magic_14/nand_magic_0/a_13_n12# A0 and_magic_14/nand_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1376 VDD B3 and_magic_14/nand_magic_0/OUTPUT and_magic_14/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1377 and_magic_14/nand_magic_0/OUTPUT B3 and_magic_14/nand_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1378 and_magic_15/inverter_magic_0/OUTPUT and_magic_15/nand_magic_0/OUTPUT VDD and_magic_15/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1379 and_magic_15/inverter_magic_0/OUTPUT and_magic_15/nand_magic_0/OUTPUT and_magic_15/inverter_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=4 ps=10
+M1380 and_magic_15/nand_magic_0/OUTPUT A1 VDD and_magic_15/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1381 and_magic_15/nand_magic_0/a_13_n12# A1 and_magic_15/nand_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1382 VDD B2 and_magic_15/nand_magic_0/OUTPUT and_magic_15/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1383 and_magic_15/nand_magic_0/OUTPUT B2 and_magic_15/nand_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1384 full_adder_magic_4/half_adder_magic_0/CARRY full_adder_magic_4/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT VDD full_adder_magic_4/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1385 full_adder_magic_4/half_adder_magic_0/CARRY full_adder_magic_4/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_4/half_adder_magic_0/and_magic_0/inverter_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=4 ps=10
+M1386 full_adder_magic_4/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT and_magic_12/inverter_magic_0/OUTPUT VDD full_adder_magic_4/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1387 full_adder_magic_4/half_adder_magic_0/and_magic_0/nand_magic_0/a_13_n12# and_magic_12/inverter_magic_0/OUTPUT full_adder_magic_4/half_adder_magic_0/and_magic_0/nand_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1388 VDD and_magic_8/inverter_magic_0/OUTPUT full_adder_magic_4/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_4/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1389 full_adder_magic_4/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT and_magic_8/inverter_magic_0/OUTPUT full_adder_magic_4/half_adder_magic_0/and_magic_0/nand_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1390 full_adder_magic_4/half_adder_magic_0/xor_magic_0/a_46_39# full_adder_magic_4/half_adder_magic_0/xor_magic_0/a_13_6# full_adder_magic_4/half_adder_magic_0/xor_magic_0/a_46_21# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1391 full_adder_magic_4/half_adder_magic_1/A full_adder_magic_4/half_adder_magic_0/xor_magic_0/a_46_n26# full_adder_magic_4/half_adder_magic_0/xor_magic_0/a_80_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1392 full_adder_magic_4/half_adder_magic_0/xor_magic_0/a_46_n26# full_adder_magic_4/half_adder_magic_0/xor_magic_0/a_13_6# full_adder_magic_4/half_adder_magic_0/xor_magic_0/a_46_n44# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1393 full_adder_magic_4/half_adder_magic_0/xor_magic_0/a_46_21# and_magic_12/inverter_magic_0/OUTPUT full_adder_magic_4/half_adder_magic_0/xor_magic_0/a_43_21# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1394 full_adder_magic_4/half_adder_magic_1/A full_adder_magic_4/half_adder_magic_0/xor_magic_0/a_46_39# VDD full_adder_magic_4/half_adder_magic_0/xor_magic_0/w_67_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1395 full_adder_magic_4/half_adder_magic_0/xor_magic_0/a_46_n26# and_magic_8/inverter_magic_0/OUTPUT VDD full_adder_magic_4/half_adder_magic_0/xor_magic_0/w_33_n32# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1396 VDD full_adder_magic_4/half_adder_magic_0/xor_magic_0/a_13_6# full_adder_magic_4/half_adder_magic_0/xor_magic_0/a_46_39# full_adder_magic_4/half_adder_magic_0/xor_magic_0/w_33_33# CMOSP w=8 l=2
++  ad=0 pd=0 as=48 ps=28
+M1397 VDD full_adder_magic_4/half_adder_magic_0/xor_magic_0/a_46_n26# full_adder_magic_4/half_adder_magic_1/A full_adder_magic_4/half_adder_magic_0/xor_magic_0/w_67_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1398 full_adder_magic_4/half_adder_magic_0/xor_magic_0/a_13_6# and_magic_12/inverter_magic_0/OUTPUT VDD full_adder_magic_4/half_adder_magic_0/xor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1399 full_adder_magic_4/half_adder_magic_0/xor_magic_0/a_13_n12# and_magic_12/inverter_magic_0/OUTPUT full_adder_magic_4/half_adder_magic_0/xor_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1400 VDD full_adder_magic_4/half_adder_magic_0/xor_magic_0/a_13_6# full_adder_magic_4/half_adder_magic_0/xor_magic_0/a_46_n26# full_adder_magic_4/half_adder_magic_0/xor_magic_0/w_33_n32# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1401 full_adder_magic_4/half_adder_magic_0/xor_magic_0/a_46_39# and_magic_12/inverter_magic_0/OUTPUT VDD full_adder_magic_4/half_adder_magic_0/xor_magic_0/w_33_33# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1402 VDD and_magic_8/inverter_magic_0/OUTPUT full_adder_magic_4/half_adder_magic_0/xor_magic_0/a_13_6# full_adder_magic_4/half_adder_magic_0/xor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1403 full_adder_magic_4/half_adder_magic_0/xor_magic_0/a_80_n12# full_adder_magic_4/half_adder_magic_0/xor_magic_0/a_46_39# full_adder_magic_4/half_adder_magic_0/xor_magic_0/a_77_n12# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1404 full_adder_magic_4/half_adder_magic_0/xor_magic_0/a_13_6# and_magic_8/inverter_magic_0/OUTPUT full_adder_magic_4/half_adder_magic_0/xor_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1405 full_adder_magic_4/half_adder_magic_0/xor_magic_0/a_46_n44# and_magic_8/inverter_magic_0/OUTPUT full_adder_magic_4/half_adder_magic_0/xor_magic_0/a_43_n44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1406 full_adder_magic_4/half_adder_magic_1/CARRY full_adder_magic_4/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT VDD full_adder_magic_4/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1407 full_adder_magic_4/half_adder_magic_1/CARRY full_adder_magic_4/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_4/half_adder_magic_1/and_magic_0/inverter_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=4 ps=10
+M1408 full_adder_magic_4/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_4/half_adder_magic_1/A VDD full_adder_magic_4/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1409 full_adder_magic_4/half_adder_magic_1/and_magic_0/nand_magic_0/a_13_n12# full_adder_magic_4/half_adder_magic_1/A full_adder_magic_4/half_adder_magic_1/and_magic_0/nand_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1410 VDD full_adder_magic_4/C_IN full_adder_magic_4/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_4/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1411 full_adder_magic_4/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_4/C_IN full_adder_magic_4/half_adder_magic_1/and_magic_0/nand_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1412 full_adder_magic_4/half_adder_magic_1/xor_magic_0/a_46_39# full_adder_magic_4/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_4/half_adder_magic_1/xor_magic_0/a_46_21# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1413 half_adder_magic_3/B full_adder_magic_4/half_adder_magic_1/xor_magic_0/a_46_n26# full_adder_magic_4/half_adder_magic_1/xor_magic_0/a_80_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1414 full_adder_magic_4/half_adder_magic_1/xor_magic_0/a_46_n26# full_adder_magic_4/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_4/half_adder_magic_1/xor_magic_0/a_46_n44# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1415 full_adder_magic_4/half_adder_magic_1/xor_magic_0/a_46_21# full_adder_magic_4/half_adder_magic_1/A full_adder_magic_4/half_adder_magic_1/xor_magic_0/a_43_21# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1416 half_adder_magic_3/B full_adder_magic_4/half_adder_magic_1/xor_magic_0/a_46_39# VDD full_adder_magic_4/half_adder_magic_1/xor_magic_0/w_67_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1417 full_adder_magic_4/half_adder_magic_1/xor_magic_0/a_46_n26# full_adder_magic_4/C_IN VDD full_adder_magic_4/half_adder_magic_1/xor_magic_0/w_33_n32# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1418 VDD full_adder_magic_4/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_4/half_adder_magic_1/xor_magic_0/a_46_39# full_adder_magic_4/half_adder_magic_1/xor_magic_0/w_33_33# CMOSP w=8 l=2
++  ad=0 pd=0 as=48 ps=28
+M1419 VDD full_adder_magic_4/half_adder_magic_1/xor_magic_0/a_46_n26# half_adder_magic_3/B full_adder_magic_4/half_adder_magic_1/xor_magic_0/w_67_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1420 full_adder_magic_4/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_4/half_adder_magic_1/A VDD full_adder_magic_4/half_adder_magic_1/xor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1421 full_adder_magic_4/half_adder_magic_1/xor_magic_0/a_13_n12# full_adder_magic_4/half_adder_magic_1/A full_adder_magic_4/half_adder_magic_1/xor_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1422 VDD full_adder_magic_4/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_4/half_adder_magic_1/xor_magic_0/a_46_n26# full_adder_magic_4/half_adder_magic_1/xor_magic_0/w_33_n32# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1423 full_adder_magic_4/half_adder_magic_1/xor_magic_0/a_46_39# full_adder_magic_4/half_adder_magic_1/A VDD full_adder_magic_4/half_adder_magic_1/xor_magic_0/w_33_33# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1424 VDD full_adder_magic_4/C_IN full_adder_magic_4/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_4/half_adder_magic_1/xor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1425 full_adder_magic_4/half_adder_magic_1/xor_magic_0/a_80_n12# full_adder_magic_4/half_adder_magic_1/xor_magic_0/a_46_39# full_adder_magic_4/half_adder_magic_1/xor_magic_0/a_77_n12# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1426 full_adder_magic_4/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_4/C_IN full_adder_magic_4/half_adder_magic_1/xor_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1427 full_adder_magic_4/half_adder_magic_1/xor_magic_0/a_46_n44# full_adder_magic_4/C_IN full_adder_magic_4/half_adder_magic_1/xor_magic_0/a_43_n44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1428 full_adder_magic_4/or_magic_0/nor_magic_0/a_13_6# full_adder_magic_4/half_adder_magic_1/CARRY VDD full_adder_magic_4/or_magic_0/nor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1429 full_adder_magic_4/or_magic_0/nor_magic_0/OUTPUT full_adder_magic_4/half_adder_magic_1/CARRY full_adder_magic_4/or_magic_0/nor_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1430 full_adder_magic_4/or_magic_0/nor_magic_0/OUTPUT full_adder_magic_4/half_adder_magic_0/CARRY full_adder_magic_4/or_magic_0/nor_magic_0/a_13_6# full_adder_magic_4/or_magic_0/nor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1431 full_adder_magic_4/or_magic_0/nor_magic_0/a_21_n12# full_adder_magic_4/half_adder_magic_0/CARRY full_adder_magic_4/or_magic_0/nor_magic_0/OUTPUT Gnd CMOSN w=4 l=2
++  ad=4 pd=10 as=0 ps=0
+M1432 full_adder_magic_5/C_IN full_adder_magic_4/or_magic_0/nor_magic_0/OUTPUT VDD full_adder_magic_4/or_magic_0/nor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1433 full_adder_magic_5/C_IN full_adder_magic_4/or_magic_0/nor_magic_0/OUTPUT full_adder_magic_4/or_magic_0/inverter_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=4 ps=10
+M1434 full_adder_magic_5/half_adder_magic_0/CARRY full_adder_magic_5/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT VDD full_adder_magic_5/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1435 full_adder_magic_5/half_adder_magic_0/CARRY full_adder_magic_5/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_5/half_adder_magic_0/and_magic_0/inverter_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=4 ps=10
+M1436 full_adder_magic_5/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT and_magic_9/inverter_magic_0/OUTPUT VDD full_adder_magic_5/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1437 full_adder_magic_5/half_adder_magic_0/and_magic_0/nand_magic_0/a_13_n12# and_magic_9/inverter_magic_0/OUTPUT full_adder_magic_5/half_adder_magic_0/and_magic_0/nand_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1438 VDD full_adder_magic_5/half_adder_magic_0/B full_adder_magic_5/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_5/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1439 full_adder_magic_5/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_5/half_adder_magic_0/B full_adder_magic_5/half_adder_magic_0/and_magic_0/nand_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1440 full_adder_magic_5/half_adder_magic_0/xor_magic_0/a_46_39# full_adder_magic_5/half_adder_magic_0/xor_magic_0/a_13_6# full_adder_magic_5/half_adder_magic_0/xor_magic_0/a_46_21# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1441 full_adder_magic_5/half_adder_magic_1/A full_adder_magic_5/half_adder_magic_0/xor_magic_0/a_46_n26# full_adder_magic_5/half_adder_magic_0/xor_magic_0/a_80_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1442 full_adder_magic_5/half_adder_magic_0/xor_magic_0/a_46_n26# full_adder_magic_5/half_adder_magic_0/xor_magic_0/a_13_6# full_adder_magic_5/half_adder_magic_0/xor_magic_0/a_46_n44# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1443 full_adder_magic_5/half_adder_magic_0/xor_magic_0/a_46_21# and_magic_9/inverter_magic_0/OUTPUT full_adder_magic_5/half_adder_magic_0/xor_magic_0/a_43_21# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1444 full_adder_magic_5/half_adder_magic_1/A full_adder_magic_5/half_adder_magic_0/xor_magic_0/a_46_39# VDD full_adder_magic_5/half_adder_magic_0/xor_magic_0/w_67_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1445 full_adder_magic_5/half_adder_magic_0/xor_magic_0/a_46_n26# full_adder_magic_5/half_adder_magic_0/B VDD full_adder_magic_5/half_adder_magic_0/xor_magic_0/w_33_n32# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1446 VDD full_adder_magic_5/half_adder_magic_0/xor_magic_0/a_13_6# full_adder_magic_5/half_adder_magic_0/xor_magic_0/a_46_39# full_adder_magic_5/half_adder_magic_0/xor_magic_0/w_33_33# CMOSP w=8 l=2
++  ad=0 pd=0 as=48 ps=28
+M1447 VDD full_adder_magic_5/half_adder_magic_0/xor_magic_0/a_46_n26# full_adder_magic_5/half_adder_magic_1/A full_adder_magic_5/half_adder_magic_0/xor_magic_0/w_67_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1448 full_adder_magic_5/half_adder_magic_0/xor_magic_0/a_13_6# and_magic_9/inverter_magic_0/OUTPUT VDD full_adder_magic_5/half_adder_magic_0/xor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1449 full_adder_magic_5/half_adder_magic_0/xor_magic_0/a_13_n12# and_magic_9/inverter_magic_0/OUTPUT full_adder_magic_5/half_adder_magic_0/xor_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1450 VDD full_adder_magic_5/half_adder_magic_0/xor_magic_0/a_13_6# full_adder_magic_5/half_adder_magic_0/xor_magic_0/a_46_n26# full_adder_magic_5/half_adder_magic_0/xor_magic_0/w_33_n32# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1451 full_adder_magic_5/half_adder_magic_0/xor_magic_0/a_46_39# and_magic_9/inverter_magic_0/OUTPUT VDD full_adder_magic_5/half_adder_magic_0/xor_magic_0/w_33_33# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1452 VDD full_adder_magic_5/half_adder_magic_0/B full_adder_magic_5/half_adder_magic_0/xor_magic_0/a_13_6# full_adder_magic_5/half_adder_magic_0/xor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1453 full_adder_magic_5/half_adder_magic_0/xor_magic_0/a_80_n12# full_adder_magic_5/half_adder_magic_0/xor_magic_0/a_46_39# full_adder_magic_5/half_adder_magic_0/xor_magic_0/a_77_n12# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1454 full_adder_magic_5/half_adder_magic_0/xor_magic_0/a_13_6# full_adder_magic_5/half_adder_magic_0/B full_adder_magic_5/half_adder_magic_0/xor_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1455 full_adder_magic_5/half_adder_magic_0/xor_magic_0/a_46_n44# full_adder_magic_5/half_adder_magic_0/B full_adder_magic_5/half_adder_magic_0/xor_magic_0/a_43_n44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1456 full_adder_magic_5/half_adder_magic_1/CARRY full_adder_magic_5/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT VDD full_adder_magic_5/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1457 full_adder_magic_5/half_adder_magic_1/CARRY full_adder_magic_5/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_5/half_adder_magic_1/and_magic_0/inverter_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=4 ps=10
+M1458 full_adder_magic_5/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_5/half_adder_magic_1/A VDD full_adder_magic_5/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1459 full_adder_magic_5/half_adder_magic_1/and_magic_0/nand_magic_0/a_13_n12# full_adder_magic_5/half_adder_magic_1/A full_adder_magic_5/half_adder_magic_1/and_magic_0/nand_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1460 VDD full_adder_magic_5/C_IN full_adder_magic_5/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_5/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1461 full_adder_magic_5/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_5/C_IN full_adder_magic_5/half_adder_magic_1/and_magic_0/nand_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1462 full_adder_magic_5/half_adder_magic_1/xor_magic_0/a_46_39# full_adder_magic_5/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_5/half_adder_magic_1/xor_magic_0/a_46_21# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1463 full_adder_magic_6/half_adder_magic_0/A full_adder_magic_5/half_adder_magic_1/xor_magic_0/a_46_n26# full_adder_magic_5/half_adder_magic_1/xor_magic_0/a_80_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1464 full_adder_magic_5/half_adder_magic_1/xor_magic_0/a_46_n26# full_adder_magic_5/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_5/half_adder_magic_1/xor_magic_0/a_46_n44# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1465 full_adder_magic_5/half_adder_magic_1/xor_magic_0/a_46_21# full_adder_magic_5/half_adder_magic_1/A full_adder_magic_5/half_adder_magic_1/xor_magic_0/a_43_21# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1466 full_adder_magic_6/half_adder_magic_0/A full_adder_magic_5/half_adder_magic_1/xor_magic_0/a_46_39# VDD full_adder_magic_5/half_adder_magic_1/xor_magic_0/w_67_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1467 full_adder_magic_5/half_adder_magic_1/xor_magic_0/a_46_n26# full_adder_magic_5/C_IN VDD full_adder_magic_5/half_adder_magic_1/xor_magic_0/w_33_n32# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1468 VDD full_adder_magic_5/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_5/half_adder_magic_1/xor_magic_0/a_46_39# full_adder_magic_5/half_adder_magic_1/xor_magic_0/w_33_33# CMOSP w=8 l=2
++  ad=0 pd=0 as=48 ps=28
+M1469 VDD full_adder_magic_5/half_adder_magic_1/xor_magic_0/a_46_n26# full_adder_magic_6/half_adder_magic_0/A full_adder_magic_5/half_adder_magic_1/xor_magic_0/w_67_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1470 full_adder_magic_5/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_5/half_adder_magic_1/A VDD full_adder_magic_5/half_adder_magic_1/xor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1471 full_adder_magic_5/half_adder_magic_1/xor_magic_0/a_13_n12# full_adder_magic_5/half_adder_magic_1/A full_adder_magic_5/half_adder_magic_1/xor_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1472 VDD full_adder_magic_5/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_5/half_adder_magic_1/xor_magic_0/a_46_n26# full_adder_magic_5/half_adder_magic_1/xor_magic_0/w_33_n32# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1473 full_adder_magic_5/half_adder_magic_1/xor_magic_0/a_46_39# full_adder_magic_5/half_adder_magic_1/A VDD full_adder_magic_5/half_adder_magic_1/xor_magic_0/w_33_33# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1474 VDD full_adder_magic_5/C_IN full_adder_magic_5/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_5/half_adder_magic_1/xor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1475 full_adder_magic_5/half_adder_magic_1/xor_magic_0/a_80_n12# full_adder_magic_5/half_adder_magic_1/xor_magic_0/a_46_39# full_adder_magic_5/half_adder_magic_1/xor_magic_0/a_77_n12# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1476 full_adder_magic_5/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_5/C_IN full_adder_magic_5/half_adder_magic_1/xor_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1477 full_adder_magic_5/half_adder_magic_1/xor_magic_0/a_46_n44# full_adder_magic_5/C_IN full_adder_magic_5/half_adder_magic_1/xor_magic_0/a_43_n44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1478 full_adder_magic_5/or_magic_0/nor_magic_0/a_13_6# full_adder_magic_5/half_adder_magic_1/CARRY VDD full_adder_magic_5/or_magic_0/nor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1479 full_adder_magic_5/or_magic_0/nor_magic_0/OUTPUT full_adder_magic_5/half_adder_magic_1/CARRY full_adder_magic_5/or_magic_0/nor_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1480 full_adder_magic_5/or_magic_0/nor_magic_0/OUTPUT full_adder_magic_5/half_adder_magic_0/CARRY full_adder_magic_5/or_magic_0/nor_magic_0/a_13_6# full_adder_magic_5/or_magic_0/nor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1481 full_adder_magic_5/or_magic_0/nor_magic_0/a_21_n12# full_adder_magic_5/half_adder_magic_0/CARRY full_adder_magic_5/or_magic_0/nor_magic_0/OUTPUT Gnd CMOSN w=4 l=2
++  ad=4 pd=10 as=0 ps=0
+M1482 full_adder_magic_7/half_adder_magic_0/A full_adder_magic_5/or_magic_0/nor_magic_0/OUTPUT VDD full_adder_magic_5/or_magic_0/nor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1483 full_adder_magic_7/half_adder_magic_0/A full_adder_magic_5/or_magic_0/nor_magic_0/OUTPUT full_adder_magic_5/or_magic_0/inverter_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=4 ps=10
+M1484 full_adder_magic_6/half_adder_magic_0/CARRY full_adder_magic_6/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT VDD full_adder_magic_6/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1485 full_adder_magic_6/half_adder_magic_0/CARRY full_adder_magic_6/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_6/half_adder_magic_0/and_magic_0/inverter_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=4 ps=10
+M1486 full_adder_magic_6/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_6/half_adder_magic_0/A VDD full_adder_magic_6/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1487 full_adder_magic_6/half_adder_magic_0/and_magic_0/nand_magic_0/a_13_n12# full_adder_magic_6/half_adder_magic_0/A full_adder_magic_6/half_adder_magic_0/and_magic_0/nand_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1488 VDD and_magic_10/inverter_magic_0/OUTPUT full_adder_magic_6/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_6/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1489 full_adder_magic_6/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT and_magic_10/inverter_magic_0/OUTPUT full_adder_magic_6/half_adder_magic_0/and_magic_0/nand_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1490 full_adder_magic_6/half_adder_magic_0/xor_magic_0/a_46_39# full_adder_magic_6/half_adder_magic_0/xor_magic_0/a_13_6# full_adder_magic_6/half_adder_magic_0/xor_magic_0/a_46_21# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1491 full_adder_magic_6/half_adder_magic_1/A full_adder_magic_6/half_adder_magic_0/xor_magic_0/a_46_n26# full_adder_magic_6/half_adder_magic_0/xor_magic_0/a_80_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1492 full_adder_magic_6/half_adder_magic_0/xor_magic_0/a_46_n26# full_adder_magic_6/half_adder_magic_0/xor_magic_0/a_13_6# full_adder_magic_6/half_adder_magic_0/xor_magic_0/a_46_n44# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1493 full_adder_magic_6/half_adder_magic_0/xor_magic_0/a_46_21# full_adder_magic_6/half_adder_magic_0/A full_adder_magic_6/half_adder_magic_0/xor_magic_0/a_43_21# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1494 full_adder_magic_6/half_adder_magic_1/A full_adder_magic_6/half_adder_magic_0/xor_magic_0/a_46_39# VDD full_adder_magic_6/half_adder_magic_0/xor_magic_0/w_67_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1495 full_adder_magic_6/half_adder_magic_0/xor_magic_0/a_46_n26# and_magic_10/inverter_magic_0/OUTPUT VDD full_adder_magic_6/half_adder_magic_0/xor_magic_0/w_33_n32# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1496 VDD full_adder_magic_6/half_adder_magic_0/xor_magic_0/a_13_6# full_adder_magic_6/half_adder_magic_0/xor_magic_0/a_46_39# full_adder_magic_6/half_adder_magic_0/xor_magic_0/w_33_33# CMOSP w=8 l=2
++  ad=0 pd=0 as=48 ps=28
+M1497 VDD full_adder_magic_6/half_adder_magic_0/xor_magic_0/a_46_n26# full_adder_magic_6/half_adder_magic_1/A full_adder_magic_6/half_adder_magic_0/xor_magic_0/w_67_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1498 full_adder_magic_6/half_adder_magic_0/xor_magic_0/a_13_6# full_adder_magic_6/half_adder_magic_0/A VDD full_adder_magic_6/half_adder_magic_0/xor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1499 full_adder_magic_6/half_adder_magic_0/xor_magic_0/a_13_n12# full_adder_magic_6/half_adder_magic_0/A full_adder_magic_6/half_adder_magic_0/xor_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1500 VDD full_adder_magic_6/half_adder_magic_0/xor_magic_0/a_13_6# full_adder_magic_6/half_adder_magic_0/xor_magic_0/a_46_n26# full_adder_magic_6/half_adder_magic_0/xor_magic_0/w_33_n32# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1501 full_adder_magic_6/half_adder_magic_0/xor_magic_0/a_46_39# full_adder_magic_6/half_adder_magic_0/A VDD full_adder_magic_6/half_adder_magic_0/xor_magic_0/w_33_33# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1502 VDD and_magic_10/inverter_magic_0/OUTPUT full_adder_magic_6/half_adder_magic_0/xor_magic_0/a_13_6# full_adder_magic_6/half_adder_magic_0/xor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1503 full_adder_magic_6/half_adder_magic_0/xor_magic_0/a_80_n12# full_adder_magic_6/half_adder_magic_0/xor_magic_0/a_46_39# full_adder_magic_6/half_adder_magic_0/xor_magic_0/a_77_n12# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1504 full_adder_magic_6/half_adder_magic_0/xor_magic_0/a_13_6# and_magic_10/inverter_magic_0/OUTPUT full_adder_magic_6/half_adder_magic_0/xor_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1505 full_adder_magic_6/half_adder_magic_0/xor_magic_0/a_46_n44# and_magic_10/inverter_magic_0/OUTPUT full_adder_magic_6/half_adder_magic_0/xor_magic_0/a_43_n44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1506 full_adder_magic_6/half_adder_magic_1/CARRY full_adder_magic_6/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT VDD full_adder_magic_6/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1507 full_adder_magic_6/half_adder_magic_1/CARRY full_adder_magic_6/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_6/half_adder_magic_1/and_magic_0/inverter_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=4 ps=10
+M1508 full_adder_magic_6/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_6/half_adder_magic_1/A VDD full_adder_magic_6/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1509 full_adder_magic_6/half_adder_magic_1/and_magic_0/nand_magic_0/a_13_n12# full_adder_magic_6/half_adder_magic_1/A full_adder_magic_6/half_adder_magic_1/and_magic_0/nand_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1510 VDD full_adder_magic_6/C_IN full_adder_magic_6/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_6/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1511 full_adder_magic_6/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_6/C_IN full_adder_magic_6/half_adder_magic_1/and_magic_0/nand_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1512 full_adder_magic_6/half_adder_magic_1/xor_magic_0/a_46_39# full_adder_magic_6/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_6/half_adder_magic_1/xor_magic_0/a_46_21# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1513 full_adder_magic_6/half_adder_magic_1/SUM full_adder_magic_6/half_adder_magic_1/xor_magic_0/a_46_n26# full_adder_magic_6/half_adder_magic_1/xor_magic_0/a_80_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1514 full_adder_magic_6/half_adder_magic_1/xor_magic_0/a_46_n26# full_adder_magic_6/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_6/half_adder_magic_1/xor_magic_0/a_46_n44# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1515 full_adder_magic_6/half_adder_magic_1/xor_magic_0/a_46_21# full_adder_magic_6/half_adder_magic_1/A full_adder_magic_6/half_adder_magic_1/xor_magic_0/a_43_21# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1516 full_adder_magic_6/half_adder_magic_1/SUM full_adder_magic_6/half_adder_magic_1/xor_magic_0/a_46_39# VDD full_adder_magic_6/half_adder_magic_1/xor_magic_0/w_67_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1517 full_adder_magic_6/half_adder_magic_1/xor_magic_0/a_46_n26# full_adder_magic_6/C_IN VDD full_adder_magic_6/half_adder_magic_1/xor_magic_0/w_33_n32# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1518 VDD full_adder_magic_6/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_6/half_adder_magic_1/xor_magic_0/a_46_39# full_adder_magic_6/half_adder_magic_1/xor_magic_0/w_33_33# CMOSP w=8 l=2
++  ad=0 pd=0 as=48 ps=28
+M1519 VDD full_adder_magic_6/half_adder_magic_1/xor_magic_0/a_46_n26# full_adder_magic_6/half_adder_magic_1/SUM full_adder_magic_6/half_adder_magic_1/xor_magic_0/w_67_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1520 full_adder_magic_6/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_6/half_adder_magic_1/A VDD full_adder_magic_6/half_adder_magic_1/xor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1521 full_adder_magic_6/half_adder_magic_1/xor_magic_0/a_13_n12# full_adder_magic_6/half_adder_magic_1/A full_adder_magic_6/half_adder_magic_1/xor_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1522 VDD full_adder_magic_6/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_6/half_adder_magic_1/xor_magic_0/a_46_n26# full_adder_magic_6/half_adder_magic_1/xor_magic_0/w_33_n32# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1523 full_adder_magic_6/half_adder_magic_1/xor_magic_0/a_46_39# full_adder_magic_6/half_adder_magic_1/A VDD full_adder_magic_6/half_adder_magic_1/xor_magic_0/w_33_33# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1524 VDD full_adder_magic_6/C_IN full_adder_magic_6/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_6/half_adder_magic_1/xor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1525 full_adder_magic_6/half_adder_magic_1/xor_magic_0/a_80_n12# full_adder_magic_6/half_adder_magic_1/xor_magic_0/a_46_39# full_adder_magic_6/half_adder_magic_1/xor_magic_0/a_77_n12# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1526 full_adder_magic_6/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_6/C_IN full_adder_magic_6/half_adder_magic_1/xor_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1527 full_adder_magic_6/half_adder_magic_1/xor_magic_0/a_46_n44# full_adder_magic_6/C_IN full_adder_magic_6/half_adder_magic_1/xor_magic_0/a_43_n44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1528 full_adder_magic_6/or_magic_0/nor_magic_0/a_13_6# full_adder_magic_6/half_adder_magic_1/CARRY VDD full_adder_magic_6/or_magic_0/nor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1529 full_adder_magic_6/or_magic_0/nor_magic_0/OUTPUT full_adder_magic_6/half_adder_magic_1/CARRY full_adder_magic_6/or_magic_0/nor_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1530 full_adder_magic_6/or_magic_0/nor_magic_0/OUTPUT full_adder_magic_6/half_adder_magic_0/CARRY full_adder_magic_6/or_magic_0/nor_magic_0/a_13_6# full_adder_magic_6/or_magic_0/nor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1531 full_adder_magic_6/or_magic_0/nor_magic_0/a_21_n12# full_adder_magic_6/half_adder_magic_0/CARRY full_adder_magic_6/or_magic_0/nor_magic_0/OUTPUT Gnd CMOSN w=4 l=2
++  ad=4 pd=10 as=0 ps=0
+M1532 full_adder_magic_7/half_adder_magic_0/B full_adder_magic_6/or_magic_0/nor_magic_0/OUTPUT VDD full_adder_magic_6/or_magic_0/nor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1533 full_adder_magic_7/half_adder_magic_0/B full_adder_magic_6/or_magic_0/nor_magic_0/OUTPUT full_adder_magic_6/or_magic_0/inverter_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=4 ps=10
+M1534 full_adder_magic_7/half_adder_magic_0/CARRY full_adder_magic_7/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT VDD full_adder_magic_7/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1535 full_adder_magic_7/half_adder_magic_0/CARRY full_adder_magic_7/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_7/half_adder_magic_0/and_magic_0/inverter_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=4 ps=10
+M1536 full_adder_magic_7/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_7/half_adder_magic_0/A VDD full_adder_magic_7/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1537 full_adder_magic_7/half_adder_magic_0/and_magic_0/nand_magic_0/a_13_n12# full_adder_magic_7/half_adder_magic_0/A full_adder_magic_7/half_adder_magic_0/and_magic_0/nand_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1538 VDD full_adder_magic_7/half_adder_magic_0/B full_adder_magic_7/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_7/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1539 full_adder_magic_7/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_7/half_adder_magic_0/B full_adder_magic_7/half_adder_magic_0/and_magic_0/nand_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1540 full_adder_magic_7/half_adder_magic_0/xor_magic_0/a_46_39# full_adder_magic_7/half_adder_magic_0/xor_magic_0/a_13_6# full_adder_magic_7/half_adder_magic_0/xor_magic_0/a_46_21# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1541 full_adder_magic_7/half_adder_magic_1/A full_adder_magic_7/half_adder_magic_0/xor_magic_0/a_46_n26# full_adder_magic_7/half_adder_magic_0/xor_magic_0/a_80_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1542 full_adder_magic_7/half_adder_magic_0/xor_magic_0/a_46_n26# full_adder_magic_7/half_adder_magic_0/xor_magic_0/a_13_6# full_adder_magic_7/half_adder_magic_0/xor_magic_0/a_46_n44# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1543 full_adder_magic_7/half_adder_magic_0/xor_magic_0/a_46_21# full_adder_magic_7/half_adder_magic_0/A full_adder_magic_7/half_adder_magic_0/xor_magic_0/a_43_21# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1544 full_adder_magic_7/half_adder_magic_1/A full_adder_magic_7/half_adder_magic_0/xor_magic_0/a_46_39# VDD full_adder_magic_7/half_adder_magic_0/xor_magic_0/w_67_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1545 full_adder_magic_7/half_adder_magic_0/xor_magic_0/a_46_n26# full_adder_magic_7/half_adder_magic_0/B VDD full_adder_magic_7/half_adder_magic_0/xor_magic_0/w_33_n32# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1546 VDD full_adder_magic_7/half_adder_magic_0/xor_magic_0/a_13_6# full_adder_magic_7/half_adder_magic_0/xor_magic_0/a_46_39# full_adder_magic_7/half_adder_magic_0/xor_magic_0/w_33_33# CMOSP w=8 l=2
++  ad=0 pd=0 as=48 ps=28
+M1547 VDD full_adder_magic_7/half_adder_magic_0/xor_magic_0/a_46_n26# full_adder_magic_7/half_adder_magic_1/A full_adder_magic_7/half_adder_magic_0/xor_magic_0/w_67_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1548 full_adder_magic_7/half_adder_magic_0/xor_magic_0/a_13_6# full_adder_magic_7/half_adder_magic_0/A VDD full_adder_magic_7/half_adder_magic_0/xor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1549 full_adder_magic_7/half_adder_magic_0/xor_magic_0/a_13_n12# full_adder_magic_7/half_adder_magic_0/A full_adder_magic_7/half_adder_magic_0/xor_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1550 VDD full_adder_magic_7/half_adder_magic_0/xor_magic_0/a_13_6# full_adder_magic_7/half_adder_magic_0/xor_magic_0/a_46_n26# full_adder_magic_7/half_adder_magic_0/xor_magic_0/w_33_n32# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1551 full_adder_magic_7/half_adder_magic_0/xor_magic_0/a_46_39# full_adder_magic_7/half_adder_magic_0/A VDD full_adder_magic_7/half_adder_magic_0/xor_magic_0/w_33_33# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1552 VDD full_adder_magic_7/half_adder_magic_0/B full_adder_magic_7/half_adder_magic_0/xor_magic_0/a_13_6# full_adder_magic_7/half_adder_magic_0/xor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1553 full_adder_magic_7/half_adder_magic_0/xor_magic_0/a_80_n12# full_adder_magic_7/half_adder_magic_0/xor_magic_0/a_46_39# full_adder_magic_7/half_adder_magic_0/xor_magic_0/a_77_n12# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1554 full_adder_magic_7/half_adder_magic_0/xor_magic_0/a_13_6# full_adder_magic_7/half_adder_magic_0/B full_adder_magic_7/half_adder_magic_0/xor_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1555 full_adder_magic_7/half_adder_magic_0/xor_magic_0/a_46_n44# full_adder_magic_7/half_adder_magic_0/B full_adder_magic_7/half_adder_magic_0/xor_magic_0/a_43_n44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1556 full_adder_magic_7/half_adder_magic_1/CARRY full_adder_magic_7/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT VDD full_adder_magic_7/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1557 full_adder_magic_7/half_adder_magic_1/CARRY full_adder_magic_7/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_7/half_adder_magic_1/and_magic_0/inverter_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=4 ps=10
+M1558 full_adder_magic_7/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_7/half_adder_magic_1/A VDD full_adder_magic_7/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1559 full_adder_magic_7/half_adder_magic_1/and_magic_0/nand_magic_0/a_13_n12# full_adder_magic_7/half_adder_magic_1/A full_adder_magic_7/half_adder_magic_1/and_magic_0/nand_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1560 VDD full_adder_magic_7/C_IN full_adder_magic_7/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_7/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1561 full_adder_magic_7/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT full_adder_magic_7/C_IN full_adder_magic_7/half_adder_magic_1/and_magic_0/nand_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1562 full_adder_magic_7/half_adder_magic_1/xor_magic_0/a_46_39# full_adder_magic_7/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_7/half_adder_magic_1/xor_magic_0/a_46_21# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1563 P6 full_adder_magic_7/half_adder_magic_1/xor_magic_0/a_46_n26# full_adder_magic_7/half_adder_magic_1/xor_magic_0/a_80_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1564 full_adder_magic_7/half_adder_magic_1/xor_magic_0/a_46_n26# full_adder_magic_7/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_7/half_adder_magic_1/xor_magic_0/a_46_n44# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=24 ps=20
+M1565 full_adder_magic_7/half_adder_magic_1/xor_magic_0/a_46_21# full_adder_magic_7/half_adder_magic_1/A full_adder_magic_7/half_adder_magic_1/xor_magic_0/a_43_21# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1566 P6 full_adder_magic_7/half_adder_magic_1/xor_magic_0/a_46_39# VDD full_adder_magic_7/half_adder_magic_1/xor_magic_0/w_67_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1567 full_adder_magic_7/half_adder_magic_1/xor_magic_0/a_46_n26# full_adder_magic_7/C_IN VDD full_adder_magic_7/half_adder_magic_1/xor_magic_0/w_33_n32# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1568 VDD full_adder_magic_7/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_7/half_adder_magic_1/xor_magic_0/a_46_39# full_adder_magic_7/half_adder_magic_1/xor_magic_0/w_33_33# CMOSP w=8 l=2
++  ad=0 pd=0 as=48 ps=28
+M1569 VDD full_adder_magic_7/half_adder_magic_1/xor_magic_0/a_46_n26# P6 full_adder_magic_7/half_adder_magic_1/xor_magic_0/w_67_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1570 full_adder_magic_7/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_7/half_adder_magic_1/A VDD full_adder_magic_7/half_adder_magic_1/xor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1571 full_adder_magic_7/half_adder_magic_1/xor_magic_0/a_13_n12# full_adder_magic_7/half_adder_magic_1/A full_adder_magic_7/half_adder_magic_1/xor_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1572 VDD full_adder_magic_7/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_7/half_adder_magic_1/xor_magic_0/a_46_n26# full_adder_magic_7/half_adder_magic_1/xor_magic_0/w_33_n32# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1573 full_adder_magic_7/half_adder_magic_1/xor_magic_0/a_46_39# full_adder_magic_7/half_adder_magic_1/A VDD full_adder_magic_7/half_adder_magic_1/xor_magic_0/w_33_33# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1574 VDD full_adder_magic_7/C_IN full_adder_magic_7/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_7/half_adder_magic_1/xor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+M1575 full_adder_magic_7/half_adder_magic_1/xor_magic_0/a_80_n12# full_adder_magic_7/half_adder_magic_1/xor_magic_0/a_46_39# full_adder_magic_7/half_adder_magic_1/xor_magic_0/a_77_n12# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1576 full_adder_magic_7/half_adder_magic_1/xor_magic_0/a_13_6# full_adder_magic_7/C_IN full_adder_magic_7/half_adder_magic_1/xor_magic_0/a_13_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1577 full_adder_magic_7/half_adder_magic_1/xor_magic_0/a_46_n44# full_adder_magic_7/C_IN full_adder_magic_7/half_adder_magic_1/xor_magic_0/a_43_n44# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=4 ps=10
+M1578 full_adder_magic_7/or_magic_0/nor_magic_0/a_13_6# full_adder_magic_7/half_adder_magic_1/CARRY VDD full_adder_magic_7/or_magic_0/nor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=48 pd=28 as=0 ps=0
+M1579 full_adder_magic_7/or_magic_0/nor_magic_0/OUTPUT full_adder_magic_7/half_adder_magic_1/CARRY full_adder_magic_7/or_magic_0/nor_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=24 pd=20 as=4 ps=10
+M1580 full_adder_magic_7/or_magic_0/nor_magic_0/OUTPUT full_adder_magic_7/half_adder_magic_0/CARRY full_adder_magic_7/or_magic_0/nor_magic_0/a_13_6# full_adder_magic_7/or_magic_0/nor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1581 full_adder_magic_7/or_magic_0/nor_magic_0/a_21_n12# full_adder_magic_7/half_adder_magic_0/CARRY full_adder_magic_7/or_magic_0/nor_magic_0/OUTPUT Gnd CMOSN w=4 l=2
++  ad=4 pd=10 as=0 ps=0
+M1582 C5 full_adder_magic_7/or_magic_0/nor_magic_0/OUTPUT VDD full_adder_magic_7/or_magic_0/nor_magic_0/w_0_0# CMOSP w=8 l=2
++  ad=40 pd=26 as=0 ps=0
+M1583 C5 full_adder_magic_7/or_magic_0/nor_magic_0/OUTPUT full_adder_magic_7/or_magic_0/inverter_magic_0/a_10_n12# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=4 ps=10
+C0 VDD full_adder_magic_5/half_adder_magic_1/xor_magic_0/w_0_0# 2.26fF
+C1 full_adder_magic_2/or_magic_0/nor_magic_0/w_0_0# full_adder_magic_2/half_adder_magic_0/CARRY 2.62fF
+C2 and_magic_11/nand_magic_0/w_0_0# and_magic_11/nand_magic_0/OUTPUT 3.75fF
+C3 full_adder_magic_7/half_adder_magic_1/xor_magic_0/w_33_33# full_adder_magic_7/half_adder_magic_1/A 2.62fF
+C4 full_adder_magic_5/half_adder_magic_1/xor_magic_0/w_33_33# full_adder_magic_5/half_adder_magic_1/A 2.62fF
+C5 full_adder_magic_1/C_IN full_adder_magic_1/half_adder_magic_1/xor_magic_0/w_33_n32# 2.62fF
+C6 full_adder_magic_1/half_adder_magic_0/xor_magic_0/w_67_0# VDD 2.26fF
+C7 half_adder_magic_3/xor_magic_0/w_67_0# half_adder_magic_3/xor_magic_0/a_46_n26# 2.62fF
+C8 full_adder_magic_4/half_adder_magic_1/xor_magic_0/w_33_n32# full_adder_magic_4/half_adder_magic_1/xor_magic_0/a_13_6# 3.18fF
+C9 VDD and_magic_14/nand_magic_0/w_0_0# 3.38fF
+C10 VDD full_adder_magic_2/or_magic_0/nor_magic_0/w_0_0# 2.26fF
+C11 half_adder_magic_2/xor_magic_0/w_67_0# half_adder_magic_2/xor_magic_0/a_46_n26# 2.62fF
+C12 VDD full_adder_magic_3/half_adder_magic_0/xor_magic_0/w_33_n32# 2.26fF
+C13 full_adder_magic_3/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# and_magic_13/inverter_magic_0/OUTPUT 2.62fF
+C14 full_adder_magic_2/half_adder_magic_1/xor_magic_0/w_33_n32# full_adder_magic_2/half_adder_magic_1/xor_magic_0/a_13_6# 3.18fF
+C15 half_adder_magic_3/xor_magic_0/w_0_0# half_adder_magic_3/A 3.18fF
+C16 VDD full_adder_magic_5/half_adder_magic_0/xor_magic_0/w_33_n32# 2.26fF
+C17 GND full_adder_magic_1/C_IN 2.34fF
+C18 half_adder_magic_1/xor_magic_0/w_67_0# half_adder_magic_1/xor_magic_0/a_46_n26# 2.62fF
+C19 B2 A3 2.16fF
+C20 half_adder_magic_2/xor_magic_0/w_67_0# half_adder_magic_2/xor_magic_0/a_46_39# 3.18fF
+C21 full_adder_magic_5/half_adder_magic_0/xor_magic_0/w_67_0# full_adder_magic_5/half_adder_magic_0/xor_magic_0/a_46_n26# 2.62fF
+C22 full_adder_magic_2/half_adder_magic_0/xor_magic_0/w_33_33# full_adder_magic_2/half_adder_magic_0/xor_magic_0/a_13_6# 2.62fF
+C23 full_adder_magic_6/half_adder_magic_0/xor_magic_0/w_67_0# full_adder_magic_6/half_adder_magic_0/xor_magic_0/a_46_39# 3.18fF
+C24 full_adder_magic_1/half_adder_magic_0/xor_magic_0/w_0_0# and_magic_6/inverter_magic_0/OUTPUT 3.18fF
+C25 half_adder_magic_1/xor_magic_0/w_67_0# half_adder_magic_1/xor_magic_0/a_46_39# 3.18fF
+C26 half_adder_magic_2/xor_magic_0/w_33_33# half_adder_magic_2/A 2.62fF
+C27 full_adder_magic_0/half_adder_magic_1/xor_magic_0/w_0_0# full_adder_magic_0/half_adder_magic_1/A 3.18fF
+C28 half_adder_magic_0/xor_magic_0/w_33_n32# half_adder_magic_0/xor_magic_0/a_13_6# 3.18fF
+C29 full_adder_magic_6/half_adder_magic_0/A full_adder_magic_6/half_adder_magic_0/xor_magic_0/w_0_0# 3.18fF
+C30 VDD full_adder_magic_4/half_adder_magic_0/xor_magic_0/w_0_0# 2.26fF
+C31 half_adder_magic_1/SUM full_adder_magic_0/half_adder_magic_0/xor_magic_0/w_33_n32# 2.62fF
+C32 VDD full_adder_magic_2/half_adder_magic_0/xor_magic_0/w_33_n32# 2.26fF
+C33 GND A1 3.60fF
+C34 VDD full_adder_magic_5/half_adder_magic_1/xor_magic_0/w_33_n32# 2.26fF
+C35 full_adder_magic_1/half_adder_magic_0/xor_magic_0/w_33_33# VDD 2.26fF
+C36 full_adder_magic_5/half_adder_magic_0/xor_magic_0/w_33_33# and_magic_9/inverter_magic_0/OUTPUT 2.62fF
+C37 full_adder_magic_2/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# and_magic_14/inverter_magic_0/OUTPUT 2.62fF
+C38 full_adder_magic_1/half_adder_magic_1/xor_magic_0/w_0_0# VDD 2.26fF
+C39 and_magic_9/nand_magic_0/w_0_0# and_magic_9/nand_magic_0/OUTPUT 3.75fF
+C40 VDD full_adder_magic_7/half_adder_magic_0/xor_magic_0/w_33_n32# 2.26fF
+C41 full_adder_magic_2/C_IN full_adder_magic_2/half_adder_magic_1/xor_magic_0/w_33_n32# 2.62fF
+C42 full_adder_magic_0/half_adder_magic_1/xor_magic_0/w_33_33# full_adder_magic_0/half_adder_magic_1/xor_magic_0/a_13_6# 2.62fF
+C43 full_adder_magic_7/half_adder_magic_1/xor_magic_0/w_0_0# full_adder_magic_7/half_adder_magic_1/A 3.18fF
+C44 full_adder_magic_5/half_adder_magic_0/B full_adder_magic_5/half_adder_magic_0/xor_magic_0/w_0_0# 2.62fF
+C45 GND full_adder_magic_5/half_adder_magic_0/B 2.34fF
+C46 half_adder_magic_1/SUM full_adder_magic_0/half_adder_magic_0/xor_magic_0/w_0_0# 2.62fF
+C47 full_adder_magic_1/half_adder_magic_1/xor_magic_0/w_33_33# full_adder_magic_1/half_adder_magic_1/A 2.62fF
+C48 and_magic_6/nand_magic_0/w_0_0# and_magic_6/nand_magic_0/OUTPUT 3.75fF
+C49 full_adder_magic_7/half_adder_magic_1/xor_magic_0/w_33_33# full_adder_magic_7/half_adder_magic_1/xor_magic_0/a_13_6# 2.62fF
+C50 full_adder_magic_7/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# full_adder_magic_7/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT 3.75fF
+C51 full_adder_magic_3/C_IN full_adder_magic_3/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# 2.62fF
+C52 full_adder_magic_1/half_adder_magic_0/xor_magic_0/w_33_n32# VDD 2.26fF
+C53 full_adder_magic_7/half_adder_magic_0/B full_adder_magic_7/half_adder_magic_0/xor_magic_0/w_33_n32# 2.62fF
+C54 full_adder_magic_2/half_adder_magic_1/xor_magic_0/w_0_0# full_adder_magic_2/half_adder_magic_1/A 3.18fF
+C55 A3 and_magic_11/nand_magic_0/w_0_0# 2.62fF
+C56 full_adder_magic_4/half_adder_magic_0/xor_magic_0/w_0_0# and_magic_12/inverter_magic_0/OUTPUT 3.18fF
+C57 full_adder_magic_6/half_adder_magic_1/xor_magic_0/w_67_0# full_adder_magic_6/half_adder_magic_1/xor_magic_0/a_46_n26# 2.62fF
+C58 full_adder_magic_5/or_magic_0/nor_magic_0/w_0_0# full_adder_magic_5/or_magic_0/nor_magic_0/OUTPUT 3.75fF
+C59 full_adder_magic_4/half_adder_magic_0/xor_magic_0/w_33_n32# full_adder_magic_4/half_adder_magic_0/xor_magic_0/a_13_6# 3.18fF
+C60 GND A3 3.60fF
+C61 full_adder_magic_2/half_adder_magic_1/xor_magic_0/w_33_33# full_adder_magic_2/half_adder_magic_1/A 2.62fF
+C62 VDD full_adder_magic_7/half_adder_magic_0/xor_magic_0/w_0_0# 2.26fF
+C63 and_magic_7/nand_magic_0/w_0_0# VDD 3.38fF
+C64 full_adder_magic_6/half_adder_magic_0/xor_magic_0/w_67_0# full_adder_magic_6/half_adder_magic_0/xor_magic_0/a_46_n26# 2.62fF
+C65 half_adder_magic_0/xor_magic_0/w_67_0# half_adder_magic_0/xor_magic_0/a_46_n26# 2.62fF
+C66 full_adder_magic_6/half_adder_magic_1/xor_magic_0/w_67_0# full_adder_magic_6/half_adder_magic_1/xor_magic_0/a_46_39# 3.18fF
+C67 VDD full_adder_magic_4/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# 3.38fF
+C68 full_adder_magic_4/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# full_adder_magic_4/half_adder_magic_1/A 2.62fF
+C69 VDD full_adder_magic_7/half_adder_magic_0/xor_magic_0/w_33_33# 2.26fF
+C70 full_adder_magic_6/half_adder_magic_1/xor_magic_0/w_33_33# full_adder_magic_6/half_adder_magic_1/A 2.62fF
+C71 half_adder_magic_2/xor_magic_0/w_33_33# half_adder_magic_2/xor_magic_0/a_13_6# 2.62fF
+C72 VDD full_adder_magic_3/half_adder_magic_0/xor_magic_0/w_33_33# 2.26fF
+C73 A0 and_magic_5/nand_magic_0/w_0_0# 2.62fF
+C74 half_adder_magic_0/xor_magic_0/w_67_0# half_adder_magic_0/xor_magic_0/a_46_39# 3.18fF
+C75 full_adder_magic_7/half_adder_magic_0/xor_magic_0/w_0_0# full_adder_magic_7/half_adder_magic_0/B 2.62fF
+C76 half_adder_magic_1/xor_magic_0/w_33_33# half_adder_magic_1/A 2.62fF
+C77 A3 and_magic_9/nand_magic_0/w_0_0# 2.62fF
+C78 full_adder_magic_1/half_adder_magic_1/xor_magic_0/w_33_n32# VDD 2.26fF
+C79 and_magic_5/nand_magic_0/w_0_0# and_magic_5/nand_magic_0/OUTPUT 3.75fF
+C80 full_adder_magic_0/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# full_adder_magic_0/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT 3.75fF
+C81 and_magic_11/nand_magic_0/w_0_0# VDD 3.38fF
+C82 full_adder_magic_7/half_adder_magic_1/xor_magic_0/w_33_n32# full_adder_magic_7/half_adder_magic_1/xor_magic_0/a_13_6# 3.18fF
+C83 VDD full_adder_magic_7/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# 3.38fF
+C84 B1 and_magic_1/nand_magic_0/w_0_0# 2.62fF
+C85 VDD full_adder_magic_5/half_adder_magic_0/xor_magic_0/w_0_0# 2.26fF
+C86 full_adder_magic_0/half_adder_magic_0/xor_magic_0/w_0_0# half_adder_magic_0/CARRY 3.18fF
+C87 full_adder_magic_5/C_IN full_adder_magic_5/half_adder_magic_1/xor_magic_0/w_0_0# 2.62fF
+C88 full_adder_magic_5/half_adder_magic_1/xor_magic_0/w_0_0# full_adder_magic_5/half_adder_magic_1/A 3.18fF
+C89 full_adder_magic_0/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# full_adder_magic_0/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT 3.75fF
+C90 GND VDD 19.62fF
+C91 B1 A0 2.16fF
+C92 full_adder_magic_5/half_adder_magic_0/xor_magic_0/w_33_33# full_adder_magic_5/half_adder_magic_0/xor_magic_0/a_13_6# 2.62fF
+C93 VDD full_adder_magic_6/half_adder_magic_1/xor_magic_0/w_33_33# 2.26fF
+C94 half_adder_magic_2/xor_magic_0/w_33_33# VDD 2.26fF
+C95 A1 and_magic_15/nand_magic_0/w_0_0# 2.62fF
+C96 VDD full_adder_magic_4/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# 3.38fF
+C97 full_adder_magic_4/half_adder_magic_1/xor_magic_0/w_67_0# full_adder_magic_4/half_adder_magic_1/xor_magic_0/a_46_n26# 2.62fF
+C98 full_adder_magic_0/half_adder_magic_0/xor_magic_0/w_33_33# VDD 2.26fF
+C99 and_magic_9/nand_magic_0/w_0_0# VDD 3.38fF
+C100 and_magic_10/nand_magic_0/w_0_0# B3 2.62fF
+C101 B1 and_magic_4/nand_magic_0/w_0_0# 2.62fF
+C102 full_adder_magic_1/half_adder_magic_1/xor_magic_0/w_33_33# full_adder_magic_1/half_adder_magic_1/xor_magic_0/a_13_6# 2.62fF
+C103 full_adder_magic_5/half_adder_magic_1/xor_magic_0/w_33_33# full_adder_magic_5/half_adder_magic_1/xor_magic_0/a_13_6# 2.62fF
+C104 VDD full_adder_magic_2/half_adder_magic_0/xor_magic_0/w_0_0# 2.26fF
+C105 half_adder_magic_3/xor_magic_0/w_0_0# VDD 2.26fF
+C106 full_adder_magic_4/half_adder_magic_1/xor_magic_0/w_67_0# full_adder_magic_4/half_adder_magic_1/xor_magic_0/a_46_39# 3.18fF
+C107 full_adder_magic_2/or_magic_0/nor_magic_0/w_0_0# full_adder_magic_2/or_magic_0/nor_magic_0/OUTPUT 3.75fF
+C108 VDD full_adder_magic_4/half_adder_magic_1/xor_magic_0/w_33_33# 2.26fF
+C109 VDD full_adder_magic_3/half_adder_magic_0/xor_magic_0/w_0_0# 2.26fF
+C110 full_adder_magic_4/half_adder_magic_1/xor_magic_0/w_33_33# full_adder_magic_4/half_adder_magic_1/A 2.62fF
+C111 full_adder_magic_2/half_adder_magic_1/xor_magic_0/w_33_33# full_adder_magic_2/half_adder_magic_1/xor_magic_0/a_13_6# 2.62fF
+C112 B0 and_magic_6/nand_magic_0/w_0_0# 2.62fF
+C113 full_adder_magic_0/half_adder_magic_0/xor_magic_0/w_33_n32# full_adder_magic_0/half_adder_magic_0/xor_magic_0/a_13_6# 3.18fF
+C114 full_adder_magic_3/C_IN full_adder_magic_3/half_adder_magic_1/xor_magic_0/w_33_n32# 2.62fF
+C115 and_magic_3/nand_magic_0/w_0_0# A2 2.62fF
+C116 half_adder_magic_2/xor_magic_0/w_0_0# half_adder_magic_2/A 3.18fF
+C117 half_adder_magic_1/xor_magic_0/w_33_33# VDD 2.26fF
+C118 full_adder_magic_5/C_IN full_adder_magic_5/half_adder_magic_1/xor_magic_0/w_33_n32# 2.62fF
+C119 full_adder_magic_0/half_adder_magic_0/xor_magic_0/w_67_0# VDD 2.26fF
+C120 A2 and_magic_12/nand_magic_0/w_0_0# 2.62fF
+C121 half_adder_magic_3/and_magic_0/nand_magic_0/w_0_0# half_adder_magic_3/and_magic_0/nand_magic_0/OUTPUT 3.75fF
+C122 and_magic_8/nand_magic_0/w_0_0# B3 2.62fF
+C123 half_adder_magic_2/and_magic_0/nand_magic_0/w_0_0# half_adder_magic_2/and_magic_0/nand_magic_0/OUTPUT 3.75fF
+C124 full_adder_magic_3/half_adder_magic_1/xor_magic_0/w_33_33# full_adder_magic_3/half_adder_magic_1/A 2.62fF
+C125 GND B2 7.20fF
+C126 full_adder_magic_4/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# and_magic_12/inverter_magic_0/OUTPUT 2.62fF
+C127 full_adder_magic_6/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# full_adder_magic_6/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT 3.75fF
+C128 half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT 3.75fF
+C129 and_magic_15/nand_magic_0/w_0_0# and_magic_15/nand_magic_0/OUTPUT 3.75fF
+C130 A3 B3 2.16fF
+C131 full_adder_magic_3/half_adder_magic_0/xor_magic_0/w_33_33# and_magic_13/inverter_magic_0/OUTPUT 2.62fF
+C132 A0 A1 2.16fF
+C133 B0 and_magic_2/nand_magic_0/w_0_0# 2.62fF
+C134 and_magic_0/nand_magic_0/w_0_0# VDD 3.38fF
+C135 VDD full_adder_magic_7/half_adder_magic_1/xor_magic_0/w_67_0# 2.26fF
+C136 full_adder_magic_2/C_IN full_adder_magic_2/half_adder_magic_1/xor_magic_0/w_0_0# 2.62fF
+C137 B2 and_magic_9/nand_magic_0/w_0_0# 2.62fF
+C138 full_adder_magic_7/or_magic_0/nor_magic_0/w_0_0# full_adder_magic_7/half_adder_magic_0/CARRY 2.62fF
+C139 full_adder_magic_5/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# full_adder_magic_5/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT 3.75fF
+C140 full_adder_magic_0/half_adder_magic_1/xor_magic_0/w_33_33# VDD 2.26fF
+C141 VDD and_magic_15/nand_magic_0/w_0_0# 3.38fF
+C142 half_adder_magic_1/SUM full_adder_magic_0/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# 2.62fF
+C143 full_adder_magic_7/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# full_adder_magic_7/half_adder_magic_1/A 2.62fF
+C144 A1 and_magic_4/nand_magic_0/w_0_0# 2.62fF
+C145 full_adder_magic_6/half_adder_magic_1/CARRY full_adder_magic_6/or_magic_0/nor_magic_0/w_0_0# 2.62fF
+C146 VDD full_adder_magic_5/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# 3.38fF
+C147 full_adder_magic_4/half_adder_magic_0/xor_magic_0/w_67_0# full_adder_magic_4/half_adder_magic_0/xor_magic_0/a_46_n26# 2.62fF
+C148 half_adder_magic_3/xor_magic_0/w_33_33# half_adder_magic_3/A 2.62fF
+C149 full_adder_magic_0/half_adder_magic_1/xor_magic_0/w_67_0# VDD 2.26fF
+C150 full_adder_magic_0/half_adder_magic_1/xor_magic_0/w_33_n32# full_adder_magic_0/half_adder_magic_1/xor_magic_0/a_13_6# 3.18fF
+C151 full_adder_magic_4/half_adder_magic_0/xor_magic_0/w_67_0# full_adder_magic_4/half_adder_magic_0/xor_magic_0/a_46_39# 3.18fF
+C152 VDD full_adder_magic_2/half_adder_magic_1/xor_magic_0/w_33_n32# 2.26fF
+C153 and_magic_14/nand_magic_0/w_0_0# B3 2.62fF
+C154 full_adder_magic_2/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# full_adder_magic_2/half_adder_magic_1/A 2.62fF
+C155 full_adder_magic_6/half_adder_magic_1/xor_magic_0/w_0_0# full_adder_magic_6/half_adder_magic_1/A 3.18fF
+C156 full_adder_magic_3/half_adder_magic_1/xor_magic_0/w_0_0# full_adder_magic_3/half_adder_magic_1/A 3.18fF
+C157 full_adder_magic_3/half_adder_magic_0/xor_magic_0/w_0_0# and_magic_13/inverter_magic_0/OUTPUT 3.18fF
+C158 full_adder_magic_1/C_IN full_adder_magic_1/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# 2.62fF
+C159 half_adder_magic_1/xor_magic_0/w_0_0# half_adder_magic_1/A 3.18fF
+C160 full_adder_magic_3/half_adder_magic_0/xor_magic_0/w_33_n32# full_adder_magic_3/half_adder_magic_0/xor_magic_0/a_13_6# 3.18fF
+C161 full_adder_magic_6/half_adder_magic_1/xor_magic_0/w_33_33# full_adder_magic_6/half_adder_magic_1/xor_magic_0/a_13_6# 2.62fF
+C162 full_adder_magic_6/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# full_adder_magic_6/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT 3.75fF
+C163 full_adder_magic_3/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# full_adder_magic_3/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT 3.75fF
+C164 full_adder_magic_5/half_adder_magic_0/xor_magic_0/w_33_n32# full_adder_magic_5/half_adder_magic_0/xor_magic_0/a_13_6# 3.18fF
+C165 full_adder_magic_0/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# full_adder_magic_0/half_adder_magic_1/A 2.62fF
+C166 and_magic_8/inverter_magic_0/OUTPUT full_adder_magic_4/half_adder_magic_0/xor_magic_0/w_33_n32# 2.62fF
+C167 half_adder_magic_1/xor_magic_0/w_33_33# half_adder_magic_1/xor_magic_0/a_13_6# 2.62fF
+C168 B1 and_magic_13/nand_magic_0/w_0_0# 2.62fF
+C169 full_adder_magic_0/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# half_adder_magic_0/CARRY 2.62fF
+C170 and_magic_1/nand_magic_0/w_0_0# VDD 3.38fF
+C171 full_adder_magic_1/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# and_magic_7/inverter_magic_0/OUTPUT 2.62fF
+C172 full_adder_magic_7/half_adder_magic_1/CARRY full_adder_magic_7/or_magic_0/nor_magic_0/w_0_0# 2.62fF
+C173 B2 and_magic_15/nand_magic_0/w_0_0# 2.62fF
+C174 and_magic_1/nand_magic_0/OUTPUT and_magic_1/nand_magic_0/w_0_0# 3.75fF
+C175 VDD full_adder_magic_6/half_adder_magic_1/xor_magic_0/w_0_0# 2.26fF
+C176 half_adder_magic_2/xor_magic_0/w_0_0# VDD 2.26fF
+C177 full_adder_magic_1/or_magic_0/nor_magic_0/w_0_0# full_adder_magic_1/half_adder_magic_0/CARRY 2.62fF
+C178 full_adder_magic_1/half_adder_magic_0/xor_magic_0/w_33_33# and_magic_6/inverter_magic_0/OUTPUT 2.62fF
+C179 VDD full_adder_magic_3/half_adder_magic_1/xor_magic_0/w_33_33# 2.26fF
+C180 full_adder_magic_2/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# full_adder_magic_2/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT 3.75fF
+C181 and_magic_10/nand_magic_0/w_0_0# and_magic_10/nand_magic_0/OUTPUT 3.75fF
+C182 full_adder_magic_5/half_adder_magic_0/B full_adder_magic_5/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# 2.62fF
+C183 A0 and_magic_14/nand_magic_0/w_0_0# 2.62fF
+C184 full_adder_magic_5/half_adder_magic_0/xor_magic_0/w_0_0# and_magic_9/inverter_magic_0/OUTPUT 3.18fF
+C185 full_adder_magic_0/half_adder_magic_0/xor_magic_0/w_67_0# full_adder_magic_0/half_adder_magic_0/xor_magic_0/a_46_39# 3.18fF
+C186 VDD full_adder_magic_2/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# 3.38fF
+C187 and_magic_4/nand_magic_0/w_0_0# VDD 3.38fF
+C188 VDD full_adder_magic_0/or_magic_0/nor_magic_0/w_0_0# 2.26fF
+C189 half_adder_magic_3/xor_magic_0/w_33_33# half_adder_magic_3/xor_magic_0/a_13_6# 2.62fF
+C190 full_adder_magic_7/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# full_adder_magic_7/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT 3.75fF
+C191 full_adder_magic_0/half_adder_magic_0/CARRY full_adder_magic_0/or_magic_0/nor_magic_0/w_0_0# 2.62fF
+C192 full_adder_magic_3/half_adder_magic_0/B full_adder_magic_3/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# 2.62fF
+C193 VDD full_adder_magic_7/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# 3.38fF
+C194 full_adder_magic_0/half_adder_magic_1/xor_magic_0/w_67_0# full_adder_magic_0/half_adder_magic_1/xor_magic_0/a_46_39# 3.18fF
+C195 half_adder_magic_1/xor_magic_0/w_0_0# half_adder_magic_1/B 2.62fF
+C196 half_adder_magic_1/xor_magic_0/w_0_0# VDD 2.26fF
+C197 full_adder_magic_4/half_adder_magic_1/xor_magic_0/w_33_33# full_adder_magic_4/half_adder_magic_1/xor_magic_0/a_13_6# 2.62fF
+C198 half_adder_magic_3/and_magic_0/nand_magic_0/w_0_0# half_adder_magic_3/A 2.62fF
+C199 full_adder_magic_3/half_adder_magic_0/xor_magic_0/w_67_0# full_adder_magic_3/half_adder_magic_0/xor_magic_0/a_46_n26# 2.62fF
+C200 half_adder_magic_2/and_magic_0/nand_magic_0/w_0_0# half_adder_magic_2/A 2.62fF
+C201 full_adder_magic_2/half_adder_magic_0/xor_magic_0/w_33_n32# full_adder_magic_2/half_adder_magic_0/xor_magic_0/a_13_6# 3.18fF
+C202 full_adder_magic_1/half_adder_magic_1/xor_magic_0/w_0_0# full_adder_magic_1/half_adder_magic_1/A 3.18fF
+C203 VDD full_adder_magic_6/half_adder_magic_0/xor_magic_0/w_33_33# 2.26fF
+C204 full_adder_magic_5/half_adder_magic_1/xor_magic_0/w_33_n32# full_adder_magic_5/half_adder_magic_1/xor_magic_0/a_13_6# 3.18fF
+C205 full_adder_magic_7/half_adder_magic_0/B full_adder_magic_7/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# 2.62fF
+C206 full_adder_magic_3/half_adder_magic_0/xor_magic_0/w_67_0# full_adder_magic_3/half_adder_magic_0/xor_magic_0/a_46_39# 3.18fF
+C207 full_adder_magic_3/half_adder_magic_1/xor_magic_0/w_33_33# full_adder_magic_3/half_adder_magic_1/xor_magic_0/a_13_6# 2.62fF
+C208 full_adder_magic_0/half_adder_magic_1/xor_magic_0/w_0_0# VDD 2.26fF
+C209 full_adder_magic_6/or_magic_0/nor_magic_0/w_0_0# full_adder_magic_6/or_magic_0/nor_magic_0/OUTPUT 3.75fF
+C210 full_adder_magic_3/or_magic_0/nor_magic_0/w_0_0# full_adder_magic_3/or_magic_0/nor_magic_0/OUTPUT 3.75fF
+C211 VDD full_adder_magic_5/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# 3.38fF
+C212 and_magic_8/nand_magic_0/w_0_0# and_magic_8/nand_magic_0/OUTPUT 3.75fF
+C213 VDD full_adder_magic_3/half_adder_magic_1/xor_magic_0/w_0_0# 2.26fF
+C214 full_adder_magic_5/C_IN full_adder_magic_5/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# 2.62fF
+C215 full_adder_magic_3/half_adder_magic_0/xor_magic_0/w_33_33# full_adder_magic_3/half_adder_magic_0/xor_magic_0/a_13_6# 2.62fF
+C216 full_adder_magic_7/half_adder_magic_0/xor_magic_0/w_33_n32# full_adder_magic_7/half_adder_magic_0/xor_magic_0/a_13_6# 3.18fF
+C217 full_adder_magic_5/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# full_adder_magic_5/half_adder_magic_1/A 2.62fF
+C218 full_adder_magic_6/C_IN full_adder_magic_6/half_adder_magic_1/xor_magic_0/w_0_0# 2.62fF
+C219 full_adder_magic_0/half_adder_magic_0/xor_magic_0/w_33_n32# VDD 2.26fF
+C220 full_adder_magic_2/half_adder_magic_0/xor_magic_0/w_0_0# and_magic_15/inverter_magic_0/OUTPUT 3.18fF
+C221 and_magic_11/nand_magic_0/w_0_0# B3 2.62fF
+C222 full_adder_magic_0/half_adder_magic_1/xor_magic_0/w_0_0# full_adder_magic_0/C_IN 2.62fF
+C223 and_magic_4/nand_magic_0/w_0_0# and_magic_4/nand_magic_0/OUTPUT 3.75fF
+C224 GND B3 6.30fF
+C225 full_adder_magic_1/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# VDD 3.38fF
+C226 half_adder_magic_0/xor_magic_0/w_33_33# half_adder_magic_0/A 2.62fF
+C227 full_adder_magic_5/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# full_adder_magic_5/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT 3.75fF
+C228 full_adder_magic_2/C_IN full_adder_magic_2/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# 2.62fF
+C229 A3 and_magic_13/nand_magic_0/w_0_0# 2.62fF
+C230 half_adder_magic_3/xor_magic_0/w_33_33# VDD 2.26fF
+C231 VDD full_adder_magic_6/or_magic_0/nor_magic_0/w_0_0# 2.26fF
+C232 VDD full_adder_magic_4/half_adder_magic_0/xor_magic_0/w_33_33# 2.26fF
+C233 full_adder_magic_7/C_IN full_adder_magic_7/half_adder_magic_1/xor_magic_0/w_33_n32# 2.62fF
+C234 full_adder_magic_2/half_adder_magic_1/xor_magic_0/w_67_0# full_adder_magic_2/half_adder_magic_1/xor_magic_0/a_46_39# 3.18fF
+C235 full_adder_magic_0/half_adder_magic_0/xor_magic_0/w_0_0# VDD 2.26fF
+C236 VDD full_adder_magic_2/half_adder_magic_1/xor_magic_0/w_0_0# 2.26fF
+C237 half_adder_magic_0/xor_magic_0/w_33_33# VDD 2.26fF
+C238 full_adder_magic_0/half_adder_magic_1/xor_magic_0/w_33_n32# VDD 2.26fF
+C239 full_adder_magic_3/C_IN and_magic_12/inverter_magic_0/OUTPUT 12.64fF
+C240 full_adder_magic_6/or_magic_0/nor_magic_0/w_0_0# full_adder_magic_6/half_adder_magic_0/CARRY 2.62fF
+C241 full_adder_magic_3/or_magic_0/nor_magic_0/w_0_0# full_adder_magic_3/half_adder_magic_0/CARRY 2.62fF
+C242 and_magic_3/nand_magic_0/w_0_0# VDD 3.38fF
+C243 VDD full_adder_magic_2/half_adder_magic_1/xor_magic_0/w_33_33# 2.26fF
+C244 full_adder_magic_7/half_adder_magic_0/xor_magic_0/w_33_33# full_adder_magic_7/half_adder_magic_0/xor_magic_0/a_13_6# 2.62fF
+C245 full_adder_magic_4/or_magic_0/nor_magic_0/w_0_0# full_adder_magic_4/or_magic_0/nor_magic_0/OUTPUT 3.75fF
+C246 full_adder_magic_3/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# full_adder_magic_3/half_adder_magic_1/A 2.62fF
+C247 and_magic_12/nand_magic_0/w_0_0# VDD 3.38fF
+C248 half_adder_magic_2/xor_magic_0/w_0_0# half_adder_magic_2/B 2.62fF
+C249 full_adder_magic_7/C_IN full_adder_magic_7/half_adder_magic_1/xor_magic_0/w_0_0# 2.62fF
+C250 full_adder_magic_5/half_adder_magic_0/CARRY full_adder_magic_5/or_magic_0/nor_magic_0/w_0_0# 2.62fF
+C251 full_adder_magic_3/half_adder_magic_0/B full_adder_magic_3/half_adder_magic_0/xor_magic_0/w_33_n32# 2.62fF
+C252 VDD full_adder_magic_4/or_magic_0/nor_magic_0/w_0_0# 2.26fF
+C253 full_adder_magic_1/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# VDD 3.38fF
+C254 half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# half_adder_magic_1/A 2.62fF
+C255 GND A0 2.70fF
+C256 full_adder_magic_5/half_adder_magic_1/xor_magic_0/w_67_0# full_adder_magic_5/half_adder_magic_1/xor_magic_0/a_46_39# 3.18fF
+C257 half_adder_magic_3/xor_magic_0/w_33_n32# half_adder_magic_3/xor_magic_0/a_13_6# 3.18fF
+C258 full_adder_magic_4/half_adder_magic_0/xor_magic_0/w_0_0# and_magic_8/inverter_magic_0/OUTPUT 2.62fF
+C259 VDD and_magic_13/nand_magic_0/w_0_0# 3.38fF
+C260 full_adder_magic_0/C_IN full_adder_magic_0/half_adder_magic_1/xor_magic_0/w_33_n32# 2.62fF
+C261 full_adder_magic_1/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# full_adder_magic_1/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT 3.75fF
+C262 half_adder_magic_3/xor_magic_0/w_0_0# half_adder_magic_3/B 2.62fF
+C263 full_adder_magic_7/half_adder_magic_0/A full_adder_magic_7/half_adder_magic_0/xor_magic_0/w_0_0# 3.18fF
+C264 full_adder_magic_7/half_adder_magic_0/xor_magic_0/w_67_0# full_adder_magic_7/half_adder_magic_0/xor_magic_0/a_46_n26# 2.62fF
+C265 full_adder_magic_6/half_adder_magic_0/xor_magic_0/w_33_33# full_adder_magic_6/half_adder_magic_0/xor_magic_0/a_13_6# 2.62fF
+C266 full_adder_magic_4/half_adder_magic_0/xor_magic_0/w_33_33# and_magic_12/inverter_magic_0/OUTPUT 2.62fF
+C267 half_adder_magic_2/and_magic_0/nand_magic_0/w_0_0# VDD 3.38fF
+C268 full_adder_magic_7/half_adder_magic_0/xor_magic_0/w_67_0# full_adder_magic_7/half_adder_magic_0/xor_magic_0/a_46_39# 3.18fF
+C269 full_adder_magic_1/half_adder_magic_0/xor_magic_0/w_0_0# and_magic_7/inverter_magic_0/OUTPUT 2.62fF
+C270 full_adder_magic_7/half_adder_magic_0/A full_adder_magic_7/half_adder_magic_0/xor_magic_0/w_33_33# 2.62fF
+C271 full_adder_magic_1/half_adder_magic_0/xor_magic_0/w_33_33# full_adder_magic_1/half_adder_magic_0/xor_magic_0/a_13_6# 2.62fF
+C272 half_adder_magic_2/xor_magic_0/w_67_0# VDD 2.26fF
+C273 VDD full_adder_magic_3/half_adder_magic_1/xor_magic_0/w_67_0# 2.26fF
+C274 VDD full_adder_magic_3/or_magic_0/nor_magic_0/w_0_0# 2.26fF
+C275 full_adder_magic_4/or_magic_0/nor_magic_0/w_0_0# full_adder_magic_4/half_adder_magic_0/CARRY 2.62fF
+C276 GND full_adder_magic_7/half_adder_magic_0/A 7.88fF
+C277 full_adder_magic_1/half_adder_magic_1/xor_magic_0/w_33_n32# full_adder_magic_1/half_adder_magic_1/xor_magic_0/a_13_6# 3.18fF
+C278 B2 and_magic_12/nand_magic_0/w_0_0# 2.62fF
+C279 VDD full_adder_magic_2/half_adder_magic_1/xor_magic_0/w_67_0# 2.26fF
+C280 half_adder_magic_3/and_magic_0/nand_magic_0/w_0_0# VDD 3.38fF
+C281 full_adder_magic_2/half_adder_magic_1/CARRY full_adder_magic_2/or_magic_0/nor_magic_0/w_0_0# 2.62fF
+C282 full_adder_magic_1/or_magic_0/nor_magic_0/w_0_0# full_adder_magic_1/or_magic_0/nor_magic_0/OUTPUT 3.75fF
+C283 A2 and_magic_10/nand_magic_0/w_0_0# 2.62fF
+C284 full_adder_magic_1/half_adder_magic_0/xor_magic_0/w_33_n32# full_adder_magic_1/half_adder_magic_0/xor_magic_0/a_13_6# 3.18fF
+C285 full_adder_magic_5/half_adder_magic_0/xor_magic_0/w_67_0# full_adder_magic_5/half_adder_magic_0/xor_magic_0/a_46_39# 3.18fF
+C286 VDD full_adder_magic_6/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# 3.38fF
+C287 half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# half_adder_magic_1/B 2.62fF
+C288 half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# VDD 3.38fF
+C289 A1 A2 2.16fF
+C290 full_adder_magic_4/C_IN full_adder_magic_4/half_adder_magic_1/xor_magic_0/w_33_n32# 2.62fF
+C291 half_adder_magic_3/xor_magic_0/w_67_0# VDD 2.26fF
+C292 half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# half_adder_magic_0/B 2.62fF
+C293 and_magic_3/nand_magic_0/w_0_0# and_magic_3/nand_magic_0/OUTPUT 3.75fF
+C294 and_magic_14/nand_magic_0/w_0_0# and_magic_14/nand_magic_0/OUTPUT 3.75fF
+C295 full_adder_magic_6/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# full_adder_magic_6/half_adder_magic_1/A 2.62fF
+C296 half_adder_magic_3/xor_magic_0/w_33_n32# VDD 2.26fF
+C297 full_adder_magic_2/half_adder_magic_0/xor_magic_0/w_67_0# full_adder_magic_2/half_adder_magic_0/xor_magic_0/a_46_39# 3.18fF
+C298 VDD full_adder_magic_6/half_adder_magic_0/xor_magic_0/w_67_0# 2.26fF
+C299 half_adder_magic_1/xor_magic_0/w_67_0# VDD 2.26fF
+C300 GND B0 7.20fF
+C301 and_magic_0/nand_magic_0/w_0_0# A0 2.62fF
+C302 half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# half_adder_magic_0/A 2.62fF
+C303 and_magic_12/nand_magic_0/w_0_0# and_magic_12/nand_magic_0/OUTPUT 3.75fF
+C304 half_adder_magic_2/xor_magic_0/w_33_n32# half_adder_magic_2/xor_magic_0/a_13_6# 3.18fF
+C305 and_magic_2/nand_magic_0/w_0_0# and_magic_2/nand_magic_0/OUTPUT 3.75fF
+C306 full_adder_magic_4/C_IN full_adder_magic_4/half_adder_magic_1/xor_magic_0/w_0_0# 2.62fF
+C307 full_adder_magic_1/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# full_adder_magic_1/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT 3.75fF
+C308 VDD full_adder_magic_6/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# 3.38fF
+C309 VDD full_adder_magic_3/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# 3.38fF
+C310 full_adder_magic_2/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# and_magic_15/inverter_magic_0/OUTPUT 2.62fF
+C311 half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# VDD 3.38fF
+C312 A2 A3 2.16fF
+C313 full_adder_magic_5/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# and_magic_9/inverter_magic_0/OUTPUT 2.62fF
+C314 and_magic_13/nand_magic_0/w_0_0# and_magic_13/nand_magic_0/OUTPUT 3.75fF
+C315 full_adder_magic_2/half_adder_magic_1/xor_magic_0/w_67_0# full_adder_magic_2/half_adder_magic_1/xor_magic_0/a_46_n26# 2.62fF
+C316 full_adder_magic_4/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# and_magic_8/inverter_magic_0/OUTPUT 2.62fF
+C317 VDD full_adder_magic_6/half_adder_magic_1/xor_magic_0/w_67_0# 2.26fF
+C318 GND full_adder_magic_3/half_adder_magic_0/B 3.06fF
+C319 VDD full_adder_magic_2/half_adder_magic_0/xor_magic_0/w_33_33# 2.26fF
+C320 half_adder_magic_2/xor_magic_0/w_33_n32# VDD 2.26fF
+C321 half_adder_magic_0/xor_magic_0/w_33_33# half_adder_magic_0/xor_magic_0/a_13_6# 2.62fF
+C322 half_adder_magic_0/xor_magic_0/w_67_0# VDD 2.26fF
+C323 full_adder_magic_3/half_adder_magic_1/CARRY full_adder_magic_3/or_magic_0/nor_magic_0/w_0_0# 2.62fF
+C324 full_adder_magic_0/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# VDD 3.38fF
+C325 full_adder_magic_1/half_adder_magic_1/xor_magic_0/w_67_0# full_adder_magic_1/half_adder_magic_1/xor_magic_0/a_46_39# 3.18fF
+C326 and_magic_2/nand_magic_0/w_0_0# A1 2.62fF
+C327 full_adder_magic_2/half_adder_magic_0/xor_magic_0/w_67_0# full_adder_magic_2/half_adder_magic_0/xor_magic_0/a_46_n26# 2.62fF
+C328 and_magic_6/nand_magic_0/w_0_0# A3 2.62fF
+C329 B1 A1 2.16fF
+C330 VDD full_adder_magic_4/half_adder_magic_1/xor_magic_0/w_67_0# 2.26fF
+C331 A0 and_magic_1/nand_magic_0/w_0_0# 2.62fF
+C332 full_adder_magic_6/half_adder_magic_0/A full_adder_magic_6/half_adder_magic_0/xor_magic_0/w_33_33# 2.62fF
+C333 full_adder_magic_3/half_adder_magic_0/B full_adder_magic_3/half_adder_magic_0/xor_magic_0/w_0_0# 2.62fF
+C334 VDD full_adder_magic_2/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# 3.38fF
+C335 half_adder_magic_2/and_magic_0/nand_magic_0/w_0_0# half_adder_magic_2/B 2.62fF
+C336 full_adder_magic_7/C_IN full_adder_magic_7/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# 2.62fF
+C337 and_magic_0/nand_magic_0/w_0_0# B0 2.62fF
+C338 full_adder_magic_0/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# VDD 3.38fF
+C339 full_adder_magic_0/half_adder_magic_1/CARRY full_adder_magic_0/or_magic_0/nor_magic_0/w_0_0# 2.62fF
+C340 full_adder_magic_1/half_adder_magic_0/xor_magic_0/w_0_0# VDD 2.26fF
+C341 full_adder_magic_4/half_adder_magic_0/xor_magic_0/w_33_33# full_adder_magic_4/half_adder_magic_0/xor_magic_0/a_13_6# 2.62fF
+C342 VDD full_adder_magic_7/or_magic_0/nor_magic_0/w_0_0# 2.26fF
+C343 and_magic_14/inverter_magic_0/OUTPUT full_adder_magic_2/half_adder_magic_0/xor_magic_0/w_33_n32# 2.62fF
+C344 full_adder_magic_1/half_adder_magic_1/xor_magic_0/w_33_33# VDD 2.26fF
+C345 and_magic_6/nand_magic_0/w_0_0# VDD 3.38fF
+C346 full_adder_magic_6/C_IN full_adder_magic_6/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# 2.62fF
+C347 and_magic_10/inverter_magic_0/OUTPUT full_adder_magic_6/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# 2.62fF
+C348 VDD full_adder_magic_6/half_adder_magic_0/xor_magic_0/w_0_0# 2.26fF
+C349 VDD full_adder_magic_4/half_adder_magic_0/xor_magic_0/w_67_0# 2.26fF
+C350 full_adder_magic_0/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# full_adder_magic_0/C_IN 2.62fF
+C351 VDD full_adder_magic_6/half_adder_magic_1/xor_magic_0/w_33_n32# 2.26fF
+C352 VDD full_adder_magic_3/half_adder_magic_1/xor_magic_0/w_33_n32# 2.26fF
+C353 full_adder_magic_1/half_adder_magic_1/xor_magic_0/w_67_0# full_adder_magic_1/half_adder_magic_1/xor_magic_0/a_46_n26# 2.62fF
+C354 and_magic_5/nand_magic_0/w_0_0# VDD 3.38fF
+C355 A2 B2 2.88fF
+C356 and_magic_2/nand_magic_0/w_0_0# VDD 3.38fF
+C357 VDD full_adder_magic_4/half_adder_magic_1/xor_magic_0/w_33_n32# 2.26fF
+C358 full_adder_magic_0/half_adder_magic_0/xor_magic_0/w_67_0# full_adder_magic_0/half_adder_magic_0/xor_magic_0/a_46_n26# 2.62fF
+C359 full_adder_magic_4/half_adder_magic_1/CARRY full_adder_magic_4/or_magic_0/nor_magic_0/w_0_0# 2.62fF
+C360 full_adder_magic_1/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# full_adder_magic_1/half_adder_magic_1/A 2.62fF
+C361 half_adder_magic_1/xor_magic_0/w_33_n32# VDD 2.26fF
+C362 half_adder_magic_1/B half_adder_magic_1/xor_magic_0/w_33_n32# 2.62fF
+C363 VDD full_adder_magic_6/half_adder_magic_0/xor_magic_0/w_33_n32# 2.26fF
+C364 VDD full_adder_magic_3/half_adder_magic_0/xor_magic_0/w_67_0# 2.26fF
+C365 A0 B0 2.88fF
+C366 full_adder_magic_2/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# full_adder_magic_2/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT 3.75fF
+C367 full_adder_magic_1/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# and_magic_6/inverter_magic_0/OUTPUT 2.62fF
+C368 full_adder_magic_7/half_adder_magic_0/A full_adder_magic_7/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# 2.62fF
+C369 half_adder_magic_0/B half_adder_magic_0/xor_magic_0/w_33_n32# 2.62fF
+C370 A1 and_magic_8/nand_magic_0/w_0_0# 2.62fF
+C371 A2 and_magic_7/nand_magic_0/w_0_0# 2.62fF
+C372 and_magic_7/nand_magic_0/w_0_0# and_magic_7/nand_magic_0/OUTPUT 3.75fF
+C373 full_adder_magic_3/half_adder_magic_1/xor_magic_0/w_33_n32# full_adder_magic_3/half_adder_magic_1/xor_magic_0/a_13_6# 3.18fF
+C374 full_adder_magic_0/half_adder_magic_1/xor_magic_0/w_67_0# full_adder_magic_0/half_adder_magic_1/xor_magic_0/a_46_n26# 2.62fF
+C375 half_adder_magic_2/xor_magic_0/w_33_n32# half_adder_magic_2/B 2.62fF
+C376 VDD full_adder_magic_4/half_adder_magic_1/xor_magic_0/w_0_0# 2.26fF
+C377 full_adder_magic_3/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# full_adder_magic_3/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT 3.75fF
+C378 VDD full_adder_magic_5/half_adder_magic_1/xor_magic_0/w_33_33# 2.26fF
+C379 full_adder_magic_4/half_adder_magic_1/xor_magic_0/w_0_0# full_adder_magic_4/half_adder_magic_1/A 3.18fF
+C380 VDD full_adder_magic_5/half_adder_magic_0/xor_magic_0/w_33_33# 2.26fF
+C381 full_adder_magic_0/half_adder_magic_0/xor_magic_0/w_33_33# half_adder_magic_0/CARRY 2.62fF
+C382 and_magic_5/nand_magic_0/w_0_0# B2 2.62fF
+C383 full_adder_magic_4/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# full_adder_magic_4/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT 3.75fF
+C384 full_adder_magic_5/half_adder_magic_1/CARRY full_adder_magic_5/or_magic_0/nor_magic_0/w_0_0# 2.62fF
+C385 full_adder_magic_7/or_magic_0/nor_magic_0/w_0_0# full_adder_magic_7/or_magic_0/nor_magic_0/OUTPUT 3.75fF
+C386 VDD full_adder_magic_4/half_adder_magic_0/xor_magic_0/w_33_n32# 2.26fF
+C387 VDD full_adder_magic_2/half_adder_magic_0/xor_magic_0/w_67_0# 2.26fF
+C388 VDD full_adder_magic_5/half_adder_magic_1/xor_magic_0/w_67_0# 2.26fF
+C389 GND A2 3.60fF
+C390 full_adder_magic_7/half_adder_magic_1/xor_magic_0/w_67_0# full_adder_magic_7/half_adder_magic_1/xor_magic_0/a_46_n26# 2.62fF
+C391 VDD full_adder_magic_7/half_adder_magic_1/xor_magic_0/w_33_33# 2.26fF
+C392 full_adder_magic_6/C_IN full_adder_magic_6/half_adder_magic_1/xor_magic_0/w_33_n32# 2.62fF
+C393 half_adder_magic_0/xor_magic_0/w_33_n32# VDD 2.26fF
+C394 full_adder_magic_1/half_adder_magic_0/xor_magic_0/w_67_0# full_adder_magic_1/half_adder_magic_0/xor_magic_0/a_46_n26# 2.62fF
+C395 VDD full_adder_magic_7/half_adder_magic_0/xor_magic_0/w_67_0# 2.26fF
+C396 full_adder_magic_0/half_adder_magic_1/xor_magic_0/w_33_33# full_adder_magic_0/half_adder_magic_1/A 2.62fF
+C397 full_adder_magic_2/half_adder_magic_0/xor_magic_0/w_0_0# and_magic_14/inverter_magic_0/OUTPUT 2.62fF
+C398 full_adder_magic_7/half_adder_magic_1/xor_magic_0/w_67_0# full_adder_magic_7/half_adder_magic_1/xor_magic_0/a_46_39# 3.18fF
+C399 full_adder_magic_6/half_adder_magic_0/A full_adder_magic_6/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# 2.62fF
+C400 VDD full_adder_magic_5/half_adder_magic_0/xor_magic_0/w_67_0# 2.26fF
+C401 and_magic_10/nand_magic_0/w_0_0# VDD 3.38fF
+C402 full_adder_magic_0/or_magic_0/nor_magic_0/w_0_0# full_adder_magic_0/or_magic_0/nor_magic_0/OUTPUT 3.75fF
+C403 full_adder_magic_1/half_adder_magic_0/xor_magic_0/w_67_0# full_adder_magic_1/half_adder_magic_0/xor_magic_0/a_46_39# 3.18fF
+C404 VDD full_adder_magic_3/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# 3.38fF
+C405 full_adder_magic_3/C_IN full_adder_magic_3/half_adder_magic_1/xor_magic_0/w_0_0# 2.62fF
+C406 half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT 3.75fF
+C407 and_magic_10/inverter_magic_0/OUTPUT full_adder_magic_6/half_adder_magic_0/xor_magic_0/w_0_0# 2.62fF
+C408 full_adder_magic_3/half_adder_magic_1/xor_magic_0/w_67_0# full_adder_magic_3/half_adder_magic_1/xor_magic_0/a_46_n26# 2.62fF
+C409 half_adder_magic_3/xor_magic_0/w_67_0# half_adder_magic_3/xor_magic_0/a_46_39# 3.18fF
+C410 half_adder_magic_0/xor_magic_0/w_0_0# half_adder_magic_0/B 2.62fF
+C411 and_magic_0/nand_magic_0/w_0_0# and_magic_0/nand_magic_0/OUTPUT 3.75fF
+C412 and_magic_7/inverter_magic_0/OUTPUT full_adder_magic_1/half_adder_magic_0/xor_magic_0/w_33_n32# 2.62fF
+C413 and_magic_8/nand_magic_0/w_0_0# VDD 3.38fF
+C414 B1 and_magic_7/nand_magic_0/w_0_0# 2.62fF
+C415 GND full_adder_magic_2/C_IN 2.34fF
+C416 VDD full_adder_magic_7/half_adder_magic_1/xor_magic_0/w_33_n32# 2.26fF
+C417 full_adder_magic_6/half_adder_magic_1/xor_magic_0/w_33_n32# full_adder_magic_6/half_adder_magic_1/xor_magic_0/a_13_6# 3.18fF
+C418 full_adder_magic_3/half_adder_magic_1/xor_magic_0/w_67_0# full_adder_magic_3/half_adder_magic_1/xor_magic_0/a_46_39# 3.18fF
+C419 full_adder_magic_2/half_adder_magic_0/xor_magic_0/w_33_33# and_magic_15/inverter_magic_0/OUTPUT 2.62fF
+C420 full_adder_magic_4/C_IN full_adder_magic_4/half_adder_magic_1/and_magic_0/nand_magic_0/w_0_0# 2.62fF
+C421 full_adder_magic_1/C_IN full_adder_magic_1/half_adder_magic_1/xor_magic_0/w_0_0# 2.62fF
+C422 half_adder_magic_3/and_magic_0/nand_magic_0/w_0_0# half_adder_magic_3/B 2.62fF
+C423 full_adder_magic_6/half_adder_magic_0/xor_magic_0/w_33_n32# full_adder_magic_6/half_adder_magic_0/xor_magic_0/a_13_6# 3.18fF
+C424 half_adder_magic_1/xor_magic_0/w_33_n32# half_adder_magic_1/xor_magic_0/a_13_6# 3.18fF
+C425 half_adder_magic_0/xor_magic_0/w_0_0# half_adder_magic_0/A 3.18fF
+C426 full_adder_magic_1/half_adder_magic_1/CARRY full_adder_magic_1/or_magic_0/nor_magic_0/w_0_0# 2.62fF
+C427 full_adder_magic_5/half_adder_magic_0/B full_adder_magic_5/half_adder_magic_0/xor_magic_0/w_33_n32# 2.62fF
+C428 full_adder_magic_0/half_adder_magic_0/xor_magic_0/w_33_33# full_adder_magic_0/half_adder_magic_0/xor_magic_0/a_13_6# 2.62fF
+C429 full_adder_magic_1/half_adder_magic_1/xor_magic_0/w_67_0# VDD 2.26fF
+C430 half_adder_magic_3/B half_adder_magic_3/xor_magic_0/w_33_n32# 2.62fF
+C431 full_adder_magic_5/half_adder_magic_1/xor_magic_0/w_67_0# full_adder_magic_5/half_adder_magic_1/xor_magic_0/a_46_n26# 2.62fF
+C432 VDD full_adder_magic_7/half_adder_magic_1/xor_magic_0/w_0_0# 2.26fF
+C433 VDD full_adder_magic_5/or_magic_0/nor_magic_0/w_0_0# 2.26fF
+C434 full_adder_magic_4/half_adder_magic_0/and_magic_0/nand_magic_0/w_0_0# full_adder_magic_4/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT 3.75fF
+C435 full_adder_magic_1/or_magic_0/nor_magic_0/w_0_0# VDD 2.26fF
+C436 half_adder_magic_0/xor_magic_0/w_0_0# VDD 2.26fF
+C437 B0 and_magic_3/nand_magic_0/w_0_0# 2.62fF
+C438 and_magic_10/inverter_magic_0/OUTPUT full_adder_magic_6/half_adder_magic_0/xor_magic_0/w_33_n32# 2.62fF
+C439 B1 GND 7.20fF
+C440 A1 B2 2.16fF
+C441 C5 Gnd 5.85fF
+C442 full_adder_magic_7/or_magic_0/nor_magic_0/m2_5_n28# Gnd 3.38fF **FLOATING
+C443 full_adder_magic_7/or_magic_0/nor_magic_0/OUTPUT Gnd 8.96fF
+C444 full_adder_magic_7/half_adder_magic_0/CARRY Gnd 27.70fF
+C445 full_adder_magic_7/half_adder_magic_1/xor_magic_0/m2_5_n45# Gnd 5.32fF **FLOATING
+C446 full_adder_magic_7/half_adder_magic_1/xor_magic_0/m2_38_12# Gnd 5.32fF **FLOATING
+C447 P6 Gnd 11.66fF
+C448 full_adder_magic_7/half_adder_magic_1/xor_magic_0/a_46_n26# Gnd 16.55fF
+C449 full_adder_magic_7/half_adder_magic_1/xor_magic_0/a_46_39# Gnd 12.83fF
+C450 full_adder_magic_7/half_adder_magic_1/xor_magic_0/a_13_6# Gnd 16.05fF
+C451 full_adder_magic_7/half_adder_magic_1/A Gnd 41.80fF
+C452 full_adder_magic_7/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT Gnd 8.96fF
+C453 full_adder_magic_7/half_adder_magic_1/CARRY Gnd 10.75fF
+C454 full_adder_magic_7/half_adder_magic_0/xor_magic_0/m2_5_n45# Gnd 5.32fF **FLOATING
+C455 full_adder_magic_7/half_adder_magic_0/xor_magic_0/m2_38_12# Gnd 5.32fF **FLOATING
+C456 full_adder_magic_7/half_adder_magic_0/xor_magic_0/a_46_n26# Gnd 16.55fF
+C457 full_adder_magic_7/half_adder_magic_0/xor_magic_0/a_46_39# Gnd 12.83fF
+C458 full_adder_magic_7/half_adder_magic_0/xor_magic_0/a_13_6# Gnd 16.05fF
+C459 full_adder_magic_7/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT Gnd 8.96fF
+C460 full_adder_magic_7/half_adder_magic_0/B Gnd 219.76fF
+C461 full_adder_magic_6/or_magic_0/nor_magic_0/m2_5_n28# Gnd 3.38fF **FLOATING
+C462 full_adder_magic_6/or_magic_0/nor_magic_0/OUTPUT Gnd 8.96fF
+C463 full_adder_magic_6/half_adder_magic_0/CARRY Gnd 27.70fF
+C464 full_adder_magic_6/half_adder_magic_1/xor_magic_0/m2_5_n45# Gnd 5.32fF **FLOATING
+C465 full_adder_magic_6/half_adder_magic_1/xor_magic_0/m2_38_12# Gnd 5.32fF **FLOATING
+C466 full_adder_magic_6/half_adder_magic_1/SUM Gnd 22.37fF
+C467 full_adder_magic_6/half_adder_magic_1/xor_magic_0/a_46_n26# Gnd 16.55fF
+C468 full_adder_magic_6/half_adder_magic_1/xor_magic_0/a_46_39# Gnd 12.83fF
+C469 full_adder_magic_6/half_adder_magic_1/xor_magic_0/a_13_6# Gnd 16.05fF
+C470 full_adder_magic_6/half_adder_magic_1/A Gnd 41.80fF
+C471 full_adder_magic_6/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT Gnd 8.96fF
+C472 full_adder_magic_6/half_adder_magic_1/CARRY Gnd 10.75fF
+C473 full_adder_magic_6/half_adder_magic_0/xor_magic_0/m2_5_n45# Gnd 5.32fF **FLOATING
+C474 full_adder_magic_6/half_adder_magic_0/xor_magic_0/m2_38_12# Gnd 5.32fF **FLOATING
+C475 full_adder_magic_6/half_adder_magic_0/xor_magic_0/a_46_n26# Gnd 16.55fF
+C476 full_adder_magic_6/half_adder_magic_0/xor_magic_0/a_46_39# Gnd 12.83fF
+C477 full_adder_magic_6/half_adder_magic_0/xor_magic_0/a_13_6# Gnd 16.05fF
+C478 full_adder_magic_6/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT Gnd 8.96fF
+C479 full_adder_magic_7/half_adder_magic_0/A Gnd 49.59fF
+C480 full_adder_magic_5/or_magic_0/nor_magic_0/m2_5_n28# Gnd 3.38fF **FLOATING
+C481 full_adder_magic_5/or_magic_0/nor_magic_0/OUTPUT Gnd 8.96fF
+C482 full_adder_magic_5/half_adder_magic_0/CARRY Gnd 27.70fF
+C483 full_adder_magic_5/half_adder_magic_1/xor_magic_0/m2_5_n45# Gnd 5.32fF **FLOATING
+C484 full_adder_magic_5/half_adder_magic_1/xor_magic_0/m2_38_12# Gnd 5.32fF **FLOATING
+C485 full_adder_magic_6/half_adder_magic_0/A Gnd 60.03fF
+C486 full_adder_magic_5/half_adder_magic_1/xor_magic_0/a_46_n26# Gnd 16.55fF
+C487 full_adder_magic_5/half_adder_magic_1/xor_magic_0/a_46_39# Gnd 12.83fF
+C488 full_adder_magic_5/half_adder_magic_1/xor_magic_0/a_13_6# Gnd 16.05fF
+C489 full_adder_magic_5/half_adder_magic_1/A Gnd 41.80fF
+C490 full_adder_magic_5/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT Gnd 8.96fF
+C491 full_adder_magic_5/half_adder_magic_1/CARRY Gnd 10.75fF
+C492 full_adder_magic_5/half_adder_magic_0/xor_magic_0/m2_5_n45# Gnd 5.32fF **FLOATING
+C493 full_adder_magic_5/half_adder_magic_0/xor_magic_0/m2_38_12# Gnd 5.32fF **FLOATING
+C494 full_adder_magic_5/half_adder_magic_0/xor_magic_0/a_46_n26# Gnd 16.55fF
+C495 full_adder_magic_5/half_adder_magic_0/xor_magic_0/a_46_39# Gnd 12.83fF
+C496 full_adder_magic_5/half_adder_magic_0/xor_magic_0/a_13_6# Gnd 16.05fF
+C497 and_magic_9/inverter_magic_0/OUTPUT Gnd 40.48fF
+C498 full_adder_magic_5/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT Gnd 8.96fF
+C499 full_adder_magic_5/C_IN Gnd 43.26fF
+C500 full_adder_magic_4/or_magic_0/nor_magic_0/m2_5_n28# Gnd 3.38fF **FLOATING
+C501 full_adder_magic_4/or_magic_0/nor_magic_0/OUTPUT Gnd 8.96fF
+C502 full_adder_magic_4/half_adder_magic_0/CARRY Gnd 27.70fF
+C503 full_adder_magic_4/half_adder_magic_1/xor_magic_0/m2_5_n45# Gnd 5.32fF **FLOATING
+C504 full_adder_magic_4/half_adder_magic_1/xor_magic_0/m2_38_12# Gnd 5.32fF **FLOATING
+C505 full_adder_magic_4/half_adder_magic_1/xor_magic_0/a_46_n26# Gnd 16.55fF
+C506 full_adder_magic_4/half_adder_magic_1/xor_magic_0/a_46_39# Gnd 12.83fF
+C507 full_adder_magic_4/half_adder_magic_1/xor_magic_0/a_13_6# Gnd 16.05fF
+C508 full_adder_magic_4/half_adder_magic_1/A Gnd 41.80fF
+C509 full_adder_magic_4/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT Gnd 8.96fF
+C510 full_adder_magic_4/half_adder_magic_1/CARRY Gnd 10.75fF
+C511 full_adder_magic_4/half_adder_magic_0/xor_magic_0/m2_5_n45# Gnd 5.32fF **FLOATING
+C512 full_adder_magic_4/half_adder_magic_0/xor_magic_0/m2_38_12# Gnd 5.32fF **FLOATING
+C513 full_adder_magic_4/half_adder_magic_0/xor_magic_0/a_46_n26# Gnd 16.55fF
+C514 full_adder_magic_4/half_adder_magic_0/xor_magic_0/a_46_39# Gnd 12.83fF
+C515 full_adder_magic_4/half_adder_magic_0/xor_magic_0/a_13_6# Gnd 16.05fF
+C516 and_magic_12/inverter_magic_0/OUTPUT Gnd 40.48fF
+C517 full_adder_magic_4/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT Gnd 8.96fF
+C518 and_magic_8/inverter_magic_0/OUTPUT Gnd 35.66fF
+C519 and_magic_15/nand_magic_0/OUTPUT Gnd 8.96fF
+C520 and_magic_14/nand_magic_0/OUTPUT Gnd 8.96fF
+C521 B3 Gnd 150.45fF
+C522 full_adder_magic_5/half_adder_magic_0/B Gnd 81.35fF
+C523 full_adder_magic_3/or_magic_0/nor_magic_0/m2_5_n28# Gnd 3.38fF **FLOATING
+C524 full_adder_magic_3/or_magic_0/nor_magic_0/OUTPUT Gnd 8.96fF
+C525 full_adder_magic_3/half_adder_magic_0/CARRY Gnd 27.70fF
+C526 full_adder_magic_3/half_adder_magic_1/xor_magic_0/m2_5_n45# Gnd 5.32fF **FLOATING
+C527 full_adder_magic_3/half_adder_magic_1/xor_magic_0/m2_38_12# Gnd 5.32fF **FLOATING
+C528 full_adder_magic_3/half_adder_magic_1/xor_magic_0/a_46_n26# Gnd 16.55fF
+C529 full_adder_magic_3/half_adder_magic_1/xor_magic_0/a_46_39# Gnd 12.83fF
+C530 full_adder_magic_3/half_adder_magic_1/xor_magic_0/a_13_6# Gnd 16.05fF
+C531 full_adder_magic_3/half_adder_magic_1/A Gnd 41.80fF
+C532 full_adder_magic_3/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT Gnd 8.96fF
+C533 full_adder_magic_3/half_adder_magic_1/CARRY Gnd 10.75fF
+C534 full_adder_magic_3/half_adder_magic_0/xor_magic_0/m2_5_n45# Gnd 5.32fF **FLOATING
+C535 full_adder_magic_3/half_adder_magic_0/xor_magic_0/m2_38_12# Gnd 5.32fF **FLOATING
+C536 full_adder_magic_3/half_adder_magic_0/xor_magic_0/a_46_n26# Gnd 16.55fF
+C537 full_adder_magic_3/half_adder_magic_0/xor_magic_0/a_46_39# Gnd 12.83fF
+C538 full_adder_magic_3/half_adder_magic_0/xor_magic_0/a_13_6# Gnd 16.05fF
+C539 and_magic_13/inverter_magic_0/OUTPUT Gnd 40.48fF
+C540 full_adder_magic_3/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT Gnd 8.96fF
+C541 and_magic_13/nand_magic_0/OUTPUT Gnd 8.96fF
+C542 full_adder_magic_3/C_IN Gnd 47.15fF
+C543 full_adder_magic_2/or_magic_0/nor_magic_0/m2_5_n28# Gnd 3.38fF **FLOATING
+C544 full_adder_magic_2/or_magic_0/nor_magic_0/OUTPUT Gnd 8.96fF
+C545 full_adder_magic_2/half_adder_magic_0/CARRY Gnd 27.70fF
+C546 full_adder_magic_2/half_adder_magic_1/xor_magic_0/m2_5_n45# Gnd 5.32fF **FLOATING
+C547 full_adder_magic_2/half_adder_magic_1/xor_magic_0/m2_38_12# Gnd 5.32fF **FLOATING
+C548 half_adder_magic_2/B Gnd 66.26fF
+C549 full_adder_magic_2/half_adder_magic_1/xor_magic_0/a_46_n26# Gnd 16.55fF
+C550 full_adder_magic_2/half_adder_magic_1/xor_magic_0/a_46_39# Gnd 12.83fF
+C551 full_adder_magic_2/half_adder_magic_1/xor_magic_0/a_13_6# Gnd 16.05fF
+C552 full_adder_magic_2/half_adder_magic_1/A Gnd 41.80fF
+C553 full_adder_magic_2/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT Gnd 8.96fF
+C554 full_adder_magic_2/half_adder_magic_1/CARRY Gnd 10.75fF
+C555 full_adder_magic_2/half_adder_magic_0/xor_magic_0/m2_5_n45# Gnd 5.32fF **FLOATING
+C556 full_adder_magic_2/half_adder_magic_0/xor_magic_0/m2_38_12# Gnd 5.32fF **FLOATING
+C557 full_adder_magic_2/half_adder_magic_0/xor_magic_0/a_46_n26# Gnd 16.55fF
+C558 full_adder_magic_2/half_adder_magic_0/xor_magic_0/a_46_39# Gnd 12.83fF
+C559 full_adder_magic_2/half_adder_magic_0/xor_magic_0/a_13_6# Gnd 16.05fF
+C560 and_magic_15/inverter_magic_0/OUTPUT Gnd 40.48fF
+C561 full_adder_magic_2/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT Gnd 8.96fF
+C562 and_magic_14/inverter_magic_0/OUTPUT Gnd 35.66fF
+C563 full_adder_magic_2/C_IN Gnd 45.16fF
+C564 full_adder_magic_0/or_magic_0/nor_magic_0/m2_5_n28# Gnd 3.38fF **FLOATING
+C565 full_adder_magic_0/or_magic_0/nor_magic_0/OUTPUT Gnd 8.96fF
+C566 full_adder_magic_0/half_adder_magic_0/CARRY Gnd 27.70fF
+C567 full_adder_magic_0/half_adder_magic_1/xor_magic_0/m2_5_n45# Gnd 5.32fF **FLOATING
+C568 full_adder_magic_0/half_adder_magic_1/xor_magic_0/m2_38_12# Gnd 5.32fF **FLOATING
+C569 P2 Gnd 13.16fF
+C570 full_adder_magic_0/half_adder_magic_1/xor_magic_0/a_46_n26# Gnd 16.55fF
+C571 full_adder_magic_0/half_adder_magic_1/xor_magic_0/a_46_39# Gnd 12.83fF
+C572 VDD Gnd 1033.24fF
+C573 full_adder_magic_0/half_adder_magic_1/xor_magic_0/a_13_6# Gnd 16.05fF
+C574 full_adder_magic_0/half_adder_magic_1/A Gnd 41.80fF
+C575 full_adder_magic_0/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT Gnd 8.96fF
+C576 full_adder_magic_0/C_IN Gnd 45.14fF
+C577 full_adder_magic_0/half_adder_magic_1/CARRY Gnd 10.75fF
+C578 full_adder_magic_0/half_adder_magic_0/xor_magic_0/m2_5_n45# Gnd 5.32fF **FLOATING
+C579 full_adder_magic_0/half_adder_magic_0/xor_magic_0/m2_38_12# Gnd 5.32fF **FLOATING
+C580 full_adder_magic_0/half_adder_magic_0/xor_magic_0/a_46_n26# Gnd 16.55fF
+C581 full_adder_magic_0/half_adder_magic_0/xor_magic_0/a_46_39# Gnd 12.83fF
+C582 full_adder_magic_0/half_adder_magic_0/xor_magic_0/a_13_6# Gnd 16.05fF
+C583 half_adder_magic_0/CARRY Gnd 47.62fF
+C584 full_adder_magic_0/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT Gnd 8.96fF
+C585 full_adder_magic_3/half_adder_magic_0/B Gnd 68.55fF
+C586 full_adder_magic_1/or_magic_0/nor_magic_0/OUTPUT Gnd 8.96fF
+C587 full_adder_magic_1/half_adder_magic_0/CARRY Gnd 27.70fF
+C588 full_adder_magic_1/half_adder_magic_1/xor_magic_0/m2_5_n45# Gnd 5.32fF **FLOATING
+C589 full_adder_magic_1/half_adder_magic_1/xor_magic_0/m2_38_12# Gnd 5.32fF **FLOATING
+C590 full_adder_magic_1/half_adder_magic_1/xor_magic_0/a_46_n26# Gnd 16.55fF
+C591 full_adder_magic_1/half_adder_magic_1/xor_magic_0/a_46_39# Gnd 12.83fF
+C592 full_adder_magic_1/half_adder_magic_1/xor_magic_0/a_13_6# Gnd 16.05fF
+C593 full_adder_magic_1/half_adder_magic_1/A Gnd 41.80fF
+C594 full_adder_magic_1/half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT Gnd 8.96fF
+C595 full_adder_magic_1/half_adder_magic_1/CARRY Gnd 10.75fF
+C596 full_adder_magic_1/half_adder_magic_0/xor_magic_0/m2_5_n45# Gnd 5.32fF **FLOATING
+C597 full_adder_magic_1/half_adder_magic_0/xor_magic_0/m2_38_12# Gnd 5.32fF **FLOATING
+C598 full_adder_magic_1/half_adder_magic_0/xor_magic_0/a_46_n26# Gnd 16.55fF
+C599 full_adder_magic_1/half_adder_magic_0/xor_magic_0/a_46_39# Gnd 12.83fF
+C600 full_adder_magic_1/half_adder_magic_0/xor_magic_0/a_13_6# Gnd 16.05fF
+C601 and_magic_6/inverter_magic_0/OUTPUT Gnd 47.25fF
+C602 full_adder_magic_1/half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT Gnd 8.96fF
+C603 and_magic_7/inverter_magic_0/OUTPUT Gnd 35.66fF
+C604 and_magic_12/nand_magic_0/OUTPUT Gnd 8.96fF
+C605 and_magic_11/nand_magic_0/OUTPUT Gnd 8.96fF
+C606 full_adder_magic_7/C_IN Gnd 136.06fF
+C607 and_magic_10/nand_magic_0/OUTPUT Gnd 8.96fF
+C608 and_magic_10/inverter_magic_0/OUTPUT Gnd 35.66fF
+C609 half_adder_magic_3/xor_magic_0/m2_5_n45# Gnd 5.32fF **FLOATING
+C610 half_adder_magic_3/xor_magic_0/m2_38_12# Gnd 5.32fF **FLOATING
+C611 P4 Gnd 19.36fF
+C612 half_adder_magic_3/xor_magic_0/a_46_n26# Gnd 16.55fF
+C613 half_adder_magic_3/xor_magic_0/a_46_39# Gnd 12.83fF
+C614 half_adder_magic_3/xor_magic_0/a_13_6# Gnd 16.05fF
+C615 half_adder_magic_3/A Gnd 56.08fF
+C616 half_adder_magic_3/and_magic_0/nand_magic_0/OUTPUT Gnd 8.96fF
+C617 full_adder_magic_6/C_IN Gnd 56.42fF
+C618 half_adder_magic_2/xor_magic_0/m2_5_n45# Gnd 5.32fF **FLOATING
+C619 half_adder_magic_2/xor_magic_0/m2_38_12# Gnd 5.32fF **FLOATING
+C620 P3 Gnd 14.29fF
+C621 half_adder_magic_2/xor_magic_0/a_46_n26# Gnd 16.55fF
+C622 half_adder_magic_2/xor_magic_0/a_46_39# Gnd 12.83fF
+C623 half_adder_magic_2/xor_magic_0/a_13_6# Gnd 16.05fF
+C624 half_adder_magic_2/A Gnd 54.02fF
+C625 half_adder_magic_2/and_magic_0/nand_magic_0/OUTPUT Gnd 8.96fF
+C626 full_adder_magic_4/C_IN Gnd 48.33fF
+C627 half_adder_magic_1/xor_magic_0/m2_5_n45# Gnd 5.32fF **FLOATING
+C628 half_adder_magic_1/xor_magic_0/m2_38_12# Gnd 5.32fF **FLOATING
+C629 half_adder_magic_1/SUM Gnd 39.42fF
+C630 half_adder_magic_1/xor_magic_0/a_46_n26# Gnd 16.55fF
+C631 half_adder_magic_1/xor_magic_0/a_46_39# Gnd 12.83fF
+C632 half_adder_magic_1/xor_magic_0/a_13_6# Gnd 16.05fF
+C633 half_adder_magic_1/A Gnd 46.50fF
+C634 half_adder_magic_1/and_magic_0/nand_magic_0/OUTPUT Gnd 8.96fF
+C635 half_adder_magic_1/B Gnd 42.24fF
+C636 full_adder_magic_1/C_IN Gnd 50.01fF
+C637 half_adder_magic_0/xor_magic_0/m2_5_n45# Gnd 5.32fF **FLOATING
+C638 half_adder_magic_0/xor_magic_0/m2_38_12# Gnd 5.32fF **FLOATING
+C639 P1 Gnd 16.54fF
+C640 half_adder_magic_0/xor_magic_0/a_46_n26# Gnd 16.55fF
+C641 half_adder_magic_0/xor_magic_0/a_46_39# Gnd 12.83fF
+C642 half_adder_magic_0/xor_magic_0/a_13_6# Gnd 16.05fF
+C643 half_adder_magic_0/A Gnd 45.37fF
+C644 half_adder_magic_0/and_magic_0/nand_magic_0/OUTPUT Gnd 8.96fF
+C645 half_adder_magic_0/B Gnd 37.07fF
+C646 and_magic_9/nand_magic_0/OUTPUT Gnd 8.96fF
+C647 and_magic_8/nand_magic_0/OUTPUT Gnd 8.96fF
+C648 and_magic_7/nand_magic_0/OUTPUT Gnd 8.96fF
+C649 and_magic_6/nand_magic_0/OUTPUT Gnd 8.96fF
+C650 A3 Gnd 163.69fF
+C651 and_magic_4/nand_magic_0/OUTPUT Gnd 8.96fF
+C652 and_magic_5/nand_magic_0/OUTPUT Gnd 8.96fF
+C653 B2 Gnd 162.03fF
+C654 and_magic_3/nand_magic_0/OUTPUT Gnd 8.96fF
+C655 A2 Gnd 211.78fF
+C656 and_magic_2/nand_magic_0/OUTPUT Gnd 8.96fF
+C657 A1 Gnd 185.48fF
+C658 and_magic_1/nand_magic_0/OUTPUT Gnd 8.96fF
+C659 B1 Gnd 212.20fF
+C660 and_magic_0/nand_magic_0/OUTPUT Gnd 8.96fF
+C661 B0 Gnd 135.67fF
+C662 A0 Gnd 207.42fF
+C663 GND Gnd 680.85fF **FLOATING
+C664 P0 Gnd 8.84fF
+
+
+
+
+
+
+
+.TRAN 100p 40n
+
+***ANALYSIS***
+.CONTROL
+	run
+	
+.ENDC
+
+.END

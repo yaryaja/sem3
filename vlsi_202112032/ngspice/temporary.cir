@@ -1,0 +1,38 @@
+
+
+.include 4bit_adder.sub
+.inlude half_adder.sub
+.include 22nm_MGK.pm
+
+.param SUPPLY=1
+.param LAMBDA=22n
+.param width_N={2*LAMBDA}
+.param width_P={2*LAMBDA}
+.global gnd vdd 
+
+
+vdd vdd gnd  'SUPPLY'
+VA0 A0 GND PULSE(0 1 0 100p 100p 10n 20n)
+VA1 A1 GND PULSE(0 1 0 100p 100p 10n 20n)
+VA2 A2 GND PULSE(0 1 0 100p 100p 10n 20n)
+VA3 A3 GND PULSE(0 1 0 100p 100p 10n 20n)
+VB0 B0 GND PULSE(0 1 0 100p 100p 10n 20n)
+VB1 B1 GND PULSE(0 1 0 100p 100p 10n 20n)
+VB2 B2 GND PULSE(0 1 0 100p 100p 10n 20n)
+VB3 B3 GND PULSE(0 1 0 100p 100p 10n 20n)
+
+
+
+
+
+X1 A0 A1 A2 A3 B0 B1 B2 B3 P0 P1 P2 P3 carry vdd gnd fourbit_adder
+
+
+
+ 
+.control
+tran 1n 120n
+plot v(A0) v(P0)+1 v(p1)+2 v(P3)+3 v(carry)+4
+.endc
+.end
+

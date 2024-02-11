@@ -1,0 +1,10 @@
+.subckt inv 3 out vdd gnd
+
+MP_I out 3 vdd vdd pmos W={width_P} L={LAMBDA} 
+    + AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P} AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P} 
+
+MN_I out 3 gnd gnd nmos W={width_P} L={LAMBDA} 
+    + AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P} AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+   
+
+.ends inv

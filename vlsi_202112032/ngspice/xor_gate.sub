@@ -1,0 +1,18 @@
+.include and_gate.sub
+.include or_gate.sub
+.include nand_gate.sub
+.include nor_gate.sub
+.include inverter.sub
+
+
+.subckt xor_Gates A B out vdd gnd 
+x1 A C vdd gnd inv
+
+x2 B D vdd gnd inv
+x3 A D  1 vdd gnd and_Gates
+
+x4 B C 2 vdd gnd and_Gates
+
+x5 1 2  out vdd gnd or_Gates
+
+.ends xor_Gates

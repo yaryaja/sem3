@@ -1,0 +1,15 @@
+
+.include and_gate.sub
+.include or_gate.sub    
+.include nand_gate.sub
+.include nor_gate.sub
+.include xor_gate.sub
+
+.subckt full_adder A B C carry sum vdd gnd
+ X1 A B 1 vdd gnd  xor_Gates 
+ X2 1 C sum vdd gnd  xor_Gates 
+ X3 1 C 2 vdd gnd  and_Gates
+X4 A B 3 vdd gnd  and_Gates
+X5 2 3 carry vdd gnd or_Gates
+
+.ends full_adder

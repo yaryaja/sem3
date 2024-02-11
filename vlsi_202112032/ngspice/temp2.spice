@@ -1,0 +1,35 @@
+* SPICE3 file created from magicor_gate.ext - technology: scmos
+
+
+.include TSMC_180nm.txt
+.param SUPPLY=1
+.param LAMBDA=22n
+.param width_N={2*LAMBDA}
+.param width_P={2*LAMBDA}
+.global gnd vdd 
+
+.option scale=0.01u
+
+
+v_dd vdd gnd  'SUPPLY'
+va INPUT gnd pulse 0 1 0 100p 100p 10n 20n
+
+M1000 OUTPUT INPUT VDD w_0_0# pmos w=8 l=2
++  ad=40 pd=26 as=40 ps=26
+M1001 OUTPUT INPUT a_10_n12# Gnd nmos w=4 l=2
++  ad=20 pd=18 as=4 ps=10
+C0 OUTPUT w_0_0# 1.13fF
+C1 VDD w_0_0# 1.13fF
+C2 INPUT w_0_0# 2.62fF
+C3 GND Gnd 0.47fF **FLOATING
+C4 OUTPUT Gnd 2.63fF
+C5 VDD Gnd 4.51fF
+C6 INPUT Gnd 5.20fF
+
+
+
+.control
+tran 1n 120n
+plot  INPUT OUTPUT+1
+.endc
+.end

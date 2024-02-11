@@ -1,0 +1,14 @@
+.subckt nand_Gates 2 4 3 vdd gnd
+    MP_A 3 2 vdd vdd pmos W={width_P} L={LAMBDA} 
+    + AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P} AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+
+    MP_B 3 4 vdd vdd pmos W={width_P} L={LAMBDA} 
+    + AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P} AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P} 
+
+    MN_A 3 2 5 gnd nmos W={width_P} L={LAMBDA} 
+    + AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P} AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+
+    MN_B 5 4 gnd gnd nmos W={width_P} L={LAMBDA} 
+    + AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P} AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+
+.ends nand_Gates 
